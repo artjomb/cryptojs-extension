@@ -17,7 +17,7 @@
         return arr;
     }
     
-    C.algo.CMAC = Base.extend({
+    var CMAC = C.algo.CMAC = Base.extend({
         /**
          * Initializes a newly created CMAC
          * 
@@ -110,4 +110,16 @@
             return aesBlock(this._K, M_last);
         }
     });
+    
+    /**
+     * Directly invokes the CMAC and returns the calculated MAC.
+     * 
+     * @param {WordArray} key The key to be used for CMAC
+     * @param {WordArray|string} message The data to be MAC'ed (either WordArray or UTF-8 encoded string)
+     *
+     * @returns {WordArray} MAC
+     */
+    C.CMAC = function(key, message){
+        return CMAC.create(key).finalize(message);
+    };
 })(CryptoJS);

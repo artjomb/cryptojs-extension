@@ -51,6 +51,16 @@ var stats = { passed: 0, failed: 0 };
             stats.failed++;
         }
     }
+    
+    // Shortcut function test
+    var instantMAC = CryptoJS.CMAC(keyBytes, message).toString();
+    if (instantMAC === fullMAC) {
+        console.log("PASS shortcut test MAC=" + instantMAC);
+        stats.passed++;
+    } else {
+        console.log("FAIL shortcut test full=" + fullMAC + " instant=" + instantMAC);
+        stats.failed++;
+    }
 })();
 
 console.log("CMAC test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");
