@@ -388,14 +388,10 @@
          *     var cmacer = CryptoJS.algo.CMAC.create(key);
          */
         init: function(key){
-            // generate sub keys
-            var test = WordArray.create([0x8f000000, 0xed000000]);
+            // generate sub keys...
             
             // Step 1
             var L = aesBlock(key, ext.const_Zero);
-            //test vector
-            //console.log(L.toString(C.enc.Hex));
-            //console.log(L.toString(C.enc.Hex) === "7df76b0c1ab899b33e42f047b91b546f");
             
             // Step 2
             var K1 = L.clone();
@@ -414,11 +410,6 @@
             this._K1 = K1;
             this._K2 = K2;
             this._K = key;
-            
-            //test vectors
-            //console.log(K1.toString(C.enc.Hex), K2.toString(C.enc.Hex));
-            //console.log("fbeed618357133667c85e08f7236a8de", "f7ddac306ae266ccf90bc11ee46d513b");
-            //console.log(K1.toString(C.enc.Hex) === "fbeed618357133667c85e08f7236a8de", K2.toString(C.enc.Hex) === "f7ddac306ae266ccf90bc11ee46d513b");   
             
             this._const_Bsize = 16;
             
@@ -496,17 +487,19 @@
     var S2V = C.algo.S2V = Base.extend({
         init: function(key){
             this._blockSize = 16;
-            this.reset(key);
+            this._cmacAD = CMAC.create(key);
+            this._cmacPT = CMAC.create(key);
+            this.reset();
         },
         reset: function(key){
             this._buffer = WordArray.create();
             if (key) {
-                this._cmacAD = CMAC.create(key);
-                this._cmacPT = CMAC.create(key);
+                
             } else {
-                this._cmacAD.reset();
-                this._cmacPT.reset();
+                
             }
+            this._cmacAD.reset();
+            this._cmacPT.reset();
             this._d = this._cmacAD.finalize(ext.const_Zero);
             this._empty = true;
             this._ptStarted = false;

@@ -19,17 +19,14 @@
     var S2V = C.algo.S2V = Base.extend({
         init: function(key){
             this._blockSize = 16;
-            this.reset(key);
+            this._cmacAD = CMAC.create(key);
+            this._cmacPT = CMAC.create(key);
+            this.reset();
         },
-        reset: function(key){
+        reset: function(){
             this._buffer = WordArray.create();
-            if (key) {
-                this._cmacAD = CMAC.create(key);
-                this._cmacPT = CMAC.create(key);
-            } else {
-                this._cmacAD.reset();
-                this._cmacPT.reset();
-            }
+            this._cmacAD.reset();
+            this._cmacPT.reset();
             this._d = this._cmacAD.finalize(ext.const_Zero);
             this._empty = true;
             this._ptStarted = false;
