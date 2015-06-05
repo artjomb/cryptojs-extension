@@ -63,6 +63,10 @@
         },
 
         update: function (messageUpdate) {
+            if (!messageUpdate) {
+                return this;
+            }
+            
             // Shortcuts
             var buffer = this._buffer;
             var bsize = this._const_Bsize;
