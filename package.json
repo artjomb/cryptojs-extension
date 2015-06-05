@@ -1,0 +1,25 @@
+{
+  "name": "cryptojs-extension",
+  "version": "0.1.0",
+  "description": "Some additional crypto functions built on top of CryptoJS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "uglify-js": "2.4.10"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "cd test && node cmac.js && node siv.js"
+  },
+  "keywords": [
+    "crypto",
+    "aes",
+    "siv",
+    "cmac",
+    "cryptojs"
+  ],
+  "author": "artjomb",
+  "license": "MIT"
+}
