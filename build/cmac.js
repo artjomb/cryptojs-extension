@@ -135,22 +135,6 @@
     };
     
     /**
-     * Returns the n rightmost words of the WordArray. It assumes 
-     * that the current WordArray has sigBytes on a word boundary. 
-     * If n is negative then it denotes how many words from the start 
-     * should be skipped for copying.
-     * 
-     * @param {WordArray} wordArray WordArray to work on
-     * @param {int} n Words to retrieve
-     * 
-     * @returns new WordArray
-     */
-    ext.rightmostWords = function(wordArray, n){
-        wordArray.clamp();
-        return WordArray.create(wordArray.words.slice(-n));
-    };
-    
-    /**
      * Returns the n rightmost bytes of the WordArray.
      * 
      * @param {WordArray} wordArray WordArray to work on
@@ -162,11 +146,11 @@
         wordArray.clamp();
         var wordSize = 32;
         var rmArray = wordArray.clone();
-        var bitsToShift = n * 8;
+        var bitsToShift = (rmArray.sigBytes - n) * 8;
         if (bitsToShift >= wordSize) {
             var popCount = Math.floor(bitsToShift/wordSize);
             bitsToShift -= popCount * wordSize;
-            rmArray.words = rmArray.words.splice(0, popCount);
+            rmArray.words.splice(0, popCount);
             rmArray.sigBytes -= popCount * wordSize / 8;
         }
         if (bitsToShift > 0) {
@@ -187,29 +171,9 @@
      */
     ext.popWords = function(wordArray, n){
         var left = ext.leftmostWords(wordArray, n);
-        wordArray.words = wordArray.words.slice(-n);
+        wordArray.words = wordArray.words.slice(n);
         wordArray.sigBytes -= n * 4;
         return left;
-    };
-    
-    /**
-     * Shifts the array to the left and returns the shifted dropped elements 
-     * as WordArray. The initial WordArray must contain at least n bytes and 
-     * they have to be significant.
-     * 
-     * @param {WordArray} wordArray WordArray to work on (is modified)
-     * @param {int} n Bytes to shift (must be a multiple of 4 and positive, default 16)
-     * 
-     * @returns new WordArray
-     */
-    ext.shift = function(wordArray, n){
-        n = n || 16;
-        var shiftedArray = [];
-        for(var i = 0; i < n; i += 4) {
-            shiftedArray.push(wordArray.words.shift());
-            wordArray.sigBytes -= 4;
-        }
-        return WordArray.create(shiftedArray);
     };
     
     /**
@@ -261,22 +225,6 @@
     };
     
     /**
-     * XORs arr2 to the end of arr1 array. This doesn't modify the current array 
-     * aside from clamping. This assumes that the sigBytes of this array and 
-     * the passed array are on the word boundary.
-     * 
-     * @param {WordArray} arr1 Bigger array
-     * @param {WordArray} arr2 Smaller array to be XORed to the end
-     * 
-     * @returns new WordArray
-     */
-    ext.xorendWords = function(arr1, arr2){
-        // TODO: more efficient
-        return ext.leftmostWords(arr1, (arr1.sigBytes-arr2.sigBytes)/4)
-                .concat(ext.xor(ext.rightmostWords(arr1, arr2.sigBytes/4), arr2));
-    };
-    
-    /**
      * XORs arr2 to the end of arr1 array. This doesn't modify the current 
      * array aside from clamping.
      * 
@@ -319,8 +267,9 @@
      * @returns passed WordArray
      */
     ext.dbl = function(wordArray){
+        var carry = ext.msb(wordArray);
         ext.bitshift(wordArray, 1);
-        if (ext.msb(wordArray) === 1) {
+        if (carry === 1) {
             ext.xor(wordArray, ext.const_Rb);
         }
         return wordArray;
@@ -377,7 +326,7 @@
         return arr;
     }
     
-    C.algo.CMAC = Base.extend({
+    var CMAC = C.algo.CMAC = Base.extend({
         /**
          * Initializes a newly created CMAC
          * 
@@ -403,7 +352,7 @@
             // Step 3
             var K2 = K1.clone();
             ext.bitshift(K2, 1);
-            if (ext.msb(K2) === 1) {
+            if (ext.msb(K1) === 1) {
                 ext.xor(K2, ext.const_Rb);
             }
             
@@ -423,6 +372,10 @@
         },
 
         update: function (messageUpdate) {
+            if (!messageUpdate) {
+                return this;
+            }
+            
             // Shortcuts
             var buffer = this._buffer;
             var bsize = this._const_Bsize;
@@ -434,8 +387,9 @@
             buffer.concat(messageUpdate);
             
             while(buffer.sigBytes > bsize){
-                var M_i = ext.shift(buffer, bsize);
+                var M_i = ext.shiftBytes(buffer, bsize);
                 ext.xor(this._x, M_i);
+                this._x.clamp();
                 this._x = aesBlock(this._K, this._x);
                 this._counter++;
             }
@@ -466,4 +420,16 @@
             return aesBlock(this._K, M_last);
         }
     });
+    
+    /**
+     * Directly invokes the CMAC and returns the calculated MAC.
+     * 
+     * @param {WordArray} key The key to be used for CMAC
+     * @param {WordArray|string} message The data to be MAC'ed (either WordArray or UTF-8 encoded string)
+     *
+     * @returns {WordArray} MAC
+     */
+    C.CMAC = function(key, message){
+        return CMAC.create(key).finalize(message);
+    };
 })(CryptoJS);
