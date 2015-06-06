@@ -68,7 +68,6 @@
             buffer.concat(msgUpdate);
             
             while(buffer.sigBytes >= 2 * bsize){
-                // TODO: test this with longer plaintexts
                 this._empty = false;
                 var s_i = ext.popWords(buffer, wsize);
                 cmac.update(s_i);
@@ -89,8 +88,7 @@
             
             var t;
             if (s_n.sigBytes >= bsize) {
-                // TODO: test this branch
-                t = ext.xorendWords(s_n, this._d);
+                t = ext.xorendBytes(s_n, this._d);
             } else {
                 OneZeroPadding.pad(s_n, bsize);
                 t = ext.xor(ext.dbl(this._d), s_n);
@@ -133,7 +131,7 @@
                 adArray = [];
             }
             
-            var tag = ext.shift(ciphertext, 16);
+            var tag = ext.shiftBytes(ciphertext, 16);
             var filteredTag = ext.bitand(tag, ext.const_nonMSB);
             
             var plaintext = C.AES.decrypt({ciphertext:ciphertext}, this._ctrKey, {

@@ -43,7 +43,7 @@
             // Step 3
             var K2 = K1.clone();
             ext.bitshift(K2, 1);
-            if (ext.msb(K2) === 1) {
+            if (ext.msb(K1) === 1) {
                 ext.xor(K2, ext.const_Rb);
             }
             
@@ -78,8 +78,9 @@
             buffer.concat(messageUpdate);
             
             while(buffer.sigBytes > bsize){
-                var M_i = ext.shift(buffer, bsize);
+                var M_i = ext.shiftBytes(buffer, bsize);
                 ext.xor(this._x, M_i);
+                this._x.clamp();
                 this._x = aesBlock(this._K, this._x);
                 this._counter++;
             }
