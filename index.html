@@ -12,7 +12,9 @@
     <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/master/lib/cryptojs-aes.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/master/lib/cryptojs-mode-ctr.min.js"></script>
     <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/master/build/cmac.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/master/build/siv.min.js"></script>
     <script type="text/javascript" src="javascripts/main.js"></script>
     <title>CryptoJS extension by artjomb</title>
   </head>
@@ -70,12 +72,59 @@
   </div>
 </div>
 
+<div class="separator">&nbsp;</div>
+
+<h3><a id="siv-calculator" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Online AES-SIV calculator</h3>
+
+<p>AES-SIV is a mode of operation for authenticated encryption with additional data (AEAD) with AES as the base encryption primitive</p>
+
+<div class="input-block">
+  <div>
+    <label for="siv-input">Plaintext:</label> <input id="siv-input-type" type="checkbox" name="siv-input-type"><label for="siv-input-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div>
+    <textarea id="siv-input" class="message" type="text" name="siv-input"></textarea>
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <label for="siv-key">Key <sup>3</sup>:</label> <input id="siv-key-type" type="checkbox" name="siv-key-type" checked="checked"><label for="siv-key-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div>
+    <input id="siv-key" class="max512bit" type="text" name="siv-key">
+  </div>
+</div>
+
+<div class="input-block">
+  <div id="siv-ad-title" class="hidden"></div>
+  <div id="siv-ad"></div>
+  <div>
+    <a id="siv-ad-add" href="#">add associated data</a>
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <button id="siv-enc">Encrypt</button> <button id="siv-dec">Decrypt</button>
+  </div>
+  <div>
+    <label for="siv-result">Result (Hex encoded):</label>
+  </div>
+  <div>
+    <textarea id="siv-result" class="message" type="text" name="siv-result"> </textarea>
+  </div>
+</div>
+
 <div id="notes" class="input-block">
   <div>
     <sup>1</sup> The key can be 128-bit, 192-bit or 256-bit long. If the key is shorter, then it is automatically padded up to the next valid size using 0x00 bytes.
   </div>
   <div>
     <sup>2</sup> If the box is not checked it will be assumed that the data is a UTF-8 string.
+  </div>
+  <div>
+    <sup>3</sup> The key can be 256-bit, 384-bit or 512-bit long. It's split into two equal-sized chunks. The first half is used for the authentication tag and the second half for encryption.
   </div>
 </div>
         </section>

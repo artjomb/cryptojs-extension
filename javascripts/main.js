@@ -15,11 +15,10 @@ $(function(){
     }
     
     $("#cmac-calc").click(function(){
-        var msg = $("#cmac-msg").val();
-        var key = $("#cmac-key").val();
-        
-        var hexMsg = $("#cmac-msg-type").prop("checked");
-        var hexKey = $("#cmac-key-type").prop("checked");
+        var msg = $("#cmac-msg").val(),
+            key = $("#cmac-key").val(),
+            hexMsg = $("#cmac-msg-type").prop("checked"),
+            hexKey = $("#cmac-key-type").prop("checked");
         
         if (hexMsg) {
             msg = hexCleanup(msg);
@@ -30,9 +29,37 @@ $(function(){
             key = CryptoJS.enc.Hex.parse(key);
         }
         
-        
         var result = CryptoJS.CMAC(key, msg);
         
         $("#cmac-result").val(insertSpaces(result.toString()));
+    });
+    
+    $("#siv-enc, #siv-dec").click(function(){
+        var msg = $("#siv-input").val(),
+            key = $("#siv-key").val(),
+            hexMsg = $("#siv-input-type").prop("checked"),
+            hexKey = $("#siv-key-type").prop("checked");
+        
+        if (hexMsg) {
+            msg = hexCleanup(msg);
+            msg = CryptoJS.enc.Hex.parse(msg);
+        }
+        if (hexKey) {
+            key = hexCleanup(key);
+            key = CryptoJS.enc.Hex.parse(key);
+        }
+        
+        console.log("asdasd1");
+        var siv = CryptoJS.SIV.create(key),
+            result,
+            ad = ["a"];
+        console.log("asdasd");
+        if (this.id === "siv-enc") {
+            result = siv.encrypt(ad, msg);
+        } else {
+            result = siv.decrypt(ad, msg);
+        }
+        
+        $("#siv-result").val(insertSpaces(result.toString()));
     });
 });

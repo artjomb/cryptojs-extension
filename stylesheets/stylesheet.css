@@ -173,6 +173,18 @@ a.button span {
   width: 512px
 }
 
+.max512bit {
+  width: 100%
+}
+
+.separator {
+  height: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
 textarea.message {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
