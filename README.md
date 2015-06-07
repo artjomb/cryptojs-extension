@@ -37,14 +37,13 @@ CMAC is a message authentication code algorithm based on AES-128. The key is exp
     var key = CryptoJS.enc.Hex.parse('2b7e151628aed2a6abf7158809cf4f3c');
     var message = "This is some message";
     
-    var cmac = CryptoJS.algo.CMAC.create(key);
-    var mac = cmac.finalize(message);
+    var mac = CryptoJS.CMAC(key, message);
     
     console.log(mac.toString()); // Hex-encoded MAC
 </script>
 ```
 
-If the message that was passed into `finalize()` is a string it is interpreted as a UTF-8 encoded string. Otherwise, it expects the message to be a `WordArray` which is the basic type of data in CryptoJS.
+If the message is a string, it is interpreted as a UTF-8 encoded string. Otherwise, it expects the message to be a `WordArray` which is the basic data type in CryptoJS.
 
 CMAC also supports a progressive (streaming) way of calculating the MAC:
 
