@@ -67,7 +67,7 @@ SIV is an authenticated and deterministic mode of operation for AES. It requires
 
 ```html
 <script type="text/javascript" src="lib/cryptojs-aes.min.js"></script>
-<script type="text/javascript" src="lib/cryptojs-mode-ctr-min.js"></script>
+<script type="text/javascript" src="lib/cryptojs-mode-ctr.min.js"></script>
 <script type="text/javascript" src="build/siv.min.js"></script>
 <script type="text/javascript">
     var key = CryptoJS.enc.Hex.parse('fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff');

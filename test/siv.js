@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 var aesContent = fs.readFileSync("../lib/cryptojs-aes.min.js", "utf8");
-var ctrContent = fs.readFileSync("../lib/cryptojs-mode-ctr-min.js", "utf8");
+var ctrContent = fs.readFileSync("../lib/cryptojs-mode-ctr.min.js", "utf8");
 var sivContent = fs.readFileSync("../build/siv.js", "utf8");
 
 var stats = { passed: 0, failed: 0 };
