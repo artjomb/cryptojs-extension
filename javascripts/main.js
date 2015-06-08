@@ -49,11 +49,9 @@ $(function(){
             key = CryptoJS.enc.Hex.parse(key);
         }
         
-        console.log("asdasd1");
         var siv = CryptoJS.SIV.create(key),
             result,
             ad = ["a"];
-        console.log("asdasd");
         if (this.id === "siv-enc") {
             result = siv.encrypt(ad, msg);
         } else {
