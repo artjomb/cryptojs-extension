@@ -1,4 +1,4 @@
-$(function(){
+﻿$(function(){
     function hexCleanup(s){
         return s.replace(/0x/g, "")
                 .replace(/ /g, "")
@@ -37,6 +37,16 @@ $(function(){
     $("#siv-enc, #siv-dec").click(function(){
         var msg = $("#siv-input").val(),
             key = $("#siv-key").val(),
+            hexAd = $("#siv-ad-type").prop("checked"),
+            ad = $(".siv-ad").filter(function(){
+                return this.value && this.value.trim().length > 0;
+            }).map(function(){
+                if (hexAd) {
+                    return CryptoJS.enc.Hex.parse(hexCleanup(this.value));
+                } else {
+                    return this.value;
+                }
+            }).get(),
             hexMsg = $("#siv-input-type").prop("checked"),
             hexKey = $("#siv-key-type").prop("checked");
         
@@ -50,14 +60,28 @@ $(function(){
         }
         
         var siv = CryptoJS.SIV.create(key),
-            result,
-            ad = ["a"];
+            result;
         if (this.id === "siv-enc") {
             result = siv.encrypt(ad, msg);
         } else {
             result = siv.decrypt(ad, msg);
         }
         
-        $("#siv-result").val(insertSpaces(result.toString()));
+        if (!result) {
+            $("#siv-result").addClass("bad-output").val("\u22a5");
+        } else {
+            $("#siv-result").removeClass("bad-output").val(insertSpaces(result.toString()));
+        }
+    });
+    
+    $("#siv-ad-add").click(function(e){
+        e.preventDefault();
+        var len = $("siv-ad").length;
+        if (len === 0) {
+            $("#siv-ad-title").removeClass("hidden");
+        }
+        if (len < 126) {
+            $("#siv-ad-list").append("<input type='text' class='siv-ad max512bit'>");
+        }
     });
 });

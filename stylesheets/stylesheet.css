@@ -185,6 +185,10 @@ a.button span {
   display: none;
 }
 
+.bad-output {
+  border-color: red;
+}
+
 textarea.message {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

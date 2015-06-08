@@ -64,6 +64,9 @@
   <div>
     <button id="cmac-calc">Calculate CMAC</button>
   </div>
+</div>
+
+<div class="input-block">
   <div>
     <label for="cmac-result">Result (Hex encoded):</label>
   </div>
@@ -97,8 +100,10 @@
 </div>
 
 <div class="input-block">
-  <div id="siv-ad-title" class="hidden"></div>
-  <div id="siv-ad"></div>
+  <div id="siv-ad-title" class="hidden">
+    <label for="siv-input">Associated Data:</label> <input id="siv-ad-type" type="checkbox" name="siv-ad-type" checked="checked"><label for="siv-ad-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div id="siv-ad-list"></div>
   <div>
     <a id="siv-ad-add" href="#">add associated data</a>
   </div>
@@ -108,6 +113,9 @@
   <div>
     <button id="siv-enc">Encrypt</button> <button id="siv-dec">Decrypt</button>
   </div>
+</div>
+
+<div class="input-block">
   <div>
     <label for="siv-result">Result (Hex encoded):</label>
   </div>
