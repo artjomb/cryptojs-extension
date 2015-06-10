@@ -7,14 +7,18 @@ This extension adds the following algorithms to CryptoJS:
 
 It can only be used in the browser (for now). The tests run in Node.js in kind of hacky way.
 
-# How to build
+## Online "calculator"
+
+There is an online calculator that enables you to try out AES-CMAC and AES-SIV in the browser: http://artjomb.github.io/cryptojs-extension/
+
+## How to build
 
 ```
 $ npm install
 $ npm run build
 ```
 
-# How to run tests
+## How to run tests
 
 Tests are run on the build files, so it is necessary to build them first. Then the tests are invoked through
 
@@ -22,11 +26,11 @@ Tests are run on the build files, so it is necessary to build them first. Then t
 npm run test
 ```
 
-# Usage
+## Usage
 
 This extension library depends on [CryptoJS](https://code.google.com/p/crypto-js/), so you need to load it first.
 
-## AES-CMAC
+### AES-CMAC
 
 CMAC is a message authentication code algorithm based on AES-128. The key is expected to be 128-bit or 16 byte.
 
@@ -61,7 +65,7 @@ var mac = cmac.finalize();
 console.log(mac.toString()); // Hex-encoded MAC
 ```
 
-## AES-SIV
+### AES-SIV
 
 SIV is an authenticated and deterministic mode of operation for AES. It requires two passes over the plaintext data. It depends internally on AES-CMAC (included in the build file). It works with 256-bit, 384-bit or 512-bit keys. The first half of the key is used for S2V (authentication) and the second half for AES-CTR (encryption).
 
@@ -94,6 +98,6 @@ Notes:
 - The ciphertext is always expected as a `WordArray`.
 - The first 16 bytes of the ciphertext contain the authentication tag. The decryption function also expects the authentication tag to be in front of the ciphertext.
 
-# Notes
+## Notes
 
 - The algorithms are completely synchronous. That means that if this is done in the browser, the browser will freeze for the duration of the calculation. JavaScript is always running in the main thread which also handles the rendering. Don't encrypt/MAC large data, because your users won't appreciate it. Use WebWorkers to run the encryption asynchronously in a background thread.
