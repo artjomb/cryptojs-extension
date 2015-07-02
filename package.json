@@ -1,6 +1,6 @@
 {
   "name": "cryptojs-extension",
-  "version": "0.1.1-dev",
+  "version": "0.1.2-dev",
   "description": "Some additional crypto functions built on top of CryptoJS",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "test": "cd test && node cmac.js && node siv.js"
+    "test": "cd test && node mode-cfbx.js"
   },
   "keywords": [
     "crypto",
