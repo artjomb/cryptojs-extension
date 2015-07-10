@@ -1,13 +1,13 @@
 var fs = require("fs");
 
 var aesContent = fs.readFileSync("../lib/cryptojs-aes.min.js", "utf8");
-var cfbxContent = fs.readFileSync("../build/mode-cfbx.js", "utf8");
+var cfbwContent = fs.readFileSync("../build/mode-cfbw.js", "utf8");
 
 var stats = { passed: 0, failed: 0 };
 
 (function(){
     eval(aesContent);
-    eval(cfbxContent);
+    eval(cfbwContent);
     
     var key = '1234567890123456';
     var keyBytes = CryptoJS.enc.Utf8.parse(key);
@@ -24,7 +24,7 @@ var stats = { passed: 0, failed: 0 };
     function testEnc(message, expected, bitSize){
         var res = CryptoJS.AES.encrypt(message, keyBytes, {
             iv: ivBytes,
-            mode: CryptoJS.mode.CFBx,
+            mode: CryptoJS.mode.CFBw,
             // padding: {pad:function(){}, unpad:function(){}},
             segmentSize: bitSize
         });
@@ -45,13 +45,13 @@ var stats = { passed: 0, failed: 0 };
     function testEncDec(message, bitSize){
         var enc = CryptoJS.AES.encrypt(message, keyBytes, {
             iv: ivBytes,
-            mode: CryptoJS.mode.CFBx,
+            mode: CryptoJS.mode.CFBw,
             // padding: {pad:function(){}, unpad:function(){}},
             segmentSize: bitSize
         });
         var res = CryptoJS.AES.decrypt(enc, keyBytes, {
             iv: ivBytes,
-            mode: CryptoJS.mode.CFBx,
+            mode: CryptoJS.mode.CFBw,
             // padding: {pad:function(){}, unpad:function(){}},
             segmentSize: bitSize
         });
@@ -95,7 +95,7 @@ var stats = { passed: 0, failed: 0 };
     // test(pt, ct, 128)
 })();
 
-console.log("CFBx test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");
+console.log("CFBw test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");
 
 if (stats.failed > 0) {
     process.exit(1);

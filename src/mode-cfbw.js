@@ -3,10 +3,10 @@
 /**
  * Cipher Feedback block mode.
  */
-CryptoJS.mode.CFBx = (function () {
-    var CFBx = CryptoJS.lib.BlockCipherMode.extend();
+CryptoJS.mode.CFBw = (function () {
+    var CFBw = CryptoJS.lib.BlockCipherMode.extend();
 
-    CFBx.Encryptor = CFBx.extend({
+    CFBw.Encryptor = CFBw.extend({
         processBlock: function (words, offset) {
             // Shortcuts
             var cipher = this._cipher;
@@ -38,7 +38,7 @@ CryptoJS.mode.CFBx = (function () {
         }
     });
 
-    CFBx.Decryptor = CFBx.extend({
+    CFBw.Decryptor = CFBw.extend({
         processBlock: function (words, offset) {
             // Shortcuts
             var cipher = this._cipher;
@@ -70,5 +70,5 @@ CryptoJS.mode.CFBx = (function () {
         }
     });
 
-    return CFBx;
+    return CFBw;
 }());
