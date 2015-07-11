@@ -135,6 +135,21 @@
     };
     
     /**
+     * Negates all bits in the WordArray. This manipulates the given array.
+     * 
+     * @param {WordArray} wordArray WordArray to work on
+     * 
+     * @returns the WordArray that was passed in
+     */
+    ext.neg = function(wordArray){
+        var words = wordArray.words;
+        for(var i = 0; i < words.length; i++) {
+            words[i] = ~words[i];
+        }
+        return wordArray;
+    };
+    
+    /**
      * Returns the n leftmost bytes of the WordArray.
      * 
      * @param {WordArray} wordArray WordArray to work on
