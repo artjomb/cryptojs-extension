@@ -86,22 +86,52 @@
      * @returns the WordArray that was passed in
      */
     ext.bitshift = function(wordArray, n){
+        var carry = 0,
+            words = wordArray.words,
+            wres;
         if (n > 0) {
-            var carry = 0;
-            var wres;
-            for(var i = wordArray.words.length - 1; i >= 0; i--) {
-                wres = wordArray.words[i];
-                wordArray.words[i] <<= n;
-                wordArray.words[i] |= carry;
+            var skipped = 1;
+            while(n > 31) {
+                // delete first element:
+                words.splice(0, 1);
+                
+                // add `0` word to the back
+                words.push(0);
+                
+                n -= 32;
+                skipped++;
+            }
+            for(var i = words.length - skipped; i >= 0; i--) {
+                wres = words[i];
+                words[i] <<= n;
+                words[i] |= carry;
                 carry = wres >>> (32 - n);
             }
             return carry;
         } else if (n < 0) {
-            // TODO: implement
+            var skipped = 0,
+                carryMask;
+            while(n < -31) {
+                // insert `0` word to the front:
+                words.splice(0, 0, 0);
+                
+                // remove last element:
+                words.length--;
+                
+                n += 32;
+                skipped++;
+            }
+            n = -n;
+            carryMask = (1 << n) - 1;
+            for(var i = skipped; i < words.length; i++) {
+                wres = words[i] & carryMask;
+                words[i] >>>= n;
+                words[i] |= carry;
+                carry = wres << (32 - n);
+            }
+            return carry;
         }
-        
-        // Chainable
-        return wordArray;
+        return 0;
     };
     
     /**
