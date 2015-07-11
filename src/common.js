@@ -105,21 +105,6 @@
     };
     
     /**
-     * Returns the n leftmost words of the WordArray.
-     * 
-     * @param {WordArray} wordArray WordArray to work on
-     * @param {int} n Words to retrieve
-     * 
-     * @returns new WordArray
-     */
-    ext.leftmostWords = function(wordArray, n){
-        var lmArray = wordArray.clone();
-        lmArray.sigBytes = n * 4;
-        lmArray.clamp();
-        return lmArray;
-    };
-    
-    /**
      * Returns the n leftmost bytes of the WordArray.
      * 
      * @param {WordArray} wordArray WordArray to work on
@@ -170,7 +155,7 @@
      * @returns popped words as new WordArray
      */
     ext.popWords = function(wordArray, n){
-        var left = ext.leftmostWords(wordArray, n);
+        var left = ext.leftmostBytes(wordArray, n * 4);
         wordArray.words = wordArray.words.slice(n);
         wordArray.sigBytes -= n * 4;
         return left;
