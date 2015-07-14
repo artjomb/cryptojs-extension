@@ -71,6 +71,17 @@ var stats = { passed: 0, failed: 0 };
         CryptoJS.ext.bitshift(binArray, entry[1]);
         test(CryptoJS.enc.Bin.stringify(binArray), entry[2]);
     });
+    
+    var binShiftHexStr = [
+        ["21a547bc206973207465787420746f7420656e63727970740808080808080808", 28, "c206973207465787420746f7420656e637279707408080808080808080000000"],
+        ["21a547bc206973207465787420746f7420656e63727970740808080808080808", 32, "206973207465787420746f7420656e6372797074080808080808080800000000"],
+        ["21a547bc206973207465787420746f7420656e63727970740808080808080808", 36, "06973207465787420746f7420656e63727970740808080808080808000000000"],
+    ];
+    binShiftHexStr.forEach(function(entry){
+        var binArray = CryptoJS.enc.Hex.parse(entry[0]);
+        CryptoJS.ext.bitshift(binArray, entry[1]);
+        test(CryptoJS.enc.Hex.stringify(binArray), entry[2]);
+    });
 })();
 
 console.log("Common test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");

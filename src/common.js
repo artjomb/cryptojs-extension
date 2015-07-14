@@ -88,9 +88,10 @@
     ext.bitshift = function(wordArray, n){
         var carry = 0,
             words = wordArray.words,
-            wres;
+            wres,
+            skipped = 0,
+            carryMask;
         if (n > 0) {
-            var skipped = 1;
             while(n > 31) {
                 // delete first element:
                 words.splice(0, 1);
@@ -101,7 +102,13 @@
                 n -= 32;
                 skipped++;
             }
-            for(var i = words.length - skipped; i >= 0; i--) {
+            if (n == 0) {
+                // 1. nothing to shift if the shift amount is on a word boundary
+                // 2. This has to be done, because the following algorithm computes 
+                // wrong values only for n==0
+                return carry;
+            }
+            for(var i = words.length - skipped - 1; i >= 0; i--) {
                 wres = words[i];
                 words[i] <<= n;
                 words[i] |= carry;
@@ -109,8 +116,6 @@
             }
             return carry;
         } else if (n < 0) {
-            var skipped = 0,
-                carryMask;
             while(n < -31) {
                 // insert `0` word to the front:
                 words.splice(0, 0, 0);
@@ -120,6 +125,10 @@
                 
                 n += 32;
                 skipped++;
+            }
+            if (n == 0) {
+                // nothing to shift if the shift amount is on a word boundary
+                return carry;
             }
             n = -n;
             carryMask = (1 << n) - 1;

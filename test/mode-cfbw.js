@@ -48,7 +48,7 @@ var stats = { passed: 0, failed: 0 };
         var res = CryptoJS.AES.encrypt(message, keyBytes, {
             iv: ivBytes,
             mode: CryptoJS.mode.CFBb,
-            // padding: {pad:function(){}, unpad:function(){}},
+            padding: {pad:function(){}, unpad:function(){}},
             segmentSize: bitSize
         });
         var got = CryptoJS.enc.Hex.stringify(res.ciphertext);
@@ -92,9 +92,9 @@ var stats = { passed: 0, failed: 0 };
     console.log("\nSelf made test vectors");
     var text = "This is text tot encrypt";
     testEncB(text, "21a547bcdb6295b361d6fd0ac6bf82751f2052dd98a438c0", 8); // java no padding
-    return;
-    // test(text, "2114c9ed57ad54a1ca10e18bde0dd0eb7841942594dfdf79", 16); // java no padding
-    // test(text, "2114a47ffc231858190c5ebf2e44311ea5c6c70859cab865", 40); // java no padding
+    testEncB(text, "2114c9ed57ad54a1ca10e18bde0dd0eb7841942594dfdf79", 16); // java no padding
+    // fails because of not implemented TODO:
+    testEncB(text, "2114a47ffc231858190c5ebf2e44311ea5c6c70859cab865", 40); // java no padding
     testEnc(text, "2114a47fa568ac16a4aff53cf5b090efe0824700f9d8a6fef838ac469ec9bcb3", 32); // java 2114a47fa568ac16a4aff53cf5b090efe0824700f9d8a6fe
     testEnc(text, "2114a47ffc35e3ca16d0116af6d486769e56a540b942d3f27329f1af8db2bd66", 64); // java 2114a47ffc35e3ca16d0116af6d486769e56a540b942d3f2
     testEnc(text, "2114a47ffc35e3caaf8b948218a96f747b792dbc478becfc6d43f9b92121b28a", 128); // java: 2114a47ffc35e3caaf8b948218a96f747b792dbc478becfc
