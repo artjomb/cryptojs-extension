@@ -18,23 +18,30 @@ CryptoJS.mode.CFBb = (function () {
             var iv = this._iv;
             var prev = this._prevBlock;
             var segmentSize = cipher.cfg.segmentSize; // in bits
+            var i, j;
             
-            // TODO: this only works for segments smaller than 32 bits
-            var fullSegmentMask = [
-                ((1 << segmentSize) - 1) << (32 - segmentSize) // `s` most signiicant bits are set
-            ];
-            for(var i = 1; i < words.length; i++) {
+            // create a bit mask that is as big as the segment:
+            var fullSegmentMask = [];
+            for(i = 31; i < segmentSize; i += 32) {
+                fullSegmentMask.push(0xffffffff);
+            }
+            // `s` most signiicant bits are set:
+            fullSegmentMask.push(((1 << segmentSize) - 1) << (32 - segmentSize));
+            for(i = fullSegmentMask.length; i < words.length; i++) {
                 fullSegmentMask.push(0);
             }
+            
+            // some helper variables
             fullSegmentMask = WordArray.create(fullSegmentMask);
             var slidingSegmentMask = fullSegmentMask.clone(),
                 slidingSegmentMaskShifted = slidingSegmentMask.clone(),
                 slidingNegativeSegmentMask,
                 prevCT;
             
+            // shift the mask according to the current offset
             bitshift(slidingSegmentMaskShifted, -offset * 32);
             
-            for(var i = 0; i < blockSize/segmentSize; i++) {
+            for(i = 0; i < blockSize/segmentSize; i++) {
                 // console.log("  iteration: " + i + " of " + (blockSize/segmentSize));
                 if (iv) {
                     prev = iv.slice(0); // clone
@@ -77,12 +84,12 @@ CryptoJS.mode.CFBb = (function () {
                 // console.log("    plaintextSlice:            " + plaintextSlice.toString());
                 
                 // Encrypt segment
-                for (var j = 0; j < Math.ceil(segmentSize / 32); j++) {
+                for (j = 0; j < Math.ceil(segmentSize / 32); j++) {
                     plaintextSlice.words[j] ^= segKey[j];
                 }
                 // console.log("    plaintextSlice enc:        " + plaintextSlice.toString());
                 // Filter only the current segment
-                for (var j = 0; j < plaintextSlice.words.length; j++) {
+                for (j = 0; j < plaintextSlice.words.length; j++) {
                     plaintextSlice.words[j] &= fullSegmentMask.words[j];
                 }
                 // console.log("    plaintextSlice mask:       " + plaintextSlice.toString());
@@ -93,7 +100,7 @@ CryptoJS.mode.CFBb = (function () {
                 
                 slidingNegativeSegmentMask = neg(slidingSegmentMaskShifted.clone());
                 // console.log("      slidingSegmentMask neg:  " + slidingNegativeSegmentMask.toString());
-                for (var j = 0; j < words.length; j++) {
+                for (j = 0; j < words.length; j++) {
                     words[j] &= slidingNegativeSegmentMask.words[j];
                 }
                 
@@ -102,7 +109,7 @@ CryptoJS.mode.CFBb = (function () {
                 // console.log("      plaintextSlice shifted:  " + plaintextSlice.toString());
                 
                 // add filtered ciphertext segment to the plaintext/ciphertext array
-                for (var j = 0; j < words.length; j++) {
+                for (j = 0; j < words.length; j++) {
                     words[j] |= plaintextSlice.words[j];
                 }
                 

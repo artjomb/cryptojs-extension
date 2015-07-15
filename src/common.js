@@ -114,7 +114,6 @@
                 words[i] |= carry;
                 carry = wres >>> (32 - n);
             }
-            return carry;
         } else if (n < 0) {
             while(n < -31) {
                 // insert `0` word to the front:
@@ -138,9 +137,8 @@
                 words[i] |= carry;
                 carry = wres << (32 - n);
             }
-            return carry;
         }
-        return 0;
+        return carry;
     };
     
     /**
