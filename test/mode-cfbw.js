@@ -1,6 +1,7 @@
 var fs = require("fs");
 
 var aesContent = fs.readFileSync("../lib/cryptojs-aes.min.js", "utf8");
+var binContent = fs.readFileSync("../build/enc-bin.js", "utf8");
 var cfbwContent = fs.readFileSync("../build/mode-cfbw.js", "utf8");
 var cfbbContent = fs.readFileSync("../build/mode-cfb-b.js", "utf8");
 
@@ -8,6 +9,7 @@ var stats = { passed: 0, failed: 0 };
 
 (function(){
     eval(aesContent);
+    eval(binContent);
     eval(cfbwContent);
     eval(cfbbContent);
     
@@ -100,12 +102,83 @@ var stats = { passed: 0, failed: 0 };
     
     // NIST
     console.log("\nNIST test vectors");
+    var key128 = "2b7e151628aed2a6abf7158809cf4f3c";
+    var key192 = "8e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b";
+    var key256 = "603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4";
+    var pt1 = "0110101111000001";
+    var pt8 = "6bc1bee22e409f96e93d7e117393172aae2d";
+    var pt128 = "6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411e5fbc1191a0a52eff69f2445df4f9b17ad2b417be66c3710";
+    var iv = "000102030405060708090a0b0c0d0e0f";
     var nistStrings = [
         {
-            key: "2b7e151628aed2a6abf7158809cf4f3c",
-            iv: "000102030405060708090a0b0c0d0e0f",
-            pt: "6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411e5fbc1191a0a52eff69f2445df4f9b17ad2b417be66c3710",
+            key: key128,
+            iv: iv,
+            pt: CryptoJS.enc.Bin.parse(pt1),
+            ct: CryptoJS.enc.Bin.parse("0110100010110011"),
+            segment: 1,
+            padding: nopadding
+        },
+        {
+            key: key192,
+            iv: iv,
+            pt: CryptoJS.enc.Bin.parse(pt1),
+            ct: CryptoJS.enc.Bin.parse("1001001101011001"),
+            segment: 1,
+            padding: nopadding
+        },
+        {
+            key: key256,
+            iv: iv,
+            pt: CryptoJS.enc.Bin.parse(pt1),
+            ct: CryptoJS.enc.Bin.parse("1001000000101001"),
+            segment: 1,
+            padding: nopadding
+        },
+        {
+            key: key128,
+            iv: iv,
+            pt: pt8,
+            ct: "3b79424c9c0dd436bace9e0ed4586a4f32b9",
+            segment: 8,
+            padding: nopadding
+        },
+        {
+            key: key192,
+            iv: iv,
+            pt: pt8,
+            ct: "cda2521ef0a905ca44cd057cbf0d47a0678a",
+            segment: 8,
+            padding: nopadding
+        },
+        {
+            key: key256,
+            iv: iv,
+            pt: pt8,
+            ct: "dc1f1a8520a64db55fcc8ac554844e889700",
+            segment: 8,
+            padding: nopadding
+        },
+        {
+            key: key128,
+            iv: iv,
+            pt: pt128,
             ct: "3b3fd92eb72dad20333449f8e83cfb4ac8a64537a0b3a93fcde3cdad9f1ce58b26751f67a3cbb140b1808cf187a4f4dfc04b05357c5d1c0eeac4c66f9ff7f2e6",
+            segment: 128,
+            padding: nopadding
+        },
+        {
+            key: key192,
+            iv: iv,
+            pt: pt128,
+            ct: "cdc80d6fddf18cab34c25909c99a417467ce7f7f81173621961a2b70171d3d7a2e1e8a1dd59b88b1c8e60fed1efac4c9c05f9f9ca9834fa042ae8fba584b09ff",
+            segment: 128,
+            padding: nopadding
+        },
+        {
+            key: key256,
+            iv: iv,
+            pt: pt128,
+            ct: "dc7e84bfda79164b7ecd8486985d386039ffed143b28b1c832113c6331e5407bdf10132415e54b92a13ed0a8267ae2f975a385741ab9cef82031623d55b1e471",
             segment: 128,
             padding: nopadding
         }
@@ -122,8 +195,8 @@ var stats = { passed: 0, failed: 0 };
             keyBytes = CryptoJS.enc.Hex.parse(testCase.key);
             ivBytes = CryptoJS.enc.Hex.parse(testCase.iv);
             
-            var pt = CryptoJS.enc.Hex.parse(testCase.pt);
-            var ct = CryptoJS.enc.Hex.parse(testCase.ct);
+            var pt = testCase.pt.sigBytes ? testCase.pt : CryptoJS.enc.Hex.parse(testCase.pt);
+            var ct = testCase.ct.sigBytes ? testCase.ct : CryptoJS.enc.Hex.parse(testCase.ct);
             testEnc(pt, ct, testCase.segment)
         });
     });
