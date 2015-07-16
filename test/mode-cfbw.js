@@ -52,6 +52,27 @@ var stats = { passed: 0, failed: 0 };
         }
     }
     
+    function testDec(ciphertext, expected, bitSize){
+        var res = CryptoJS.AES.decrypt({ciphertext: ciphertext}, keyBytes, {
+            iv: ivBytes,
+            mode: mode,
+            padding: padding,
+            segmentSize: bitSize
+        });
+        var got = CryptoJS.enc.Hex.stringify(res);
+        if (typeof expected !== "string") {
+            expected = CryptoJS.enc.Hex.stringify(expected);
+        }
+        var passed = got === expected;
+        if (passed) {
+            console.log("PASS\n expected: '" + spaces(expected));
+            stats.passed++;
+        } else {
+            console.log("FAIL\n expected: '" + spaces(expected) + "'\n      got: '" + spaces(got) + "'");
+            stats.failed++;
+        }
+    }
+    
     function testEncDec(message, bitSize){
         var enc = CryptoJS.AES.encrypt(message, keyBytes, {
             iv: ivBytes,
@@ -84,6 +105,7 @@ var stats = { passed: 0, failed: 0 };
     testEnc(text, "2114c9ed57ad54a1ca10e18bde0dd0eb7841942594dfdf79", 16); // java no padding
     // TODO fails:
     testEnc(text, "2114a47ffc231858190c5ebf2e44311ea5c6c70859cab865", 40); // java no padding
+    testEnc(text, "2114a47ffc358f9a3e86835d265a2bfe75d6b7ae5669c04e", 48); // java no padding
     
     padding = pkcs7padding;
     mode = cfbw;
@@ -93,11 +115,13 @@ var stats = { passed: 0, failed: 0 };
     
     console.log("\nenc/dec");
     padding = nopadding;
-    mode = cfbw;
-    testEncDec(text, 32);
-    testEncDec(text, 64);
-    // testEncDec(text, 96); // TODO fails
-    testEncDec(text, 128);
+    [ cfbw, cfbb ].forEach(function(cfbMode){
+        mode = cfbMode;
+        testEncDec(text, 32);
+        testEncDec(text, 64);
+        // testEncDec(text, 96); // TODO fails
+        testEncDec(text, 128);
+    });
     // return;
     
     // NIST
@@ -198,6 +222,7 @@ var stats = { passed: 0, failed: 0 };
             var pt = testCase.pt.sigBytes ? testCase.pt : CryptoJS.enc.Hex.parse(testCase.pt);
             var ct = testCase.ct.sigBytes ? testCase.ct : CryptoJS.enc.Hex.parse(testCase.ct);
             testEnc(pt, ct, testCase.segment)
+            testDec(ct, pt, testCase.segment)
         });
     });
 })();
