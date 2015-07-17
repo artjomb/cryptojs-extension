@@ -86,37 +86,74 @@
      * @returns the WordArray that was passed in
      */
     ext.bitshift = function(wordArray, n){
+        var carry = 0,
+            words = wordArray.words,
+            wres,
+            skipped = 0,
+            carryMask;
         if (n > 0) {
-            var carry = 0;
-            var wres;
-            for(var i = wordArray.words.length - 1; i >= 0; i--) {
-                wres = wordArray.words[i];
-                wordArray.words[i] <<= n;
-                wordArray.words[i] |= carry;
+            while(n > 31) {
+                // delete first element:
+                words.splice(0, 1);
+                
+                // add `0` word to the back
+                words.push(0);
+                
+                n -= 32;
+                skipped++;
+            }
+            if (n == 0) {
+                // 1. nothing to shift if the shift amount is on a word boundary
+                // 2. This has to be done, because the following algorithm computes 
+                // wrong values only for n==0
+                return carry;
+            }
+            for(var i = words.length - skipped - 1; i >= 0; i--) {
+                wres = words[i];
+                words[i] <<= n;
+                words[i] |= carry;
                 carry = wres >>> (32 - n);
             }
-            return carry;
         } else if (n < 0) {
-            // TODO: implement
+            while(n < -31) {
+                // insert `0` word to the front:
+                words.splice(0, 0, 0);
+                
+                // remove last element:
+                words.length--;
+                
+                n += 32;
+                skipped++;
+            }
+            if (n == 0) {
+                // nothing to shift if the shift amount is on a word boundary
+                return carry;
+            }
+            n = -n;
+            carryMask = (1 << n) - 1;
+            for(var i = skipped; i < words.length; i++) {
+                wres = words[i] & carryMask;
+                words[i] >>>= n;
+                words[i] |= carry;
+                carry = wres << (32 - n);
+            }
         }
-        
-        // Chainable
-        return wordArray;
+        return carry;
     };
     
     /**
-     * Returns the n leftmost words of the WordArray.
+     * Negates all bits in the WordArray. This manipulates the given array.
      * 
      * @param {WordArray} wordArray WordArray to work on
-     * @param {int} n Words to retrieve
      * 
-     * @returns new WordArray
+     * @returns the WordArray that was passed in
      */
-    ext.leftmostWords = function(wordArray, n){
-        var lmArray = wordArray.clone();
-        lmArray.sigBytes = n * 4;
-        lmArray.clamp();
-        return lmArray;
+    ext.neg = function(wordArray){
+        var words = wordArray.words;
+        for(var i = 0; i < words.length; i++) {
+            words[i] = ~words[i];
+        }
+        return wordArray;
     };
     
     /**
@@ -170,7 +207,7 @@
      * @returns popped words as new WordArray
      */
     ext.popWords = function(wordArray, n){
-        var left = ext.leftmostWords(wordArray, n);
+        var left = ext.leftmostBytes(wordArray, n * 4);
         wordArray.words = wordArray.words.slice(n);
         wordArray.sigBytes -= n * 4;
         return left;
