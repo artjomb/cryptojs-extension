@@ -4,6 +4,7 @@ This extension adds the following algorithms to CryptoJS:
 
 - AES-CMAC ([RFC 4493](https://tools.ietf.org/html/rfc4493)): MAC algorithm based on AES
 - AES-SIV ([RFC 5297](https://tools.ietf.org/html/rfc5297)): Synthetic Initialization Vector mode of operation for AES
+- CFB ([NIST Special Publication 800-38A](http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf)): Block cipher mode of operation for confidentiality with a variable segment size
 
 It can only be used in the browser (for now). The tests run in Node.js in kind of hacky way.
 
@@ -82,12 +83,12 @@ SIV is an authenticated and deterministic mode of operation for AES. It requires
     var ciphertext = siv.encrypt([ additionalData ], message);
 
     var recoveredPlaintext = siv.decrypt([ additionalData ], ciphertext);
-    console.log(recoveredPlaintext.toString() === message);
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
 
     // Without additional data
     var ciphertext = siv.encrypt(message);
     var recoveredPlaintext = siv.decrypt(ciphertext);
-    console.log(recoveredPlaintext.toString() === message);
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
 </script>
 ```
 
@@ -97,6 +98,81 @@ Notes:
 - Additional data and the plaintext message need to be either a UTF-8 encoded string or a `WordArray`.
 - The ciphertext is always expected as a `WordArray`.
 - The first 16 bytes of the ciphertext contain the authentication tag. The decryption function also expects the authentication tag to be in front of the ciphertext.
+
+### CFB
+
+The Cipher Feedback Mode is a mode of operation for confidentiality with a shift register. This project contains two variants of the CFB mode. `CFBw` only supports segment sizes of a multiple of 32 bit (word size) up to the block size of the underlying block cipher. `CFBb` is more flexible in that it supports any segment size from 1 bit up to the block size with the current limitation that the block size must be divisible by the segment size.
+
+CryptoJS's `CFB` implementation doesn't support a custom segment size and only uses full block segments.
+
+Example usage of `CFBb` without padding:
+
+```html
+<script type="text/javascript" src="lib/cryptojs-aes.min.js"></script>
+<script type="text/javascript" src="build/mode-cfb-b.min.js"></script>
+<script type="text/javascript">
+    var key = CryptoJS.enc.Hex.parse('2b7e151628aed2a6abf7158809cf4f3c');
+    var iv = CryptoJS.lib.WordArray.random(128/8);
+    var mode = CryptoJS.mode.CFBb;
+    var padding = {
+        pad: function () {},
+        unpad: function () {}
+    }; // NoPadding
+    var segmentSize = 8; // bits; can also be 1, 2, 4, 16, 32, 64, 128 for AES
+
+    var message = "This is some secret message";
+    
+    var encrypted = CryptoJS.AES.encrypt(message, key, {
+        iv: iv,
+        mode: mode,
+        padding: padding,
+        segmentSize: segmentSize
+    });
+    var recoveredPlaintext = CryptoJS.AES.decrypt(encrypted, key, {
+        iv: iv,
+        mode: mode,
+        padding: padding,
+        segmentSize: segmentSize
+    });
+
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
+</script>
+```
+
+Example usage of `CFBw` with default PKCS#7 padding:
+
+```html
+<script type="text/javascript" src="lib/cryptojs-aes.min.js"></script>
+<script type="text/javascript" src="build/mode-cfb-w.min.js"></script>
+<script type="text/javascript">
+    var key = CryptoJS.enc.Hex.parse('2b7e151628aed2a6abf7158809cf4f3c');
+    var iv = CryptoJS.lib.WordArray.random(128/8);
+    var mode = CryptoJS.mode.CFBw;
+    var segmentSize = 32; // bits; can also be 64 or 128 for AES
+
+    var message = "This is some secret message";
+    
+    var encrypted = CryptoJS.AES.encrypt(message, key, {
+        iv: iv,
+        mode: mode,
+        segmentSize: segmentSize
+    });
+    var recoveredPlaintext = CryptoJS.AES.decrypt(encrypted, key, {
+        iv: iv,
+        mode: mode,
+        segmentSize: segmentSize
+    });
+
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
+</script>
+```
+
+Notes:
+
+- Keep in mind that the standard PKCS#7 padding only works reliably if the block size is a multiple of the block size. Example: `segmentSize = 96` and `blockSize = 128`.
+ - Use `NoPadding` for segment sizes of 8 bit or smaller.
+ - Otherwise create your own padding.
+ - Don't even think about using segment sizes like 40 bit or 96 bit, because that is currently broken.
 
 ## Notes
 
