@@ -2,7 +2,7 @@ var fs = require("fs");
 
 var aesContent = fs.readFileSync("../lib/cryptojs-aes.min.js", "utf8");
 var binContent = fs.readFileSync("../build/enc-bin.js", "utf8");
-var cfbwContent = fs.readFileSync("../build/mode-cfbw.js", "utf8");
+var cfbwContent = fs.readFileSync("../build/mode-cfb-w.js", "utf8");
 var cfbbContent = fs.readFileSync("../build/mode-cfb-b.js", "utf8");
 
 var stats = { passed: 0, failed: 0 };
