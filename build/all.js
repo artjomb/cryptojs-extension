@@ -4,6 +4,53 @@
  * Copyright (c) 2015 artjomb
  */
 (function(C){
+    C.enc.Bin = {
+        stringify: function (wordArray) {
+            // Shortcuts
+            var words = wordArray.words;
+            var sigBytes = wordArray.sigBytes;
+
+            // Convert
+            var binChars = [];
+            for (var i = 0; i < sigBytes; i++) {
+                var bite = (words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
+                
+                for(var j = 7; j >= 0; j--) {
+                    binChars.push((bite >>> j & 0x01).toString(2));
+                }
+            }
+
+            return binChars.join('');
+        },
+        parse: function (binStr) {
+            var words = [ 0 ];
+            var currentBit = 31;
+            var bits = 0;
+            for(var i = 0; i < binStr.length; i++) {
+                var c = binStr[i];
+                if (c !== "0" && c !== "1") {
+                    // skip non-encoding characters such as spaces and such
+                    continue;
+                }
+                words[words.length-1] += (parseInt(c) << currentBit);
+                currentBit--;
+                bits++;
+                if (currentBit < 0) {
+                    currentBit = 31;
+                    words.push(0);
+                }
+            }
+            return C.lib.WordArray.create(words, Math.ceil(bits/8));
+        }
+    };
+})(CryptoJS);
+
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
+(function(C){
     // put on ext property in CryptoJS
     var ext;
     if (!C.hasOwnProperty("ext")) {
@@ -128,6 +175,77 @@
         return newArr;
     };
 })(CryptoJS);
+
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
+ 
+/**
+ * Cipher Feedback block mode with segment size parameter according to
+ * http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf. 
+ * The segment size must be a multiple of 32 bit (word size) and not bigger 
+ * than the block size of the underlying block cipher.
+ * 
+ * Use CryptoJS.mode.CFBb if you want segments as small as 1 bit.
+ */
+CryptoJS.mode.CFBw = (function () {
+    var CFBw = CryptoJS.lib.BlockCipherMode.extend();
+
+    CFBw.Encryptor = CFBw.extend({
+        processBlock: function(words, offset){
+            processBlock.call(this, words, offset, true);
+        }
+    });
+
+    CFBw.Decryptor = CFBw.extend({
+        processBlock: function(words, offset){
+            processBlock.call(this, words, offset, false);
+        }
+    });
+    
+    function processBlock(words, offset, encryptor) {
+        // Shortcuts
+        var self = this;
+        var cipher = self._cipher;
+        var blockSize = cipher.blockSize; // in words
+        var prev = self._prevBlock;
+        var segmentSize = cipher.cfg.segmentSize / 32; // in words
+        
+        // somehow the wrong indexes are used
+        for(var i = 0; i < blockSize/segmentSize; i++) {
+            if (!prev) {
+                prev = self._iv.slice(0); // clone
+
+                // Remove IV for subsequent blocks
+                self._iv = undefined;
+            } else {
+                prev = prev.slice(segmentSize).concat(self._ct);
+            }
+            
+            if (!encryptor) {
+                self._ct = words.slice(offset + i * segmentSize, offset + i * segmentSize + segmentSize);
+            }
+            
+            var segKey = prev.slice(0); // clone
+            cipher.encryptBlock(segKey, 0);
+
+            // Encrypt segment
+            for (var j = 0; j < segmentSize; j++) {
+                words[offset + i * segmentSize + j] ^= segKey[j];
+            }
+            
+            if (encryptor) {
+                self._ct = words.slice(offset + i * segmentSize, offset + i * segmentSize + segmentSize);
+            }
+        }
+        self._prevBlock = prev;
+    }
+
+    return CFBw;
+}());
+
 
 /* 
  * The MIT License (MIT)
@@ -360,6 +478,152 @@
         return arr.words[0] >>> 31;
     }
 })(CryptoJS);
+
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
+ 
+/**
+ * Cipher Feedback block mode with segment size parameter according to
+ * http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf. 
+ * The segment size can be anything from 1 bit up to the block size of the 
+ * underlying block cipher.
+ * 
+ * Current limitation: only segment sizes that divide the block size evenly 
+ * are supported.
+ */
+CryptoJS.mode.CFBb = (function () {
+    var CFBb = CryptoJS.lib.BlockCipherMode.extend(),
+        WordArray = CryptoJS.lib.WordArray, // shortcut
+        bitshift = CryptoJS.ext.bitshift,
+        neg = CryptoJS.ext.neg;
+
+    CFBb.Encryptor = CFBb.extend({
+        processBlock: function(words, offset){
+            processBlock.call(this, words, offset, true);
+        }
+    });
+
+    CFBb.Decryptor = CFBb.extend({
+        processBlock: function(words, offset){
+            processBlock.call(this, words, offset, false);
+        }
+    });
+    
+    function processBlock(words, offset, encryptor) {
+        // Shortcuts
+        var self = this;
+        var cipher = self._cipher;
+        var blockSize = cipher.blockSize * 32; // in bits
+        var prev = self._prevBlock;
+        var segmentSize = cipher.cfg.segmentSize; // in bits
+        var i, j;
+        var currentPosition;
+        
+        // Create a bit mask that has a comtinuous slice of bits set that is as big as the segment
+        var fullSegmentMask = [];
+        for(i = 31; i < segmentSize; i += 32) {
+            fullSegmentMask.push(0xffffffff);
+        }
+        // `s` most signiicant bits are set:
+        fullSegmentMask.push(((1 << segmentSize) - 1) << (32 - segmentSize));
+        for(i = fullSegmentMask.length; i < words.length; i++) {
+            fullSegmentMask.push(0);
+        }
+        
+        fullSegmentMask = WordArray.create(fullSegmentMask);
+        
+        // some helper variables
+        var slidingSegmentMask = fullSegmentMask.clone(),
+            slidingSegmentMaskShifted = slidingSegmentMask.clone(),
+            slidingNegativeSegmentMask,
+            prevCT;
+        
+        // shift the mask according to the current offset
+        bitshift(slidingSegmentMaskShifted, -offset * 32);
+        
+        for(i = 0; i < blockSize/segmentSize; i++) {
+            if (!prev) {
+                prev = self._iv.slice(0); // clone
+
+                // Remove IV for subsequent blocks
+                self._iv = undefined;
+            } else {
+                // Prepare the iteration by concatenating the unencrypted part of the previous block and the previous ciphertext
+                
+                prev = WordArray.create(prev);
+                bitshift(prev, segmentSize);
+                prev = prev.words;
+                previousCiphertextSegment = self._ct;
+                
+                // fill previous ciphertext up to the block size
+                while(previousCiphertextSegment.length < blockSize / 32) {
+                    previousCiphertextSegment.push(0);
+                }
+                previousCiphertextSegment = WordArray.create(previousCiphertextSegment);
+                
+                // move to the back
+                bitshift(previousCiphertextSegment, -blockSize + segmentSize);
+                
+                // put together
+                for (var j = 0; j < prev.length; j++) {
+                    prev[j] |= previousCiphertextSegment.words[j];
+                }
+            }
+
+            currentPosition = offset * 32 + i * segmentSize;
+            
+            // move segment in question to the front of the array
+            var plaintextSlice = WordArray.create(words.slice(0));
+            bitshift(plaintextSlice, currentPosition);
+            
+            if (!encryptor) {
+                self._ct = plaintextSlice.words.slice(0, Math.ceil(segmentSize / 32));
+            }
+            
+            var segKey = prev.slice(0); // clone
+            cipher.encryptBlock(segKey, 0);
+
+            // Encrypt segment
+            for (j = 0; j < Math.ceil(segmentSize / 32); j++) {
+                plaintextSlice.words[j] ^= segKey[j];
+            }
+            
+            // Filter only the current segment
+            for (j = 0; j < plaintextSlice.words.length; j++) {
+                plaintextSlice.words[j] &= fullSegmentMask.words[j];
+            }
+            
+            if (encryptor) {
+                self._ct = plaintextSlice.words.slice(0, Math.ceil(segmentSize / 32));
+            }
+            
+            // remove the segment from the plaintext array
+            slidingNegativeSegmentMask = neg(slidingSegmentMaskShifted.clone());
+            for (j = 0; j < words.length; j++) {
+                words[j] &= slidingNegativeSegmentMask.words[j];
+            }
+            
+            // move filtered ciphertext segment to back to the correct place
+            bitshift(plaintextSlice, -currentPosition);
+            
+            // add filtered ciphertext segment to the plaintext/ciphertext array
+            for (j = 0; j < words.length; j++) {
+                words[j] |= plaintextSlice.words[j];
+            }
+            
+            // shift the segment mask further along
+            bitshift(slidingSegmentMask, -segmentSize);
+            bitshift(slidingSegmentMaskShifted, -segmentSize);
+        }
+        self._prevBlock = prev;
+    }
+    
+    return CFBb;
+}());
+
 
 /* 
  * The MIT License (MIT)
@@ -644,3 +908,4 @@
         }
     });
 })(CryptoJS);
+

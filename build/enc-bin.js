@@ -1,3 +1,8 @@
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
 (function(C){
     C.enc.Bin = {
         stringify: function (wordArray) {

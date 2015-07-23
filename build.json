@@ -1,12 +1,12 @@
 {
 	"rollups": {
-		"siv": [ "common-bit-ops", "common", "cmac" ],
-		"cmac": [ "common-bit-ops", "common" ],
-		"common": [ "common-bit-ops" ],
-		"common-bit-ops": [ ],
 		"enc-bin": [ ],
+		"common-bit-ops": [ ],
 		"mode-cfb-w": [ ],
-		"mode-cfb-b": [ "common-bit-ops" ]
+		"common": [ "common-bit-ops" ],
+		"mode-cfb-b": [ "common-bit-ops" ],
+		"cmac": [ "common-bit-ops", "common" ],
+		"siv": [ "common-bit-ops", "common", "cmac" ]
 	},
 	"licenseHeader": "/*\n * The MIT License\n *\n * (MIT)Copyright (c) 2015 artjomb\n */\n"
 }

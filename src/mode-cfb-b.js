@@ -1,3 +1,9 @@
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
+ 
 /**
  * Cipher Feedback block mode with segment size parameter according to
  * http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf. 
