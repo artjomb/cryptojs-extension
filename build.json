@@ -2,6 +2,7 @@
 	"rollups": {
 		"enc-bin": [ ],
 		"common-bit-ops": [ ],
+		"random": [ ],
 		"mode-cfb-w": [ ],
 		"common": [ "common-bit-ops" ],
 		"mode-cfb-b": [ "common-bit-ops" ],
