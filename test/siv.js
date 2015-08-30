@@ -93,7 +93,7 @@ var stats = { passed: 0, failed: 0 };
     assert(ct.toString(), "7bdb6e3b432667eb06f4d14bff2fbd0fcb900f2fddbe404326601965c889bf17dba77ceb094fa663b7a3f748ba8af829ea64ad544a272e9c485b62a3fd5c0d", "ciphertext final");
 })();
 
-console.log("CMAC test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");
+console.log("SIV test - passed: " + stats.passed + ", failed: " + stats.failed + ", total: " + (stats.passed+stats.failed) + "\n");
 
 if (stats.failed > 0) {
     process.exit(1);

@@ -35,16 +35,15 @@
             
             // Step 2
             var K1 = L.clone();
-            ext.bitshift(K1, 1);
-            if (ext.msb(L) === 1) {
-                ext.xor(K1, ext.const_Rb);
-            }
+            ext.dbl(K1);
             
             // Step 3
-            var K2 = K1.clone();
-            ext.bitshift(K2, 1);
-            if (ext.msb(K1) === 1) {
-                ext.xor(K2, ext.const_Rb);
+            if (!this._isTwo()) {
+                var K2 = K1.clone();
+                ext.dbl(K2);
+            } else {
+                var K2 = L.clone();
+                ext.inv(K2);
             }
             
             this._K1 = K1;
@@ -109,6 +108,10 @@
             this.reset(); // Can be used immediately afterwards
             
             return aesBlock(this._K, M_last);
+        },
+        
+        _isTwo: function(){
+            return false;
         }
     });
     
@@ -123,4 +126,11 @@
     C.CMAC = function(key, message){
         return CMAC.create(key).finalize(message);
     };
+    
+    C.algo.OMAC1 = CMAC;
+    C.algo.OMAC2 = CMAC.extend({
+        _isTwo: function(){
+            return true;
+        }
+    });
 })(CryptoJS);
