@@ -4,6 +4,7 @@ This extension adds the following algorithms to CryptoJS:
 
 - AES-CMAC ([RFC 4493](https://tools.ietf.org/html/rfc4493)): MAC algorithm based on AES
 - AES-SIV ([RFC 5297](https://tools.ietf.org/html/rfc5297)): Synthetic Initialization Vector mode of operation for AES
+- AES-EAX ([eax.pdf](http://web.cs.ucdavis.edu/~rogaway/papers/eax.pdf)): EAX Mode of Operation for AES
 - CFB ([NIST Special Publication 800-38A](http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf)): Block cipher mode of operation for confidentiality with a variable segment size
 
 It can only be used in the browser (for now). The tests run in Node.js in kind of hacky way.
@@ -98,6 +99,69 @@ Notes:
 - Additional data and the plaintext message need to be either a UTF-8 encoded string or a `WordArray`.
 - The ciphertext is always expected as a `WordArray`.
 - The first 16 bytes of the ciphertext contain the authentication tag. The decryption function also expects the authentication tag to be in front of the ciphertext.
+
+### AES-EAX
+
+EAX is a authenticated mode based on AES and CMAC. It requires the use of a nonce, but can be implemented as a single pass (plaintext needs to be passed in only once). It works either with a single key with 128, 192 or 256 bit or with a double sized key where the first half will be used for CMAC and the second half for CTR (actual encryption).
+
+```html
+<script type="text/javascript" src="lib/cryptojs-aes.min.js"></script>
+<script type="text/javascript" src="lib/cryptojs-mode-ctr.min.js"></script>
+<script type="text/javascript" src="build/eax.min.js"></script>
+<script type="text/javascript">
+    var key = CryptoJS.enc.Hex.parse('fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0');
+    var nonce = CryptoJS.lib.WordArray.random(16);
+    var message = "This is some secret message";
+    var additionalData = "This is some additional (authenticated) data";
+    
+    var eax = CryptoJS.EAX.create(key);
+    var ciphertext = eax.encrypt(message, nonce, [ additionalData ]);
+
+    var recoveredPlaintext = eax.decrypt(ciphertext, nonce, [ additionalData ]);
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
+
+    // Without additional data
+    var ciphertext = eax.encrypt(message, nonce);
+    var recoveredPlaintext = eax.decrypt(ciphertext, nonce);
+    console.log(recoveredPlaintext.toString(CryptoJS.enc.Utf8) === message);
+</script>
+```
+
+It is also possible to use a progressive encryption/decryption:
+
+```javascript
+var key = CryptoJS.enc.Hex.parse('fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0');
+var nonce = CryptoJS.lib.WordArray.random(16);
+var message = "This is some secret message";
+var additionalData = "This is some additional (authenticated) data";
+
+var eax = CryptoJS.EAX.create(key);
+
+// AAD must be called before the actual encryption begins
+eax.updateAAD(additionalData);
+eax.initCrypt(true /* encryption */, nonce);
+
+var ct1 = eax.update("This ");
+var ct2 = eax.update("is some ");
+var ct3 = eax.update("secret message");
+var ct4 = eax.finalize();
+
+ct1.concat(ct2);
+ct3.concat(ct4);
+
+// the same object can be reused as long as the key doesn't need to change
+eax.updateAAD(additionalData);
+eax.initCrypt(false /* decryption */, nonce);
+
+var pt1 = eax.update(ct1);
+var pt2 = eax.finalize(ct3);
+
+if (pt2 !== false) {
+    console.log("Valid: " + pt1.concat(pt2).toString(CryptoJS.enc.Utf8));
+} else {
+    console.log("Authentication tag didn't match");
+}
+```
 
 ### CFB
 
