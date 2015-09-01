@@ -106,12 +106,31 @@ var stats = { passed: 0, failed: 0 };
             msgBytes = CryptoJS.enc.Hex.parse(vec.msg),
             nonceBytes = CryptoJS.enc.Hex.parse(vec.nonce),
             headerBytes = CryptoJS.enc.Hex.parse(vec.header);
-        var ct = CryptoJS.EAX.encrypt(msgBytes, keyBytes, nonceBytes, {
-            header: headerBytes
-        });
+            
+        // encryption test
+        var eax = CryptoJS.EAX.create(keyBytes);
+        var ct = eax.encrypt(msgBytes, nonceBytes, [headerBytes]);
         assert(ct.toString(), vec.ct.toLowerCase(), "ciphertext match ["+i+"]");
         
-        // TODO: add decryption testing
+        // decryption test with verification
+        var pt = eax.decrypt(ct, nonceBytes, [headerBytes]);
+        assert(pt.toString(), vec.msg.toLowerCase(), "plaintext match ["+i+"]");
+        
+        // tampering detection test
+        ct = eax.encrypt(msgBytes, nonceBytes, [headerBytes]);
+        ct.words[2] ^= 8
+        pt = eax.decrypt(ct, nonceBytes, [headerBytes]);
+        assert(pt, false, "tampering detected ["+i+"]");
+        
+        // testing without additional data
+        ct = eax.encrypt(msgBytes, nonceBytes);
+        pt = eax.decrypt(ct, nonceBytes);
+        assert(pt.toString(), vec.msg.toLowerCase(), "plaintext match w/o AD ["+i+"]");
+        
+        // testing with multiple additional data
+        ct = eax.encrypt(msgBytes, nonceBytes, [headerBytes, headerBytes, headerBytes, CryptoJS.lib.WordArray.create()]);
+        pt = eax.decrypt(ct, nonceBytes, [headerBytes, headerBytes, headerBytes]);
+        assert(pt.toString(), vec.msg.toLowerCase(), "plaintext match w/ 3*AD ["+i+"]");
     });
 })();
 

@@ -151,7 +151,8 @@
     // Constants
     ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
     ext.const_One = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
-    ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]);
+    ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
+    ext.const_Rb_Shifted = WordArray.create([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
     ext.const_nonMSB = WordArray.create([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
     
     /**
@@ -323,6 +324,23 @@
         ext.bitshift(wordArray, 1);
         if (carry === 1) {
             ext.xor(wordArray, ext.const_Rb);
+        }
+        return wordArray;
+    };
+    
+    /**
+     * Inverse operation on a 128-bit value. This operation modifies the 
+     * passed array.
+     * 
+     * @param {WordArray} wordArray WordArray to work on
+     * 
+     * @returns passed WordArray
+     */
+    ext.inv = function(wordArray){
+        var carry = wordArray.words[4] & 1;
+        ext.bitshift(wordArray, -1);
+        if (carry === 1) {
+            ext.xor(wordArray, ext.const_Rb_Shifted);
         }
         return wordArray;
     };

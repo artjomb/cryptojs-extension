@@ -294,7 +294,8 @@ CryptoJS.mode.CFBw = (function () {
     // Constants
     ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
     ext.const_One = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
-    ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]);
+    ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
+    ext.const_Rb_Shifted = WordArray.create([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
     ext.const_nonMSB = WordArray.create([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
     
     /**
@@ -466,6 +467,23 @@ CryptoJS.mode.CFBw = (function () {
         ext.bitshift(wordArray, 1);
         if (carry === 1) {
             ext.xor(wordArray, ext.const_Rb);
+        }
+        return wordArray;
+    };
+    
+    /**
+     * Inverse operation on a 128-bit value. This operation modifies the 
+     * passed array.
+     * 
+     * @param {WordArray} wordArray WordArray to work on
+     * 
+     * @returns passed WordArray
+     */
+    ext.inv = function(wordArray){
+        var carry = wordArray.words[4] & 1;
+        ext.bitshift(wordArray, -1);
+        if (carry === 1) {
+            ext.xor(wordArray, ext.const_Rb_Shifted);
         }
         return wordArray;
     };
@@ -687,16 +705,15 @@ CryptoJS.mode.CFBb = (function () {
             
             // Step 2
             var K1 = L.clone();
-            ext.bitshift(K1, 1);
-            if (ext.msb(L) === 1) {
-                ext.xor(K1, ext.const_Rb);
-            }
+            ext.dbl(K1);
             
             // Step 3
-            var K2 = K1.clone();
-            ext.bitshift(K2, 1);
-            if (ext.msb(K1) === 1) {
-                ext.xor(K2, ext.const_Rb);
+            if (!this._isTwo()) {
+                var K2 = K1.clone();
+                ext.dbl(K2);
+            } else {
+                var K2 = L.clone();
+                ext.inv(K2);
             }
             
             this._K1 = K1;
@@ -761,6 +778,10 @@ CryptoJS.mode.CFBb = (function () {
             this.reset(); // Can be used immediately afterwards
             
             return aesBlock(this._K, M_last);
+        },
+        
+        _isTwo: function(){
+            return false;
         }
     });
     
@@ -775,6 +796,13 @@ CryptoJS.mode.CFBb = (function () {
     C.CMAC = function(key, message){
         return CMAC.create(key).finalize(message);
     };
+    
+    C.algo.OMAC1 = CMAC;
+    C.algo.OMAC2 = CMAC.extend({
+        _isTwo: function(){
+            return true;
+        }
+    });
 })(CryptoJS);
 
 /* 
@@ -930,6 +958,146 @@ CryptoJS.mode.CFBb = (function () {
             } else {
                 return false;
             }
+        }
+    });
+})(CryptoJS);
+
+/* 
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2015 artjomb
+ */
+(function(C){
+    // Shortcuts
+    var Base = C.lib.Base;
+    var WordArray = C.lib.WordArray;
+    var AES = C.algo.AES;
+    var ext = C.ext;
+    var CMAC = C.algo.CMAC;
+    var zero = WordArray.create([0x0, 0x0, 0x0, 0x0]);
+    var one = WordArray.create([0x0, 0x0, 0x0, 0x1]);
+    var two = WordArray.create([0x0, 0x0, 0x0, 0x2]);
+    var blockLength = 16;
+    
+    var EAX = C.EAX = Base.extend({
+        /**
+         * Initializes the key of the cipher.
+         * 
+         * @param {WordArray} key Key to be used for CMAC and CTR
+         * @param {object} options Additonal options to tweak the encryption:
+         *        splitKey - If true then the first half of the passed key will be 
+         *                   the CMAC key and the second half the CTR key
+         *        tagLength - Length of the tag in bytes (for created tag and expected tag)
+         */
+        init: function(key, options){
+            var macKey;
+            if (options && options.splitKey) {
+                var len = Math.floor(key.sigBytes / 2);
+                macKey = ext.shiftBytes(key, len);
+            } else {
+                macKey = key.clone();
+            }
+            this._ctrKey = key;
+            this._mac = CMAC.create(macKey);
+            
+            this._tagLen = (options && options.tagLength) || blockLength;
+            this.reset();
+        },
+        reset: function(){
+            this._mac.update(one);
+            if (this._ctr) {
+                this._ctr.reset();
+            }
+        },
+        updateAAD: function(header){
+            this._mac.update(header);
+            return this;
+        },
+        initCrypt: function(isEncrypt, nonce){
+            var self = this;
+            self._tag = self._mac.finalize();
+            self._isEnc = isEncrypt;
+            
+            self._mac.update(zero);
+            nonce = self._mac.finalize(nonce);
+            
+            ext.xor(self._tag, nonce);
+            
+            self._ctr = AES.createEncryptor(self._ctrKey, {
+                iv: nonce, 
+                mode: C.mode.CTR, 
+                padding: C.pad.NoPadding
+            });
+            self._buf = WordArray.create();
+            
+            self._mac.update(two);
+            
+            return self;
+        },
+        update: function(msg) {
+            if (typeof msg === "string") {
+                msg = C.enc.Utf8.parse(msg);
+            }
+            var self = this;
+            var buffer = self._buf;
+            var isEncrypt = self._isEnc;
+            buffer.concat(msg);
+            
+            var useBytes = isEncrypt ? buffer.sigBytes : Math.max(buffer.sigBytes - self._tagLen, 0);
+            
+            var data = useBytes > 0 ? ext.shiftBytes(buffer, useBytes) : WordArray.create(); // guaranteed to be pure plaintext or ciphertext (without a tag during decryption)
+            var xoredData = self._ctr.process(data);
+            
+            self._mac.update(isEncrypt ? xoredData : data);
+            
+            return xoredData;
+        },
+        finalize: function(msg){
+            var self = this;
+            var xoredData = msg ? self.update(msg) : WordArray.create();
+            var mac = self._mac;
+            var ctFin = self._ctr.finalize();
+            
+            if (self._isEnc) {
+                var ctTag = mac.finalize(ctFin);
+                
+                ext.xor(self._tag, ctTag);
+                self.reset();
+                return xoredData.concat(ctFin).concat(self._tag);
+            } else {
+                // buffer must contain only the tag at this point
+                var ctTag = mac.finalize();
+                
+                ext.xor(self._tag, ctTag);
+                self.reset();
+                if (ext.equals(self._tag, self._buf)) {
+                    return xoredData.concat(ctFin);
+                } else {
+                    return false; // tag doesn't match
+                }
+            }
+        },
+        encrypt: function(plaintext, nonce, adArray){
+            var self = this;
+            if (adArray) {
+                Array.prototype.forEach.call(adArray, function(ad){
+                    self.updateAAD(ad);
+                });
+            }
+            self.initCrypt(true, nonce);
+            
+            return self.finalize(plaintext);
+        },
+        decrypt: function(ciphertext, nonce, adArray){
+            var self = this;
+            if (adArray) {
+                Array.prototype.forEach.call(adArray, function(ad){
+                    self.updateAAD(ad);
+                });
+            }
+            self.initCrypt(false, nonce);
+            
+            return self.finalize(ciphertext);
         }
     });
 })(CryptoJS);
