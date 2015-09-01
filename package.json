@@ -1,6 +1,6 @@
 {
   "name": "cryptojs-extension",
-  "version": "0.2.0-dev",
+  "version": "0.2.0",
   "description": "Some additional crypto functions built on top of CryptoJS",
   "main": "index.js",
   "directories": {
@@ -17,7 +17,9 @@
     "crypto",
     "aes",
     "siv",
+    "eax",
     "cmac",
+    "omac",
     "cfb",
     "cryptojs"
   ],
