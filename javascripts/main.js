@@ -84,4 +84,61 @@
             $("#siv-ad-list").append("<input type='text' class='siv-ad max512bit'>");
         }
     });
+    
+    $("#eax-enc, #eax-dec").click(function(){
+        var msg = $("#eax-input").val(),
+            key = $("#eax-key").val(),
+            nonce = $("#eax-nonce").val(),
+            hexAd = $("#eax-ad-type").prop("checked"),
+            ad = $(".eax-ad").filter(function(){
+                return this.value && this.value.trim().length > 0;
+            }).map(function(){
+                if (hexAd) {
+                    return CryptoJS.enc.Hex.parse(hexCleanup(this.value));
+                } else {
+                    return this.value;
+                }
+            }).get(),
+            hexMsg = $("#eax-input-type").prop("checked"),
+            hexKey = $("#eax-key-type").prop("checked");
+            hexNonce = $("#eax-nonce-type").prop("checked");
+        
+        if (hexMsg) {
+            msg = hexCleanup(msg);
+            msg = CryptoJS.enc.Hex.parse(msg);
+        }
+        if (hexKey) {
+            key = hexCleanup(key);
+            key = CryptoJS.enc.Hex.parse(key);
+        }
+        if (hexNonce) {
+            nonce = hexCleanup(nonce);
+            nonce = CryptoJS.enc.Hex.parse(nonce);
+        }
+        
+        var eax = CryptoJS.EAX.create(key),
+            result;
+        if (this.id === "eax-enc") {
+            result = eax.encrypt(msg, nonce, ad);
+        } else {
+            result = eax.decrypt(msg, nonce, ad);
+        }
+        
+        if (!result) {
+            $("#eax-result").addClass("bad-output").val("\u22a5");
+        } else {
+            $("#eax-result").removeClass("bad-output").val(insertSpaces(result.toString()));
+        }
+    });
+    
+    $("#eax-ad-add").click(function(e){
+        e.preventDefault();
+        var len = $("eax-ad").length;
+        if (len === 0) {
+            $("#eax-ad-title").removeClass("hidden");
+        }
+        if (len < 126) {
+            $("#eax-ad-list").append("<input type='text' class='eax-ad max512bit'>");
+        }
+    });
 });

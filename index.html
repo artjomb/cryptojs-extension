@@ -11,10 +11,9 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.1.0/lib/cryptojs-aes.min.js"></script>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.1.0/lib/cryptojs-mode-ctr.min.js"></script>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.1.0/build/cmac.min.js"></script>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.1.0/build/siv.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.2.0/lib/cryptojs-aes.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.2.0/lib/cryptojs-mode-ctr.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/artjomb/cryptojs-extension/0.2.0/build/all.min.js"></script>
     <script type="text/javascript" src="javascripts/main.js"></script>
     <title>CryptoJS extension by artjomb</title>
   </head>
@@ -121,6 +120,64 @@
   </div>
   <div>
     <textarea id="siv-result" class="message" type="text" name="siv-result"> </textarea>
+  </div>
+</div>
+
+<div class="separator">&nbsp;</div>
+
+<h3><a id="eax-calculator" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Online AES-EAX calculator</h3>
+
+<p>AES-EAX is a mode of operation for authenticated encryption with additional data (AEAD) based on AES as the base encryption primitive and AES-CMAC</p>
+
+<div class="input-block">
+  <div>
+    <label for="eax-input">Input (Plaintext / Ciphertext):</label> <input id="eax-input-type" type="checkbox" name="eax-input-type"><label for="eax-input-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div>
+    <textarea id="eax-input" class="message" type="text" name="eax-input"></textarea>
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <label for="eax-key">Key <sup>1</sup>:</label> <input id="eax-key-type" type="checkbox" name="eax-key-type" checked="checked"><label for="eax-key-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div>
+    <input id="eax-key" class="max256bit" type="text" name="eax-key">
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <label for="eax-nonce">Nonce:</label> <input id="eax-nonce-type" type="checkbox" name="eax-nonce-type" checked="checked"><label for="eax-nonce-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div>
+    <input id="eax-nonce" class="max128bit" type="text" name="eax-nonce">
+  </div>
+</div>
+
+<div class="input-block">
+  <div id="eax-ad-title" class="hidden">
+    <label for="eax-input">Associated Data:</label> <input id="eax-ad-type" type="checkbox" name="eax-ad-type" checked="checked"><label for="eax-ad-type">Hex encoded <sup>2</sup></label>
+  </div>
+  <div id="eax-ad-list"></div>
+  <div>
+    <a id="eax-ad-add" href="#">add associated data</a>
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <button id="eax-enc">Encrypt</button> <button id="eax-dec">Decrypt</button>
+  </div>
+</div>
+
+<div class="input-block">
+  <div>
+    <label for="eax-result">Result (Hex encoded):</label>
+  </div>
+  <div>
+    <textarea id="eax-result" class="message" type="text" name="eax-result"> </textarea>
   </div>
 </div>
 
