@@ -191,9 +191,7 @@
     ext.dbl = function(wordArray){
         var carry = ext.msb(wordArray);
         ext.bitshift(wordArray, 1);
-        if (carry === 1) {
-            ext.xor(wordArray, ext.const_Rb);
-        }
+        ext.xor(wordArray, carry === 1 ? ext.const_Rb : ext.const_Zero);
         return wordArray;
     };
     
@@ -208,9 +206,7 @@
     ext.inv = function(wordArray){
         var carry = wordArray.words[4] & 1;
         ext.bitshift(wordArray, -1);
-        if (carry === 1) {
-            ext.xor(wordArray, ext.const_Rb_Shifted);
-        }
+        ext.xor(wordArray, carry === 1 ? ext.const_Rb_Shifted : ext.const_Zero);
         return wordArray;
     };
     
@@ -228,12 +224,11 @@
         }
         arr1.clamp();
         arr2.clamp();
+        var equal = 0;
         for(var i = 0; i < arr1.words.length; i++) {
-            if (arr1.words[i] !== arr2.words[i]) {
-                return false;
-            }
+            equal |= arr1.words[i] ^ arr2.words[i];
         }
-        return true;
+        return equal === 0;
     };
     
     /**
