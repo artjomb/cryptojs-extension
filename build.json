@@ -9,6 +9,7 @@
 		"cmac": [ "common-bit-ops", "common" ],
 		"siv": [ "common-bit-ops", "common", "cmac" ],
 		"eax": [ "common-bit-ops", "common", "cmac" ],
+		"hkdf" : [ ],
 		"blowfish": [ ]
 	},
 	"licenseHeader": "/*\n * The MIT License\n *\n * (MIT)Copyright (c) 2015 artjomb\n */\n"
