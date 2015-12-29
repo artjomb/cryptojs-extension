@@ -103,18 +103,22 @@ var stats = { passed: 0, failed: 0 };
 			prk: "2adccada18779e7c2077ad2eb19d3f3e731385dd",
 			okm: "2c91117204d745f3500d636a62f64f0ab3bae548aa53d423b0d1f27ebba6f5e5673a081d70cce7acfc48",
 			hasher: CryptoJS.algo.SHA1
-		},
-		{
-			id: "TC7 w/o info",
-			ikm: "0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c",
-			L: 42,
-			prk: "2adccada18779e7c2077ad2eb19d3f3e731385dd",
-			okm: "2c91117204d745f3500d636a62f64f0ab3bae548aa53d423b0d1f27ebba6f5e5673a081d70cce7acfc48",
-			hasher: CryptoJS.algo.SHA1
-		},
+		}
 	];
 	
-	tests.forEach(function(t, i){
+	// add adjusted test cases where info is fully missing
+	tests.filter(function(t){
+		return t.info === "";
+	}).forEach(function(t){
+		var nt = JSON.parse(JSON.stringify(t));
+		nt.id += " w/o info";
+		nt.hasher = t.hasher;
+		delete nt.info;
+		tests.push(nt);
+	});
+	
+	// run long tests
+	tests.forEach(function(t){
 		var ikm = typeof t.ikm === "string" ? CryptoJS.enc.Hex.parse(t.ikm) : null;
 		var salt = typeof t.salt === "string" ? CryptoJS.enc.Hex.parse(t.salt) : null;
 		var info = typeof t.info === "string" ? CryptoJS.enc.Hex.parse(t.info) : null;
@@ -122,6 +126,15 @@ var stats = { passed: 0, failed: 0 };
 		var hkdf = CryptoJS.algo.HKDF.create(t.hasher, ikm, salt);
 		assert(hkdf.extract().toString(), t.prk, "prk matches for " + t.id);
 		assert(hkdf.expand(t.L, info).toString(), t.okm, "okm matches for " + t.id);
+	});
+	
+	// filter long tests for test cases where short tests are applicable and run them
+	tests.filter(function(t){
+		return (!t.info || t.info === "") && !t.salt;
+	}).forEach(function(t){
+		var ikm = CryptoJS.enc.Hex.parse(t.ikm);
+		var okm = CryptoJS.HKDF(t.hasher, ikm, t.L);
+		assert(okm.toString(), t.okm, "okm matches for short " + t.id);
 	});
 })();
 
