@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "node build.js",
+    "testn": "cd test && node gost3411-2012.js",
     "test": "cd test && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
   },
   "keywords": [
