@@ -200,7 +200,7 @@
 			overrun = 0;
 
 		for (i = BLOCK_SIZE; i-- > 0;) {
-			overrun = (src[i] + add[i] + (overrun >> 8)) | 0;
+			overrun = (src[i] + add[i] + (overrun >>> 8)) | 0;
 			dst[i] = overrun;
 		}
 	}
@@ -211,8 +211,8 @@
 
 		for (i = BLOCK_SIZE; i-- > 0;) {
 			add = (src[i] + add) | 0;
-			dst[i] = add;
-			add >>= 8;
+			dst[i] = add & 0xFF;
+			add >>>= 8;
 		}
 	}
 
@@ -239,9 +239,9 @@
 		offset = offset || 0;
 		for(var i = offset; i < (offset+len); i++) {
 			if (dst.length <= (i-offset))
-				dst.push(src[i]);
+				dst.push(src[i] | 0);
 			else
-				dst = src[i];
+				dst = src[i] | 0;
 		}
 		return dst;
 	}
@@ -272,17 +272,18 @@
 				for (k = 0; k < 8; k++) {
 
 					/* check if current bit is set */
-					if (tmp[j*8+i] & 0x80 >> k)
+					if (tmp[j*8+i] & 0x80 >>> k){
 						c0 ^= A[2*(j*8+k)];
 						c1 ^= A[2*(j*8+k)+1];
+					}
 				}
 			}
 
 			for (j = 0; j < 8; j++) {
 				if (j < 4) {
-					vect[i*8+j] = c0 >> (3 - j) * 8;
+					vect[i*8+j] = (c0 >>> (3 - j) * 8) & 0xFF;
 				} else {
-					vect[i*8+j] = c1 >> (7 - j) * 8;
+					vect[i*8+j] = (c1 >>> (7 - j) * 8) & 0xFF;
 				}
 			}
 		}
@@ -294,18 +295,24 @@
 			K = [];
 
 		cpy(K, k, BLOCK_SIZE);
+		// pb(K, "E Ki   ");
 
 		xor512(dst, K, m);
+		// pb(dst, "E dst1 ");
 
 		for (i = 1; i < 13; i++) {
 			S(dst);
+			// pb(dst, "E dst2 ");
 			LP(dst);
+			// pb(dst, "E dst3 ");
 
 			/* next K */
 			xor512(K, K, C[i-1]);
+			// pb(K, "E Kl   ");
 
 			S(K);
 			LP(K);
+			// pb(K, "E K LPS");
 
 			xor512(dst, K, dst);
 		}
@@ -319,9 +326,12 @@
 		xor512(h, h, N);
 
 		S(h);
+		// pb(h, "g_N S");
 		LP(h);
+		// pb(h, "g_N L");
 
 		E(h, h, m);
+		// pb(h, "g_N E");
 
 		xor512(h, h, hash);
 		xor512(h, h, m);
@@ -343,6 +353,7 @@
 
 	function stribog(message, len, is256)
 	{
+		console.log("is256", is256);
 		var i, 
 			m, 
 			padding, 
@@ -379,14 +390,53 @@
 		}
 
 		g_N(h, N, m);
+		// pb(h, "h");
 
 		addmod512_u32(N, N, len*8);
 		addmod512(S, S, m);
+		// pb(N, "N");
+		// pb(S, "S");
 
 		g_0(h, N);
+		// pb(h, "g_0 N");
 		g_0(h, S);
+		// pb(h, "g_0 S");
 		
 		return h.slice(0, is256 ? 32 : 64)
+	}
+	
+	/**
+	 * Combine bytes into words (4 ints into one int)
+	 */
+	function from_u8_to_u32(u8_bytes){
+		var words = [], i;
+		for(i = 0; i < u8_bytes.length; i++) {
+			if (i % 4 === 0) {
+				words.push(0);
+			}
+			
+			words[(i / 4) | 0] ^= u8_bytes[i] << ((3 - i%4)*8);
+		}
+		return words;
+	}
+	
+	/**
+	 * Split words into bytes (one into into 4 ints)
+	 */
+	function from_u32_to_u8(u32_words, sigBytes){
+		var bytes = [], i;
+		for(i = 0; i < sigBytes; i++) {
+			bytes.push((u32_words[(i / 4) | 0] >>> ((3 - i%4)*8)) & 0xff);
+		}
+		return bytes;
+	}
+	
+	function pb(b, msg) {
+		msg = msg || "byte";
+		if (b)
+			console.log(msg + ": " + WordArray.create(from_u8_to_u32(b), b.length).toString());
+		else
+			console.log(msg + ": <empty> ... " + b);
 	}
 
 	var Streebog = C_algo.Streebog = Hasher.extend({
@@ -395,9 +445,13 @@
 		},
 
 		_doProcessBlock: function (M, offset) {
-			for(var i = 0; i < this.blockSize; i++) {
-				this._streebogCache.words.push(M[i + offset]);
-				this._streebogCache.sigBytes += 4
+			var self = this,
+				cache = self._streebogCache,
+				i;
+			for(i = 0; i < self.blockSize; i++) {
+				console.log("Copy word: " + M[i + offset]);
+				cache.words.push(M[i + offset]);
+				cache.sigBytes += 4;
 			}
 		},
 
@@ -409,35 +463,29 @@
 			
 			var cache = self._streebogCache;
 			var cacheWords = cache.words;
-			var messageBytes = [];
+			var messageBytes;
 			var i;
 			var hashBytes;
-			var hash = WordArray.create();
-			var hashWords = hash.words;
+			var hash;
 			
 			// put the rest into cache
 			for(i = 0; i < dataWords.length; i++) {
 				cacheWords.push(dataWords[i]);
 			}
 			cache.sigBytes += data.sigBytes;
+			console.log("final data: " + cache);
 
 			// split words into bytes (one into into 4 ints)
-			for(i = 0; i < cache.sigBytes; i++) {
-				messageBytes.push((cacheWords[(i / 4) | 0] >>> ((3 - i%4)*8)) & 0xff);
-			}
+			messageBytes = from_u32_to_u8(cacheWords, cache.sigBytes);
+			
+			pb(messageBytes, "messageBytes");
 			
 			// hash
 			hashBytes = stribog(messageBytes, messageBytes.length, self.outputSize === 256);
-			console.log("hashBytes", hashBytes);
+			pb(hashBytes, "hashBytes");
 			
 			// combine bytes into words (4 ints into one int)
-			for(i = 0; i < hashBytes.length; i++) {
-				if (hashWords.length * 4 < i) {
-					hashWords.push(0);
-				}
-				
-				hashWords[(i / 4) | 0] ^= hashBytes[i];
-			}
+			hash = WordArray.create(from_u8_to_u32(hashBytes));
 
 			// Hash final blocks
 			//self._process();
