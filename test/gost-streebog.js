@@ -1,14 +1,12 @@
 var fs = require("fs");
 
 var aesContent = fs.readFileSync("../lib/cryptojs-aes.min.js", "utf8");
-//var ctrContent = fs.readFileSync("../lib/cryptojs-sha1.js", "utf8");
-var gostContent = fs.readFileSync("../src/gost3411-2012.js", "utf8");
+var gostContent = fs.readFileSync("../src/gost-streebog.js", "utf8");
 
 var stats = { passed: 0, failed: 0 };
 
 (function(){
 	eval(aesContent);
-	//eval(ctrContent);
 	eval(gostContent);
 
 	function assert(got, expected, msg){

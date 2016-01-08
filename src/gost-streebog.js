@@ -4,6 +4,8 @@
  * Copyright (c) 2015 artjomb
  */
 (function(CJS){
+	// port of https://github.com/sftp/gost34.11-2012_stribog
+	
 	// Shortcuts
 	var C_lib = CJS.lib;
 	var WordArray = C_lib.WordArray;

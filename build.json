@@ -10,7 +10,8 @@
 		"siv": [ "common-bit-ops", "common", "cmac" ],
 		"eax": [ "common-bit-ops", "common", "cmac" ],
 		"hkdf" : [ ],
-		"blowfish": [ ]
+		"blowfish": [ ],
+		"gost-streebog": [ ]
 	},
 	"licenseHeader": "/*\n * The MIT License\n *\n * (MIT)Copyright (c) 2015 artjomb\n */\n"
 }
