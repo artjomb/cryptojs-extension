@@ -3,13 +3,13 @@
  * 
  * Copyright (c) 2015 artjomb
  */
-(function(C){
+(function(CJS){
 	// Shortcuts
-	var C_lib = C.lib;
+	var C_lib = CJS.lib;
 	var WordArray = C_lib.WordArray;
 	var BlockCipher = C_lib.BlockCipher;
 	var Hasher = C_lib.Hasher;
-	var C_algo = C.algo;
+	var C_algo = CJS.algo;
 	var BLOCK_SIZE = 64;
 
 	var sbox = [
@@ -201,7 +201,7 @@
 
 		for (i = BLOCK_SIZE; i-- > 0;) {
 			overrun = (src[i] + add[i] + (overrun >>> 8)) | 0;
-			dst[i] = overrun;
+			dst[i] = overrun & 0xFF;
 		}
 	}
 
@@ -295,24 +295,18 @@
 			K = [];
 
 		cpy(K, k, BLOCK_SIZE);
-		// pb(K, "E Ki   ");
 
 		xor512(dst, K, m);
-		// pb(dst, "E dst1 ");
 
 		for (i = 1; i < 13; i++) {
 			S(dst);
-			// pb(dst, "E dst2 ");
 			LP(dst);
-			// pb(dst, "E dst3 ");
 
 			/* next K */
 			xor512(K, K, C[i-1]);
-			// pb(K, "E Kl   ");
 
 			S(K);
 			LP(K);
-			// pb(K, "E K LPS");
 
 			xor512(dst, K, dst);
 		}
@@ -326,12 +320,9 @@
 		xor512(h, h, N);
 
 		S(h);
-		// pb(h, "g_N S");
 		LP(h);
-		// pb(h, "g_N L");
 
 		E(h, h, m);
-		// pb(h, "g_N E");
 
 		xor512(h, h, hash);
 		xor512(h, h, m);
@@ -353,7 +344,6 @@
 
 	function stribog(message, len, is256)
 	{
-		console.log("is256", is256);
 		var i, 
 			m, 
 			padding, 
@@ -390,17 +380,12 @@
 		}
 
 		g_N(h, N, m);
-		// pb(h, "h");
 
 		addmod512_u32(N, N, len*8);
 		addmod512(S, S, m);
-		// pb(N, "N");
-		// pb(S, "S");
 
 		g_0(h, N);
-		// pb(h, "g_0 N");
 		g_0(h, S);
-		// pb(h, "g_0 S");
 		
 		return h.slice(0, is256 ? 32 : 64)
 	}
@@ -430,16 +415,8 @@
 		}
 		return bytes;
 	}
-	
-	function pb(b, msg) {
-		msg = msg || "byte";
-		if (b)
-			console.log(msg + ": " + WordArray.create(from_u8_to_u32(b), b.length).toString());
-		else
-			console.log(msg + ": <empty> ... " + b);
-	}
 
-	var Streebog = C_algo.Streebog = Hasher.extend({
+	var Streebog256 = C_algo.Streebog256 = Hasher.extend({
 		_doReset: function () {
 			this._streebogCache = WordArray.create();
 		},
@@ -449,7 +426,7 @@
 				cache = self._streebogCache,
 				i;
 			for(i = 0; i < self.blockSize; i++) {
-				console.log("Copy word: " + M[i + offset]);
+				// console.log("Copy word: " + M[i + offset]);
 				cache.words.push(M[i + offset]);
 				cache.sigBytes += 4;
 			}
@@ -473,16 +450,12 @@
 				cacheWords.push(dataWords[i]);
 			}
 			cache.sigBytes += data.sigBytes;
-			console.log("final data: " + cache);
 
 			// split words into bytes (one into into 4 ints)
 			messageBytes = from_u32_to_u8(cacheWords, cache.sigBytes);
 			
-			pb(messageBytes, "messageBytes");
-			
 			// hash
 			hashBytes = stribog(messageBytes, messageBytes.length, self.outputSize === 256);
-			pb(hashBytes, "hashBytes");
 			
 			// combine bytes into words (4 ints into one int)
 			hash = WordArray.create(from_u8_to_u32(hashBytes));
@@ -504,9 +477,10 @@
 		outputSize: 256
 	});
 	
-	C.Streebog256 = Hasher._createHelper(Streebog);
-	console.log(!!C.Streebog256);
+	var Streebog512 = C_algo.Streebog512 = Streebog256.extend({
+		outputSize: 512
+	});
 	
-	C.Streebog512 = Hasher._createHelper(Streebog);
-	C.Streebog512.outputSize = 512;
+	CJS.Streebog256 = Hasher._createHelper(Streebog256);
+	CJS.Streebog512 = Hasher._createHelper(Streebog512);
 })(CryptoJS);

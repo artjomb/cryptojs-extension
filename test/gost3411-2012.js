@@ -45,18 +45,15 @@ var stats = { passed: 0, failed: 0 };
 		},
 	];
 
-	CryptoJS.Streebog256 = CryptoJS.lib.Hasher._createHelper(CryptoJS.algo.Streebog);
 	vectors.forEach(function(vec, i){
+		console.log("Message: '" + vec.msg + "'");
 		var msgBytes = CryptoJS.enc.Hex.parse(vec.msg);
 		
-		// testing with multiple additional data
-		// console.log(!!CryptoJS.Streebog256);
-		// console.log(typeof CryptoJS.Streebog256);
-		// console.log(typeof CryptoJS.algo.Streebog);
 		var hash = CryptoJS.Streebog256(msgBytes);
-		assert(hash.toString(), vec.o256, "hash matches");
-		// var hash = CryptoJS.Streebog512(msgBytes);
-		// assert(hash.toString(), vec.o512, "hash matches");
+		assert(hash.toString(), vec.o256, "hash 256 matches");
+		
+		hash = CryptoJS.Streebog512(msgBytes);
+		assert(hash.toString(), vec.o512, "hash 512 matches");
 	});
 })();
 
