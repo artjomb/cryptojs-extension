@@ -428,7 +428,6 @@
 				cache = self._streebogCache,
 				i;
 			for(i = 0; i < self.blockSize; i++) {
-				// console.log("Copy word: " + M[i + offset]);
 				cache.words.push(M[i + offset]);
 				cache.sigBytes += 4;
 			}
