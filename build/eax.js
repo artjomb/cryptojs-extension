@@ -414,7 +414,7 @@
             ext.dbl(K1);
             
             // Step 3
-            if (!this._isTwo()) {
+            if (!this._isTwo) {
                 var K2 = K1.clone();
                 ext.dbl(K2);
             } else {
@@ -486,9 +486,7 @@
             return aesBlock(this._K, M_last);
         },
         
-        _isTwo: function(){
-            return false;
-        }
+        _isTwo: false
     });
     
     /**
@@ -505,9 +503,7 @@
     
     C.algo.OMAC1 = CMAC;
     C.algo.OMAC2 = CMAC.extend({
-        _isTwo: function(){
-            return true;
-        }
+        _isTwo: true
     });
 })(CryptoJS);
 
