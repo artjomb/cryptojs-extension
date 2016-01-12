@@ -11,7 +11,8 @@
 		"eax": [ "common-bit-ops", "common", "cmac" ],
 		"hkdf" : [ ],
 		"blowfish": [ ],
-		"gost-streebog": [ ]
+		"gost-streebog": [ ],
+		"gost28147": [ ]
 	},
 	"licenseHeader": "/*\n * The MIT License\n *\n * (MIT)Copyright (c) 2015 artjomb\n */\n"
 }

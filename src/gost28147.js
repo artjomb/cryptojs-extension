@@ -29,28 +29,30 @@
 
 	(function init_sbox_x(sbox, sbox_x)
 	{
-		var i, j, k;
+		var i, j, k, x;
 
 		for (i = 0, j = 0; i < 4; i++, j += 2) {
 			sbox_x.push([]);
 			for (k = 0; k < 256; k++) {
-				sbox_x[i][k] = (sbox[j][k & 0x0f] | sbox[j+1][k>>4] << 4) << (j*4);
-				sbox_x[i][k] = sbox_x[i][k] << 11 | sbox_x[i][k] >> (32-11);
+				x = (sbox[j][k & 0x0f] | sbox[j+1][k>>4] << 4) << (j*4);
+				sbox_x[i][k] = x << 11 | x >>> 21;
 			}
 		}
 	}(sbox, sbox_x));
 
 	function f(word)
 	{
-		return sbox_x[3][word >> 24] ^
-			sbox_x[2][(word & 0x00ff0000) >> 16] ^
-			sbox_x[1][(word & 0x0000ff00) >>  8] ^
+		return sbox_x[3][word >>> 24] ^
+			sbox_x[2][(word & 0x00ff0000) >>> 16] ^
+			sbox_x[1][(word & 0x0000ff00) >>>  8] ^
 			sbox_x[0][(word & 0x000000ff)];
 	}
 
 	function encrypt_block(l, r, key)
 	{
 		var i;
+		l = switch_word_endianness(l);
+		r = switch_word_endianness(r);
 
 		for (i = 0; i < 23; i += 2) {
 			l ^= f(r + key[i % 8]);
@@ -62,12 +64,14 @@
 			r ^= f(l + key[31-(i+1)]);
 		}
 
-		return [r, l];
+		return [switch_word_endianness(l), switch_word_endianness(r)];
 	}
 
 	function decrypt_block(l, r, key)
 	{
 		var i;
+		l = switch_word_endianness(l);
+		r = switch_word_endianness(r);
 
 		for (i = 0; i < 7; i += 2) {
 			l ^= f(r + key[i]);
@@ -79,7 +83,7 @@
 			r ^= f(l + key[(31-(i+1)) % 8]);
 		}
 
-		return [r, l];
+		return [switch_word_endianness(l), switch_word_endianness(r)];
 	}
 
 	function calc_mac(l, r, key)
@@ -94,6 +98,11 @@
 		return [l, r];
 	}
 	
+	function switch_word_endianness(word) {
+		return word >>> 24 | ((word >>> 8) & 0xff00) | 
+			(word & 0xff00) << 8 | (word & 0xff) << 24;
+	}
+	
 	function check_key(keyWordArray){
 		var words = keyWordArray.words,
 			i;
@@ -103,23 +112,25 @@
 		for(i = words.length; i < 8; i++) {
 			words.push(0);
 		}
-		return words;
+		return words.slice(0, 8).map(switch_word_endianness);
 	}
 	
 	/**
 	 * GOST 28147-89 (ГОСТ 28147-89) block cipher algorithm.
 	 */
 	var Gost28147 = C_algo.Gost28147 = BlockCipher.extend({
-		_doReset: function () {},
+		_doReset: function () {
+			this.__ck = check_key(this._key);
+		},
 
 		encryptBlock: function (M, offset) {
-			var block = encrypt_block(M[offset], M[offset+1], check_key(this._key))
+			var block = encrypt_block(M[offset+1], M[offset], this.__ck)
 			M[offset] = block[0];
 			M[offset+1] = block[1];
 		},
 
 		decryptBlock: function (M, offset) {
-			var block = decrypt_block(M[offset], M[offset+1], check_key(this._key))
+			var block = decrypt_block(M[offset+1], M[offset], this.__ck)
 			M[offset] = block[0];
 			M[offset+1] = block[1];
 		},
