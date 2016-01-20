@@ -48,7 +48,7 @@ var stats = { passed: 0, failed: 0 };
 	vectors.forEach(function(vec, i){
 		console.log("Message: '" + vec.msg + "'");
 		var msgChunk, hash;
-		var msgBytes = CryptoJS.enc.Hex.parse(vec.msg);
+		var msgBytes = CryptoJS.enc.Utf8.parse(vec.msg);
 		
 		hash = CryptoJS.Neeva(msgBytes);
 		assert(hash.toString(), vec.hash, "hash matches");

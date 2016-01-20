@@ -61,13 +61,11 @@
 				cv[j] = word;
 			}
 			
-			// XOR 3 16-bit words into the first one 4 times
+			// ADD 3 16-bit words into the first one 4 times
 			for(j = 0; j < 4; j++) {
-				word = cv[j*2];
-				word ^= word << 16;
-				word ^= cv[j*2+1] & 0xffff0000;
-				word ^= cv[j*2+1] << 16;
-				cv[j] = word;
+				word = cv[j*2+1] & 0xffff;
+				cv[2*j] = (((cv[j*2] >>> 16) + word) << 16) | ((cv[j*2] + word) & 0xffff);
+				cv[2*j+1] = (cv[2*j+1] + (word << 16)) | 0;
 			}
 			
 			// rotate left by 8 bit
@@ -79,9 +77,9 @@
 				prevCarry = carry;
 			}
 			
-			// "add" round constant RC[i]
+			// ADD round constant RC[i]
 			for(j = 0; j < 8; j++) {
-				cv[j] ^= RC[i][j];
+				cv[j] = (((cv[j] >>> 16) + (RC[i][j] >>> 16)) << 16) | ((cv[j] + RC[i][j]) & 0xffff);
 			}
 		}
 	}
