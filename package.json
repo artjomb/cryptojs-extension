@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "node build.js",
-    "testn": "cd test",
-    "test": "cd test && node gost28147.js && node gost-streebog.js && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
+    "testn": "cd test && node tea.js",
+    "test": "cd test && node tea.js && node gost28147.js && node gost-streebog.js && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
   },
   "keywords": [
     "crypto",
