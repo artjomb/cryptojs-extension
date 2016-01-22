@@ -42,9 +42,10 @@
 
 		decryptBlock: function (M, offset) {
 			var k = this._key.words;
-			var v0 = M[offset], v1 = M[offset+1], sum = 0xC6EF3720, i;
+			var rounds = this.nRounds;
+			var v0 = M[offset], v1 = M[offset+1], sum = (rounds * delta) | 0, i;
 			var k0 = k[0], k1 = k[1], k2 = k[2], k3 = k[3];
-			for (i = 0; i < this.nRounds; i++) {
+			for (i = 0; i < rounds; i++) {
 				v1 = (v1 - (((v0 << 4) + k2) ^ (v0 + sum) ^ ((v0 >>> 5) + k3))) | 0;
 				v0 = (v0 - (((v1 << 4) + k0) ^ (v1 + sum) ^ ((v1 >>> 5) + k1))) | 0;
 				sum = (sum - delta) | 0;
@@ -56,6 +57,38 @@
 		nRounds: 32,
 		blockSize: 64/32
 	});
+	
+	/**
+	 * XTEA block cipher algorithm.
+	 */
+	var XTEA = C_algo.XTEA = TEA.extend({
+		encryptBlock: function (M, offset) {
+			var k = this._key.words;
+			var v0 = M[offset], v1 = M[offset+1], sum = 0, i;
+			var k0 = k[0], k1 = k[1], k2 = k[2], k3 = k[3];
+			for (i = 0; i < this.nRounds; i++) {
+				v0 = (v0 + ((((v1 << 4) ^ (v1 >>> 5)) + v1) ^ (sum + k[sum & 3]))) | 0;
+				sum = (sum + delta) | 0;
+				v1 = (v1 + ((((v0 << 4) ^ (v0 >>> 5)) + v0) ^ (sum + k[(sum >>> 11) & 3]))) | 0;
+			}
+			M[offset] = v0; 
+			M[offset + 1] = v1;
+		},
+
+		decryptBlock: function (M, offset) {
+			var k = this._key.words;
+			var rounds = this.nRounds;
+			var v0 = M[offset], v1 = M[offset+1], sum = (rounds * delta) | 0, i;
+			var k0 = k[0], k1 = k[1], k2 = k[2], k3 = k[3];
+			for (i = 0; i < this.nRounds; i++) {
+				v1 = (v1 - ((((v0 << 4) ^ (v0 >>> 5)) + v0) ^ (sum + k[(sum >>> 11) & 3]))) | 0;
+				sum = (sum - delta) | 0;
+				v0 = (v0 - ((((v1 << 4) ^ (v1 >>> 5)) + v1) ^ (sum + k[sum & 3]))) | 0;
+			}
+			M[offset] = v0; 
+			M[offset + 1] = v1;
+		}
+	});
 
 	/**
 	 * Shortcut functions to the cipher's object interface.
@@ -66,4 +99,14 @@
 	 *     var plaintext  = CryptoJS.TEA.decrypt(ciphertext, key, cfg);
 	 */
 	C.TEA = BlockCipher._createHelper(TEA);
+	
+	/**
+	 * Shortcut functions to the cipher's object interface.
+	 *
+	 * @example
+	 *
+	 *     var ciphertext = CryptoJS.XTEA.encrypt(message, key, cfg);
+	 *     var plaintext  = CryptoJS.XTEA.decrypt(ciphertext, key, cfg);
+	 */
+	C.XTEA = BlockCipher._createHelper(XTEA);
 }(CryptoJS));
