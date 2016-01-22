@@ -1,0 +1,1128 @@
+
+Input: abc8	0001	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	
+After Round No.:0	abc8	0001	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	0000	
+After S-Box	f843	ccc5	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	cccc	
+After Permutation	348f	0009	0000	cccc	0000	0000	0000	cccc	0000	0000	0000	cccc	0000	0000	0000	cccc	
+After Rotation	8f00	0900	00cc	cc00	0000	0000	00cc	cc00	0000	0000	00cc	cc00	0000	0000	00cc	cc34	
+After Add Round Constant	56b1	2240	2cb3	275f	e342	30e1	c7aa	4111	503b	802a	9773	c146	fd02	a80d	8d7e	4497	
+After Round No.:1	56b1	2240	2cb3	275f	e342	30e1	c7aa	4111	503b	802a	9773	c146	fd02	a80d	8d7e	4497	
+After S-Box	0a85	669c	648b	6d02	1b96	bc15	4dff	9555	0cb8	3c6f	eddb	459a	27c6	f3c7	37d1	99ed	
+After Permutation	6787	0b9e	0989	6d02	8ec3	2940	d8aa	9555	4922	79f5	a841	459a	be2b	6a2a	ae3c	99ed	
+After Rotation	870b	9e09	896d	028e	c329	40d8	aa95	5549	2279	f5a8	4145	9abe	2b6a	2aae	3c99	ed67	
+After Add Round Constant	f09b	5e37	ae3c	9d47	0f2e	bf26	b307	b6ab	ff44	8d72	6953	b789	9923	8c0f	96ab	5cfe	
+After Round No.:2	f09b	5e37	ae3c	9d47	0f2e	bf26	b307	b6ab	ff44	8d72	6953	b789	9923	8c0f	96ab	5cfe	
+After S-Box	2ce8	01bd	f1b4	e79d	c261	826a	8bcd	8af8	2299	37d6	ae0b	8d3e	ee6b	34c2	eaf8	0421	
+After Permutation	cb75	e620	1629	e79d	4899	0892	0135	8af8	afa7	bae8	2335	8d3e	ea4a	30e3	eed9	0421	
+After Rotation	75e6	2016	29e7	9d48	9908	9201	358a	f8af	a7ba	e823	358d	3eea	4a30	e3ee	d904	21cb	
+After Add Round Constant	7508	5927	21dd	a20a	0bdf	7e73	10e2	b00f	0e57	cb60	23f8	1f0a	6f80	a827	ab74	1229	
+After Round No.:3	7508	5927	21dd	a20a	0bdf	7e73	10e2	b00f	0e57	cb60	23f8	1f0a	6f80	a827	ab74	1229	
+After S-Box	d0c3	0e6d	6577	f6cf	c872	d1db	5c16	8cc2	c10d	48ac	6b23	52cf	a23c	f36d	f8d9	566e	
+After Permutation	260c	f8a2	93b8	f6cf	44b0	5d19	d0d4	8cc2	93c2	1a63	39ec	52cf	f452	a503	aeb7	566e	
+After Rotation	0cf8	a293	b8f6	cf44	b05d	19d0	d48c	c293	c21a	6339	ec52	cff4	52a5	03ae	b756	6e26	
+After Add Round Constant	029e	6515	c5a2	e9f7	62c0	0dc6	5fa9	fee6	d3a5	1d0e	1173	8d46	615c	a593	5b21	0c81	
+After Round No.:4	029e	6515	c5a2	e9f7	62c0	0dc6	5fa9	fee6	d3a5	1d0e	1173	8d46	615c	a593	5b21	0c81	
+After S-Box	c6e1	a050	40f6	1e2d	a64c	c74a	02fe	211a	7bf0	57c1	55db	379a	a504	f0eb	0865	c435	
+After Permutation	d8cc	be7d	5edb	1e2d	8756	e650	23e4	211a	4c6a	605b	6241	379a	6131	34de	cc50	c435	
+After Rotation	ccbe	7d5e	db1e	2d87	56e6	5023	e421	1a4c	6a60	5b62	4137	9a61	3134	decc	50c4	35d8	
+After Add Round Constant	e2d0	8ebc	5d1f	ddb8	758a	2260	0fd4	1352	ed8a	bb7b	5c78	1c3a	2526	80f7	e735	2992	
+After Round No.:5	e2d0	8ebc	5d1f	ddb8	758a	2260	0fd4	1352	ed8a	bb7b	5c78	1c3a	2526	80f7	e735	2992	
+After S-Box	167c	3184	0752	7783	d03f	66ac	c279	5b06	173f	88d8	04d3	54bf	606a	3c2d	1db0	6ee6	
+After Permutation	61ff	4607	70d1	7783	8b39	3daa	997f	5b06	4380	dc67	506c	54bf	0e8c	52cb	7356	6ee6	
+After Rotation	ff46	0770	d177	838b	393d	aa99	7f5b	0643	80dc	6750	6c54	bf0e	8c52	cb73	566e	e661	
+After Add Round Constant	d1df	b5a3	ab94	d260	26d9	0710	83d6	7bd2	60f7	199d	b455	6249	0ca2	ccb2	11a7	5175	
+After Round No.:6	d1df	b5a3	ab94	d260	26d9	0710	83d6	7bd2	60f7	199d	b455	6249	0ca2	ccb2	11a7	5175	
+After S-Box	7572	80fb	f8e9	76ac	6a7e	cd5c	3b7a	d876	ac2d	5ee7	8900	a69e	c4f6	4486	55fd	05d0	
+After Permutation	03de	f657	8e45	76ac	b208	152a	e30c	d876	0ab3	f879	2f9e	a69e	c126	4156	502d	05d0	
+After Rotation	def6	578e	4576	acb2	0815	2ae3	0cd8	760a	b3f8	792f	9ea6	9ec1	2641	5650	2d05	d003	
+After Add Round Constant	fc0e	559f	12e0	532a	d7f5	7e28	20f0	5de5	6cab	fb51	a136	8a95	48d2	fd4f	9951	e746	
+After Round No.:7	fc0e	559f	12e0	532a	d7f5	7e28	20f0	5de5	6cab	fb51	a136	8a95	48d2	fd4f	9951	e746	
+After S-Box	24c1	00e2	561c	0b6f	7d20	d163	6c2c	0710	a4f8	2805	f5ba	3fe0	9376	2792	ee05	1d9a	
+After Permutation	2fae	0b8d	5d73	0b6f	7a30	d673	6b3c	0710	9b18	17e5	ca5a	3fe0	8eec	3a08	f39f	1d9a	
+After Rotation	ae0b	8d5d	730b	6f7a	30d6	736b	3c07	109b	1817	e5ca	5a3f	e08e	ec3a	08f3	9f1d	9a2f	
+After Add Round Constant	f907	eb6f	eab2	a4d8	f18b	158e	56a5	3d67	1b0c	3b9e	cdd7	16e4	6807	f884	7831	6a11	
+After Round No.:8	f907	eb6f	eab2	a4d8	f18b	158e	56a5	3d67	1b0c	3b9e	cdd7	16e4	6807	f884	7831	6a11	
+After S-Box	2ecd	18a2	1f86	f973	2538	5031	0af0	b7ad	58c4	b8e1	477d	5a19	a3cd	2339	d3b5	af55	
+After Permutation	d7be	e1d1	e6f5	f973	9295	e79c	bd5d	b7ad	02dd	e2f8	1d64	5a19	0c98	8c6c	7ce0	af55	
+After Rotation	bee1	d1e6	f5f9	7392	95e7	9cbd	5db7	ad02	dde2	f81d	645a	190c	988c	6c7c	e0af	55d7	
+After Add Round Constant	abc9	82b9	2c13	fee8	35cf	6b88	8f70	99d9	c512	cd37	1e53	646e	9be3	43a4	de6d	3049	
+After Round No.:9	abc9	82b9	2c13	fee8	35cf	6b88	8f70	99d9	c512	cd37	1e53	646e	9be3	43a4	de6d	3049	
+After S-Box	f84e	368e	645b	2113	b042	a833	32dc	ee7e	4056	47bd	510b	a9a1	e81b	9bf9	71a7	bc9e	
+After Permutation	d95d	179d	4548	2113	5e3c	464d	dca2	ee7e	e9f7	ee1c	f8aa	a9a1	5485	2767	cd39	bc9e	
+After Rotation	5d17	9d45	4821	135e	3c46	4ddc	a2ee	7ee9	f7ee	1cf8	aaa9	a154	8527	67cd	39bc	9ed9	
+After Add Round Constant	7b74	c8c0	44c3	042a	1f49	009b	d6ac	bcad	c64e	a51b	4364	064a	90a1	42d6	65b6	6d02	
+After Round No.:10	7b74	c8c0	44c3	042a	1f49	009b	d6ac	bcad	c64e	a51b	4364	064a	90a1	42d6	65b6	6d02	
+After S-Box	d8d9	434c	994b	c96f	529e	cce8	7af4	84f7	4a91	f058	9ba9	ca9f	ecf5	967a	a08a	a7c6	
+After Permutation	11b6	8a23	5024	c96f	d669	481f	fe03	84f7	800e	3ac7	5136	ca9f	4b33	31bc	074c	a7c6	
+After Rotation	b68a	2350	24c9	6fd6	6948	1ffe	0384	f780	0e3a	c751	36ca	9f4b	3331	bc07	4ca7	c611	
+After Add Round Constant	402c	c9f2	dfc1	eb5d	6f32	f752	4b55	5ab4	55d4	9949	b110	1d5d	7911	f2f9	5e44	b6fc	
+After Round No.:11	402c	c9f2	dfc1	eb5d	6f32	f752	4b55	5ab4	55d4	9949	b110	1d5d	7911	f2f9	5e44	b6fc	
+After S-Box	9c64	4e26	7245	1807	a2b6	2d06	9800	0f89	0079	ee9e	855c	5707	de55	262e	0199	8a24	
+After Permutation	8463	5621	6a42	1807	ad3f	228f	9789	0f89	577e	b999	d25b	5707	5471	ac0a	8bbd	8a24	
+After Rotation	6356	216a	4218	07ad	3f22	8f97	890f	8957	7eb9	99d2	5b57	0754	71ac	0a8b	bd8a	2484	
+After Add Round Constant	fa0f	9202	60d0	9198	d7ac	2656	8b0b	a728	b8c5	ab67	7556	ea99	024c	08c1	7faf	9922	
+After Round No.:12	fa0f	9202	60d0	9198	d7ac	2656	8b0b	a728	b8c5	ab67	7556	ea99	024c	08c1	7faf	9922	
+After S-Box	2fc2	e6c6	ac7c	e5e3	7df4	6a0a	38c8	fd63	8340	f8ad	d00a	1fee	c694	c345	d2f2	ee66	
+After Permutation	ca21	0325	499f	e5e3	8097	9769	c5ab	fd63	9cae	e743	cfe4	1fee	28f2	2d23	3c94	ee66	
+After Rotation	2103	2549	9fe5	e380	9797	69c5	abfd	639c	aee7	43cf	e41f	ee28	f22d	233c	94ee	66ca	
+After Add Round Constant	31f5	32ad	5e22	85f8	c8ab	6812	a6ec	e609	6075	b1f4	b361	ed97	14d3	27df	de56	dfa0	
+After Round No.:13	31f5	32ad	5e22	85f8	c8ab	6812	a6ec	e609	6075	b1f4	b361	ed97	14d3	27df	de56	dfa0	
+After S-Box	b520	b6f7	0166	3023	43f8	a356	fa14	1ace	acd0	8529	8ba5	17ed	597b	6d72	710a	72fc	
+After Permutation	8503	86d4	3145	3023	5936	b998	e0da	1ace	bb3d	92c4	9c48	17ed	2b87	1f8e	03f6	72fc	
+After Rotation	0386	d431	4530	2359	36b9	98e0	da1a	cebb	3d92	c49c	4817	ed2b	871f	8e03	f672	fc85	
+After Add Round Constant	13d3	f10e	2b9f	6a8a	5de2	5c01	bae4	0a54	112d	39e2	bafa	7e38	f16c	6a23	40eb	867b	
+After Round No.:14	13d3	f10e	2b9f	6a8a	5de2	5c01	bae4	0a54	112d	39e2	bafa	7e38	f16c	6a23	40eb	867b	
+After S-Box	5b7b	25c1	68e2	af3f	0716	04c5	8f19	cf09	5567	be16	8f2f	d1b3	25a4	af6b	9c18	3ad8	
+After Permutation	f444	8afe	c7dd	af3f	c81f	cbcc	4010	cf09	84d4	6fa5	5e9c	d1b3	1f7c	95b3	a6c0	3ad8	
+After Rotation	448a	fec7	ddaf	3fc8	1fcb	cc40	10cf	0984	d46f	a55e	9cd1	b31f	7c95	b3a6	c03a	d8f4	
+After Add Round Constant	7fbe	6ba7	34b2	1e46	d23c	5d70	bfea	4bea	3519	6882	db14	6542	c82a	74b3	e90b	0e1c	
+After Round No.:15	7fbe	6ba7	34b2	1e46	d23c	5d70	bfea	4bea	3519	6882	db14	6542	c82a	74b3	e90b	0e1c	
+After S-Box	d281	a8fd	b986	519a	76b4	07dc	821f	981f	b05e	a336	7859	a096	436f	d98b	1ec8	c154	
+After Permutation	831b	f967	e81c	519a	eeab	9fc3	1a00	981f	10c8	03a0	d8cf	a096	823b	18df	df9c	c154	
+After Rotation	1bf9	67e8	1c51	9aee	ab9f	c31a	0098	1f10	c803	a0d8	cfa0	9682	3b18	dfdf	9cc1	5483	
+After Add Round Constant	9466	dff1	3e4a	e3f9	3fe6	247c	6137	f8f1	c8c5	9e8b	179e	b88a	4383	fd6e	5f06	eae4	
+After Round No.:16	9466	dff1	3e4a	e3f9	3fe6	247c	6137	f8f1	c8c5	9e8b	179e	b88a	4383	fd6e	5f06	eae4	
+After S-Box	e9aa	7225	b19f	1b2e	b21a	69d4	a5bd	2325	4340	e138	5de1	833f	9b3b	27a1	02ca	1f19	
+After Permutation	f284	690b	aab1	1b2e	913f	4af1	8698	2325	c07f	6207	dede	833f	8422	38b8	1dd3	1f19	
+After Rotation	8469	0baa	b11b	2e91	3f4a	f186	9823	25c0	7f62	07de	de83	3f84	2238	b81d	d31f	19f2	
+After Add Round Constant	0ced	6c5f	dab7	1ca5	2153	4f8c	0ee7	1433	2e53	7ff7	54ff	1872	b45b	ce46	fbe7	5155	
+After Round No.:17	0ced	6c5f	dab7	1ca5	2153	4f8c	0ee7	1433	2e53	7ff7	54ff	1872	b45b	ce46	fbe7	5155	
+After S-Box	c417	a402	7f8d	54f0	650b	9234	c11d	59bb	610b	d22d	0922	53d6	8908	419a	281d	0500	
+After Permutation	90e7	f0f2	2b7d	54f0	3cb0	cb8f	98a6	59bb	32dd	81fb	5af4	53d6	8c08	449a	2d1d	0500	
+After Rotation	e7f0	f22b	7d54	f03c	b0cb	8f98	a659	bb32	dd81	fb5a	f453	d68c	0844	9a2d	1d05	0090	
+After Add Round Constant	cfff	3887	1cd0	ecb4	5560	c94f	ddda	e7ee	ba54	6ea1	c3a0	16b1	b4b4	3c70	73f4	0663	
+After Round No.:18	cfff	3887	1cd0	ecb4	5560	c94f	ddda	e7ee	ba54	6ea1	c3a0	16b1	b4b4	3c70	73f4	0663	
+After S-Box	4222	b33d	547c	1489	00ac	4e92	777f	1d11	8f09	a1f5	4bfc	5a85	8989	b4dc	db29	caab	
+After Permutation	56ab	a7b4	40f5	1489	1dbd	5383	6a6e	1d11	d58c	fb70	1179	5a85	4322	7e77	1182	caab	
+After Rotation	aba7	b440	f514	891d	bd53	836a	6e1d	11d5	8cfb	7011	795a	8543	227e	7711	82ca	ab56	
+After Add Round Constant	79dd	2018	6dbd	aaa4	4447	8148	615b	3caa	9d0d	5dce	5aea	0b33	0e4c	5f57	bbc4	1c7c	
+After Round No.:19	79dd	2018	6dbd	aaa4	4447	8148	615b	3caa	9d0d	5dce	5aea	0b33	0e4c	5f57	bbc4	1c7c	
+After S-Box	de77	6c53	a787	fff9	999d	3593	a508	b4ff	e7c7	0741	0f1f	c8bb	c194	020d	8849	54d4	
+After Permutation	218e	93aa	587e	fff9	2d62	816c	11f7	b4ff	2f7c	cffa	c7a4	c8bb	9540	56d9	dc9d	54d4	
+After Rotation	8e93	aa58	7eff	f92d	6281	6c11	f7b4	ff2f	7ccf	fac7	a4c8	bb95	4056	d9dc	9d54	d421	
+After Add Round Constant	0537	08f7	6a2b	3a50	9985	b438	7808	b3c3	32fc	42e2	014c	bf36	0b0b	2c77	87b6	8b66	
+After Round No.:20	0537	08f7	6a2b	3a50	9985	b438	7808	b3c3	32fc	42e2	014c	bf36	0b0b	2c77	87b6	8b66	
+After S-Box	c0bd	c32d	af68	bf0c	ee30	89b3	d3c3	8b4b	b624	9616	c594	82ba	c8c8	64dd	3d8a	38aa	
+After Permutation	7fb1	7c21	1064	bf0c	657b	02f8	5888	8b4b	349e	14ac	472e	82ba	f062	5c77	0520	38aa	
+After Rotation	b17c	2110	64bf	0c65	7b02	f858	888b	4b34	9e14	ac47	2e82	baf0	625c	7705	2038	aa7f	
+After Add Round Constant	5f72	f4f9	9625	b35d	0db2	a22d	25e0	ecd9	bab5	c7e3	e3b2	92e5	3765	bde2	bd26	84ab	
+After Round No.:21	5f72	f4f9	9625	b35d	0db2	a22d	25e0	ecd9	bab5	c7e3	e3b2	92e5	3765	bde2	bd26	84ab	
+After S-Box	02d6	292e	ea60	8b07	c786	f667	601c	147e	8f80	4d1b	1b86	e610	bda0	8716	876a	39f8	
+After Permutation	89d1	a229	6167	8b07	d3f8	e219	7462	147e	6990	ab0b	fd96	e610	8458	beee	be92	39f8	
+After Rotation	d1a2	2961	678b	07d3	f8e2	1974	6214	7e69	90ab	0bfd	96e6	1084	58be	eebe	9239	f889	
+After Add Round Constant	03e8	da6d	0006	1f22	d2d7	b1b8	ac70	c152	7ae4	18f2	5bab	b681	133c	f8c6	87d6	2799	
+After Round No.:22	03e8	da6d	0006	1f22	d2d7	b1b8	ac70	c152	7ae4	18f2	5bab	b681	133c	f8c6	87d6	2799	
+After S-Box	cb13	7fa7	ccca	5266	767d	8583	f4dc	4506	df19	5326	08f8	8a35	5bb4	234a	3d7a	6dee	
+After Permutation	9975	2dc1	9eac	5266	337b	c085	b1da	4506	552c	d913	82cd	8a35	365a	4ea4	5094	6dee	
+After Rotation	752d	c19e	ac52	6633	7bc0	85b1	da45	0655	2cd9	1382	cd8a	3536	5a4e	a450	946d	ee99	
+After Add Round Constant	1466	c583	dfdd	ca48	54eb	ccb8	2072	554d	551d	0b0b	4b59	c4a6	8861	c056	baef	9833	
+After Round No.:23	1466	c583	dfdd	ca48	54eb	ccb8	2072	554d	551d	0b0b	4b59	c4a6	8861	c056	baef	9833	
+After S-Box	59aa	403b	7277	4f93	0918	4483	6cd6	0097	0057	c8c8	980e	49fa	33a5	4c0a	8f12	e3bb	
+After Permutation	1639	0fa8	3de4	4f93	098f	4414	6c41	0097	49ad	8132	d1f4	49fa	d01e	afb1	6ca9	e3bb	
+After Rotation	390f	a83d	e44f	9309	8f44	146c	4100	9749	ad81	32d1	f449	fad0	1eaf	b16c	a9e3	bb16	
+After Add Round Constant	aa0e	d201	a56e	ab09	1d19	4818	1824	23e4	b7e5	618b	e874	4a82	2747	d9f7	e331	1a49	
+After Round No.:24	aa0e	d201	a56e	ab09	1d19	4818	1824	23e4	b7e5	618b	e874	4a82	2747	d9f7	e331	1a49	
+After S-Box	ffc1	76c5	f0a1	f8ce	575e	9353	5369	6b19	8d10	a538	13d9	9f36	6d9d	7e2d	1bb5	5f9e	
+After Permutation	070f	8e0b	086f	f8ce	3c47	f84a	3870	6b19	1226	3a0e	8cef	9f36	3203	21b3	442b	5f9e	
+After Rotation	0f8e	0b08	6ff8	ce3c	47f8	4a38	706b	1912	263a	0e8c	ef9f	3632	0321	b344	2b5f	9e07	
+After Add Round Constant	db19	fae7	4f53	f1c7	646b	5643	6373	6ecd	edda	ce31	9dd4	4cdd	81fe	e5b3	8170	4c4f	
+After Round No.:25	db19	fae7	4f53	f1c7	646b	5643	6373	6ecd	edda	ce31	9dd4	4cdd	81fe	e5b3	8170	4c4f	
+After S-Box	785e	2f1d	920b	254d	a9a8	0a9b	abdb	a147	177f	41b5	e779	9477	3521	108b	35dc	9492	
+After Permutation	5d13	0a50	b746	254d	08ef	abdc	0a9c	a147	8308	d5c2	730e	9477	a1b3	8419	a14e	9492	
+After Rotation	130a	50b7	4625	4d08	efab	dc0a	9ca1	4783	08d5	c273	0e94	77a1	b384	19a1	4e94	925d	
+After Add Round Constant	f2f5	791e	7590	1cc9	9f5e	ad24	345c	2de2	c9d4	7bf0	60fd	8b9d	5ad1	983a	aa3d	3603	
+After Round No.:26	f2f5	791e	7590	1cc9	9f5e	ad24	345c	2de2	c9d4	7bf0	60fd	8b9d	5ad1	983a	aa3d	3603	
+After S-Box	2620	de51	d0ec	544e	e201	f769	b904	6716	4e79	d82c	ac27	38e7	0f75	e3bf	ffb7	bacb	
+After Permutation	726e	8a1f	84a2	544e	8517	907f	de12	6716	769e	e0cb	94c0	38e7	b5be	5974	457c	bacb	
+After Rotation	6e8a	1f84	a254	4e85	1790	7fde	1267	1676	9ee0	cb94	c038	e7b5	be59	7445	7cba	cb72	
+After Add Round Constant	0e09	681a	e8c7	a14d	3c59	c18d	5bed	8287	c34f	10bd	9594	f2c6	cf12	78ba	f1de	60a5	
+After Round No.:27	0e09	681a	e8c7	a14d	3c59	c18d	5bed	8287	c34f	10bd	9594	f2c6	cf12	78ba	f1de	60a5	
+After S-Box	c1ce	a35f	134d	f597	b40e	4537	0817	363d	4b92	5c87	e0e9	264a	4256	d38f	2571	acf0	
+After Permutation	3459	56c8	e6da	f597	8233	730a	3e2a	363d	6dd8	7acd	c6a3	264a	eea6	7f7f	8981	acf0	
+After Rotation	5956	c8e6	daf5	9782	3373	0a3e	2a36	3d6d	d87a	cdc6	a326	4aee	a67f	7f89	81ac	f034	
+After Add Round Constant	d2ef	cfe8	3d11	ea93	78aa	93d4	6e83	ffd4	3b16	efe0	4095	0ec5	0266	9cf9	cc8d	aaf6	
+After Round No.:28	d2ef	cfe8	3d11	ea93	78aa	93d4	6e83	ffd4	3b16	efe0	4095	0ec5	0266	9cf9	cc8d	aaf6	
+After S-Box	7612	4213	b755	1feb	d3ff	eb79	a13b	2279	b85a	121c	9ce0	c140	c6aa	e42e	4437	ff2a	
+After Permutation	69f9	5df8	a8be	1feb	f186	c900	8342	2279	791a	d35c	5da0	c140	3980	1b04	bb1d	ff2a	
+After Rotation	f95d	f8a8	be1f	ebf1	86c9	0083	4222	7979	1ad3	5c5d	a0c1	4039	801b	04bb	1dff	2a69	
+After Add Round Constant	58c4	2a67	2748	0fe2	3d9a	dd6a	8b27	4143	6b1d	2800	717a	9c00	1d92	8bbd	7582	1038	
+After Round No.:29	58c4	2a67	2748	0fe2	3d9a	dd6a	8b27	4143	6b1d	2800	717a	9c00	1d92	8bbd	7582	1038	
+After S-Box	0349	6fad	6d93	c216	b7ef	77af	386d	959b	a857	63cc	d5df	e4cc	57e6	3887	d036	5cb3	
+After Permutation	c15f	adbb	af85	c216	2274	e234	adf6	959b	4c9b	8700	3113	e4cc	0b55	6434	8c85	5cb3	
+After Rotation	5fad	bbaf	85c2	1622	74e2	34ad	f695	9b4c	9b87	0031	13e4	cc0b	5564	348c	855c	b3c1	
+After Add Round Constant	4bca	c93c	632d	73af	43fe	8f22	9643	190c	5d8d	48cc	dcd5	1998	f3ae	a057	a7e3	7b84	
+After Round No.:30	4bca	c93c	632d	73af	43fe	8f22	9643	190c	5d8d	48cc	dcd5	1998	f3ae	a057	a7e3	7b84	
+After S-Box	984f	4eb4	ab67	dbf2	9b21	3266	ea9b	5ec4	0737	9344	7470	5ee3	2bf1	fc0d	fd1b	d839	
+After Permutation	43bd	9546	7095	dbf2	c5e5	6ca2	b45f	5ec4	59d4	cda7	2a93	5ee3	f3c8	2434	2522	d839	
+After Rotation	bd95	4670	95db	f2c5	e56c	a2b4	5f5e	c459	d4cd	a72a	935e	e3f3	c824	3425	22d8	3943	
+After Add Round Constant	b9c2	d640	e16a	4af4	9342	c310	08d7	7aa1	7793	a3c5	9428	6f2b	64fd	7e63	1be2	0d78	
+After Round No.:31	b9c2	d640	e16a	4af4	9342	c310	08d7	7aa1	7793	a3c5	9428	6f2b	64fd	7e63	1be2	0d78	
+After S-Box	8e46	7a9c	15af	9f29	eb96	4b5c	c37d	dff5	ddeb	fb40	e963	a268	a927	d1ab	5816	c7d3	
+After Permutation	116f	e5b5	8a86	9f29	3463	94a9	1c88	dff5	7f83	5928	4b0b	a268	6ef4	1678	9fc5	c7d3	
+After Rotation	6fe5	b58a	869f	2934	6394	a91c	88df	f57f	8359	284b	0ba2	686e	f416	789f	c5c7	d311	
+After Add Round Constant	b0c8	be3d	0ba0	ed5b	94c4	4ea3	1949	024b	d7ba	2192	fda3	de09	44cc	9672	f0a5	aeab	b0c8be3d
+Input: b0c8	be3d	0ba0	ed5b	94c4	4ea3	1949	024b	d7ba	2192	fda3	de09	44cc	9672	f0a5	aeab	
+After Round No.:0	b0c8	be3d	0ba0	ed5b	94c4	4ea3	1949	024b	d7ba	2192	fda3	de09	44cc	9672	f0a5	aeab	
+After S-Box	8c43	81b7	c8fc	1708	e949	91fb	5e9e	c698	7d8f	65e6	27fb	71ce	9944	ead6	2cf0	f1f8	
+After Permutation	9b4b	96bf	dff4	1708	2fd1	5763	9806	c698	0c41	1428	5635	71ce	68bc	1b2e	dd08	f1f8	
+After Rotation	4b96	bfdf	f417	082f	d157	6398	06c6	980c	4114	2856	3571	ce68	bc1b	2edd	08f1	f89b	
+After Add Round Constant	1347	d91f	1ffe	638e	b499	9479	cda4	0d1d	914f	a880	cc18	c3ae	b91d	d6ea	95a3	70fe	
+After Round No.:1	1347	d91f	1ffe	638e	b499	9479	cda4	0d1d	914f	a880	cc18	c3ae	b91d	d6ea	95a3	70fe	
+After S-Box	5b9d	7e52	5221	ab31	89ee	e9de	47f9	c757	e592	f33c	4453	4bf1	8e57	7a1f	e0fb	dc21	
+After Permutation	f0ac	d563	f910	ab31	4eb9	2e89	80ae	c757	ae63	b8cd	0fa2	4bf1	5276	a63e	3cda	dc21	
+After Rotation	acd5	63f9	10ab	314e	b92e	8980	aec7	57ae	63b8	cd0f	a24b	f152	76a6	3e3c	dadc	21f0	
+After Add Round Constant	1665	2427	357a	cc07	0533	07ce	b739	b910	4083	64d9	ca59	0e1d	e45f	9f9d	34ee	9187	
+After Round No.:2	1665	2427	357a	cc07	0533	07ce	b739	b910	4083	64d9	ca59	0e1d	e45f	9f9d	34ee	9187	
+After S-Box	5aa0	696d	b0df	44cd	c0bb	cd41	8dbe	8e5c	9c3b	a97e	4f0e	c157	1902	e2e7	b911	e53d	
+After Permutation	1e6d	2da0	f412	44cd	4ee7	431d	03e2	8e5c	5d6c	6829	8e59	c157	fc3f	07da	5c2c	e53d	
+After Rotation	6d2d	a0f4	1244	cd4e	e743	1d03	e28e	5c5d	6c68	298e	59c1	57fc	3f07	da5c	2ce5	3d1e	
+After Add Round Constant	6c4f	da05	0a3a	d210	5a1a	0975	bde6	13bd	d305	0ccb	482c	381c	6457	9e95	ff55	2d7c	
+After Round No.:3	6c4f	da05	0a3a	d210	5a1a	0975	bde6	13bd	d305	0ccb	482c	381c	6457	9e95	ff55	2d7c	
+After S-Box	a492	7fc0	cfbf	765c	0f5f	ced0	871a	5b87	7bc0	c448	9364	b354	a90d	e1e0	2200	67d4	
+After Permutation	d2ce	099c	b9e3	765c	54d8	9557	dc9d	5b87	c894	771c	2030	b354	ced9	8634	45d4	67d4	
+After Rotation	ce09	9cb9	e376	5c54	d895	57dc	9d5b	87c8	9477	1c20	30b3	54ce	d986	3445	d467	d4d2	
+After Add Round Constant	c3af	5f3b	f022	7707	8af8	4bd2	2878	c41b	a602	d5f5	55d4	1220	e83d	d62a	7832	732d	
+After Round No.:4	c3af	5f3b	f022	7707	8af8	4bd2	2878	c41b	a602	d5f5	55d4	1220	e83d	d62a	7832	732d	
+After S-Box	4bf2	02b8	2c66	ddcd	3f23	9876	63d3	4958	fac6	7020	0079	566c	13b7	7a6f	d3b6	db67	
+After Permutation	963f	df75	f1ab	ddcd	767b	d12e	2a8b	4958	acaa	264c	5615	566c	c8d0	a108	08d1	db67	
+After Rotation	3fdf	75f1	abdd	cd76	7bd1	2e2a	8b49	58ac	aa26	4c56	1556	6cc8	d0a1	0808	d1db	6796	
+After Add Round Constant	55f1	874f	2dde	7da7	9a75	0067	b6fc	51b2	2d50	ac6f	3097	eea1	c493	aa33	684c	5b50	
+After Round No.:5	55f1	874f	2dde	7da7	9a75	0067	b6fc	51b2	2d50	ac6f	3097	eea1	c493	aa33	684c	5b50	
+After S-Box	0025	3d92	6771	d7fd	efd0	ccad	8a24	0586	670c	f4a2	bced	11f5	49eb	ffbb	a394	080c	
+After Permutation	d7d8	ea6f	b08c	d7fd	ea56	c92b	8fa2	0586	76f9	e557	ad18	11f5	41e7	f7b7	ab98	080c	
+After Rotation	d8ea	6fb0	8cd7	fdea	56c9	2b8f	a205	8676	f9e5	57ad	1811	f541	e7f7	b7ab	9808	0cd7	
+After Add Round Constant	ab83	1de3	66f4	4cbf	4465	8806	a680	fc05	da00	09fa	6012	987c	6847	b8ea	5341	77eb	
+After Round No.:6	ab83	1de3	66f4	4cbf	4465	8806	a680	fc05	da00	09fa	6012	987c	6847	b8ea	5341	77eb	
+After S-Box	f83b	571b	aa29	9482	99a0	33ca	fa3c	24c0	7fcc	ce2f	ac56	e3d4	a39d	831f	0b95	dd18	
+After Permutation	6cb9	c399	3eab	9482	bd60	170a	defc	24c0	9c18	2dfb	4f82	e3d4	7e85	5e07	d68d	dd18	
+After Rotation	b9c3	993e	ab94	82bd	6017	0ade	fc24	c09c	182d	fb4f	82e3	d47e	855e	07d6	8ddd	186c	
+After Add Round Constant	d6db	974f	78fe	2935	2ff7	5e23	103c	a877	d0e0	7d71	8573	c052	a7ef	aed5	fa29	2faf	
+After Round No.:7	d6db	974f	78fe	2935	2ff7	5e23	103c	a877	d0e0	7d71	8573	c052	a7ef	aed5	fa29	2faf	
+After S-Box	7a78	ed92	d321	6eb0	622d	016b	5cb4	f3dd	7c1c	d7d5	30db	4c06	fd12	f170	2f6e	62f2	
+After Permutation	14c8	8322	bd91	6eb0	91f0	f2b6	af69	f3dd	301a	9bd3	7cdd	4c06	9fe0	9382	4d9c	62f2	
+After Rotation	c883	22bd	916e	b091	f0f2	b6af	69f3	dd30	1a9b	d37c	dd4c	069f	e093	824d	9c62	f214	
+After Add Round Constant	137f	80cf	0915	e5ef	b1a7	58d2	8491	09fc	1d90	2950	50e4	3cf5	5c60	71de	7576	c1f6	
+After Round No.:8	137f	80cf	0915	e5ef	b1a7	58d2	8491	09fc	1d90	2950	50e4	3cf5	5c60	71de	7576	c1f6	
+After S-Box	5bd2	3c42	ce50	1012	85fd	0376	39e5	ce24	57ec	6e0c	0c19	b420	04ac	d571	d0da	452a	
+After Permutation	4bc0	2c50	de42	1012	4bd9	cd52	f7c1	ce24	e3cc	da2c	b839	b420	4186	905b	95f0	452a	
+After Rotation	c02c	50de	4210	124b	d9cd	52f7	c1ce	24e3	ccda	2cb8	39b4	2041	8690	5b95	f045	2a4b	
+After Add Round Constant	ad14	01b1	782a	9da1	79b5	21c2	f387	11ba	b40a	01d2	f3ad	6ba3	89e7	32bd	ee03	04bd	
+After Round No.:9	ad14	01b1	782a	9da1	79b5	21c2	f387	11ba	b40a	01d2	f3ad	6ba3	89e7	32bd	ee03	04bd	
+After S-Box	f759	c585	d36f	e7f5	de80	6546	2b3d	558f	89cf	c576	2bf7	a8fb	3e1d	b687	11cb	c987	
+After Permutation	10ac	2270	349a	e7f5	8b0f	30c9	7eb2	558f	2134	6d8d	830c	a8fb	f79a	7f00	d84c	c987	
+After Rotation	ac22	7034	9ae7	f58b	0f30	c97e	b255	8f21	346d	8d83	0ca8	fbf7	9a7f	00d8	4cc9	8710	
+After Add Round Constant	ca7f	9baf	9789	e657	f233	7c3d	e613	cce5	02cd	15a6	a563	60ed	a5f9	dbe1	78c3	5539	
+After Round No.:10	ca7f	9baf	9789	e657	f233	7c3d	e613	cce5	02cd	15a6	a563	60ed	a5f9	dbe1	78c3	5539	
+After S-Box	4fd2	e8f2	ed3e	1a0d	26bb	d4b7	1a5b	4410	c647	50fa	f0ab	ac17	f02e	7815	d34b	00be	
+After Permutation	55df	f2ff	f733	1a0d	62ab	90a7	5e4b	4410	6a50	fced	5cbc	ac17	f090	78ab	d3f5	00be	
+After Rotation	dff2	fff7	331a	0d62	ab90	a75e	4b44	106a	50fc	ed5c	bcac	17f0	9078	abd3	f500	be55	
+After Add Round Constant	6994	a699	ee12	88e9	b17a	7eb2	9315	739e	9896	bf54	36f2	9602	d658	e2c5	069d	af40	
+After Round No.:11	6994	a699	ee12	88e9	b17a	7eb2	9315	739e	9896	bf54	36f2	9602	d658	e2c5	069d	af40	
+After S-Box	aee9	faee	1156	331e	85df	d186	eb50	dbe1	e3ea	8209	ba26	eac6	7a03	1640	cae7	f29c	
+After Permutation	9df7	c9f0	2248	331e	5e3e	0a67	30b1	dbe1	092c	68cf	50e0	eac6	889f	e4dc	387b	f29c	
+After Rotation	f7c9	f022	4833	1e5e	3e0a	6730	b1db	e109	2c68	cf50	e0ea	c688	9fe4	dc38	7bf2	9c9d	
+After Add Round Constant	8e82	60ba	66eb	a849	d694	fdef	b3d7	feda	6674	e0e5	fae9	a9cd	3084	da6e	3e17	113b	
+After Round No.:12	8e82	60ba	66eb	a849	d694	fdef	b3d7	feda	6674	e0e5	fae9	a9cd	3084	da6e	3e17	113b	
+After S-Box	3136	ac8f	aa18	f39e	7ae9	2712	8b7d	217f	aad9	1c10	2f1e	fe47	bc39	7fa1	b15d	55b8	
+After Permutation	c2a8	5f11	5986	f39e	5b96	066d	aa02	217f	549e	e257	d159	fe47	e981	2a19	e4e5	55b8	
+After Rotation	a85f	1159	86f3	9e5b	9606	6daa	0221	7f54	9ee2	57d1	59fe	47e9	812a	19e4	e555	b8c2	
+After Add Round Constant	b951	1ebd	4530	40d3	c71a	6bf7	fd10	01c1	5070	c5f6	2940	4758	a3d0	1e87	2ebd	3198	
+After Round No.:13	b951	1ebd	4530	40d3	c71a	6bf7	fd10	01c1	5070	c5f6	2940	4758	a3d0	1e87	2ebd	3198	
+After S-Box	8e05	5187	90bc	9c7b	4d5f	a82d	275c	c545	0cdc	402a	6e9c	9d03	fb7c	513d	6187	b5e3	
+After Permutation	127e	cdfc	0cc7	9c7b	881a	6d68	e219	c545	91df	dd29	f39f	9d03	4e9f	e4de	d464	b5e3	
+After Rotation	7ecd	fc0c	c79c	7b88	1a6d	68e2	19c5	4591	dfdd	29f3	9f9d	034e	9fe4	ded4	64b5	e312	
+After Add Round Constant	8f1a	18e9	ae0b	c2b9	4196	2c03	fa8f	812a	b378	9f39	1280	945b	0a31	baf4	af2e	6d08	
+After Round No.:14	8f1a	18e9	ae0b	c2b9	4196	2c03	fa8f	812a	b378	9f39	1280	945b	0a31	baf4	af2e	6d08	
+After S-Box	325f	531e	f1c8	468e	95ea	64cb	2f32	356f	8bd3	e2be	563c	e908	cfb5	8f29	f261	a7c3	
+After Permutation	74d1	1590	b746	468e	a085	51a4	1a5d	356f	62db	0bb6	bf34	e908	6876	28ea	55a2	a7c3	
+After Rotation	d115	90b7	4646	8ea0	8551	a41a	5d35	6f62	db0b	b6bf	34e9	0868	7628	ea55	a2a7	c374	
+After Add Round Constant	0c49	fd97	9d49	6d1e	37c2	354a	0c50	b1c8	3bb5	79e3	732c	ba8b	c1bd	ab62	cb78	f89c	
+After Round No.:15	0c49	fd97	9d49	6d1e	37c2	354a	0c50	b1c8	3bb5	79e3	732c	ba8b	c1bd	ab62	cb78	f89c	
+After S-Box	c49e	27ed	e79e	a751	bd46	b09f	c40c	8543	b880	de1b	db64	8f38	4587	f8a6	48d3	23e4	
+After Permutation	63cf	80bc	40cf	a751	3805	35dc	414f	8543	37b8	5123	545c	8f38	6663	db42	6b37	23e4	
+After Rotation	cf80	bc40	cfa7	5138	0535	dc41	4f85	4337	b851	2354	5c8f	3866	63db	426b	3723	e463	
+After Add Round Constant	47ed	3449	f1a0	9a43	997c	3da3	b024	1d18	b913	2107	a48d	5a6e	6c46	5ffa	f968	7ac4	
+After Round No.:16	47ed	3449	f1a0	9a43	997c	3da3	b024	1d18	b913	2107	a48d	5a6e	6c46	5ffa	f968	7ac4	
+After S-Box	9d17	b99e	25fc	ef9b	eed4	b7fb	8c69	5753	8e5b	65cd	f937	0fa1	a49a	022f	2ea3	df49	
+After Permutation	728c	5605	ca67	ef9b	b987	e0a8	db3a	5753	81fa	6a6c	f696	0fa1	7bd3	dd66	f1ea	df49	
+After Rotation	8c56	05ca	67ef	9bb9	87e0	a8db	3a57	5381	fa6a	6cf6	960f	a17b	d3dd	66f1	eadf	4972	
+After Add Round Constant	14da	667f	918b	89cd	69e9	06e1	b11b	41f4	a95b	e50f	0c8b	7a69	6600	7d1a	13a7	80d5	
+After Round No.:17	14da	667f	918b	89cd	69e9	06e1	b11b	41f4	a95b	e50f	0c8b	7a69	6600	7d1a	13a7	80d5	
+After S-Box	597f	aad2	e538	3e47	ae1e	ca15	8558	9529	fe08	10c2	c438	dfae	aacc	d75f	5bfd	3c70	
+After Permutation	6738	9495	db7f	3e47	3b37	5f3c	1071	9529	21a6	cf6c	1b96	dfae	96bc	eb2f	678d	3c70	
+After Rotation	3894	95db	7f3e	473b	375f	3c10	7195	2921	a6cf	6c1b	96df	ae96	bceb	2f67	8d3c	7067	
+After Add Round Constant	20a3	dc37	1eba	43b3	dbf4	75c7	a916	55dd	83a2	df62	662c	eebb	695b	d1aa	e42b	763a	
+After Round No.:18	20a3	dc37	1eba	43b3	dbf4	75c7	a916	55dd	83a2	df62	662c	eebb	695b	d1aa	e42b	763a	
+After S-Box	6cfb	74bd	518f	9b8b	7829	d04d	fe5a	0077	3bf6	72a6	aa64	1188	ae08	75ff	1968	dabf	
+After Permutation	f770	ef36	ca04	9b8b	785e	d03a	fe2d	0077	2a7e	632e	bbec	1188	74b7	af40	c3d7	dabf	
+After Rotation	70ef	36ca	049b	8b78	5ed0	3afe	2d00	772a	7e63	2ebb	ec11	8874	b7af	40c3	d7da	bff7	
+After Add Round Constant	3f25	a2a2	7d44	acff	e5c4	38dc	203e	a1ff	8e75	1c78	cda1	0e64	a37d	2909	10d4	311d	
+After Round No.:19	3f25	a2a2	7d44	acff	e5c4	38dc	203e	a1ff	8e75	1c78	cda1	0e64	a37d	2909	10d4	311d	
+After S-Box	b260	f6f6	d799	f422	1049	b374	6cb1	f522	31d0	54d3	47f5	c1a9	fbd7	6ece	5c79	b557	
+After Permutation	4642	02d4	23bb	f422	e56b	4656	9993	f522	f079	957a	865c	c1a9	4e80	db99	e92e	b557	
+After Rotation	4202	d423	bbf4	22e5	6b46	5699	93f5	22f0	7995	7a86	5cc1	a94e	80db	99e9	2eb5	5746	
+After Add Round Constant	b8a6	32c2	a720	6408	a24a	9ec0	1449	d784	2fc2	c2a1	b945	acef	4b90	ec84	1917	0e8b	
+After Round No.:20	b8a6	32c2	a720	6408	a24a	9ec0	1449	d784	2fc2	c2a1	b945	acef	4b90	ec84	1917	0e8b	
+After S-Box	83fa	b646	fd6c	a9c3	f69f	e14c	599e	7d39	6246	46f5	8e90	f412	98ec	1439	5e5d	c138	
+After Permutation	2a39	1f85	54af	a9c3	8ba6	9c75	24a7	7d39	9654	b2e7	7a82	f412	59d4	d501	9f65	c138	
+After Rotation	391f	8554	afa9	c38b	a69c	7524	a77d	3996	54b2	e77a	82f4	1259	d4d5	019f	65c1	382a	
+After Add Round Constant	e715	593d	e10f	6a83	394c	1ef9	44d2	db3b	7153	0316	3824	ea4e	a9de	487c	02af	1256	
+After Round No.:21	e715	593d	e10f	6a83	394c	1ef9	44d2	db3b	7153	0316	3824	ea4e	a9de	487c	02af	1256	
+After S-Box	1d50	0eb7	15c2	af3b	be94	512e	9976	78b8	d50b	cb5a	b369	1f91	fe71	93d4	c6f2	560a	
+After Permutation	b26b	a18c	baf9	af3b	c62c	2996	e1ce	78b8	ca9a	d4cb	acf8	1f91	a87b	c5de	90f8	560a	
+After Rotation	6ba1	8cba	f9af	3bc6	2c29	96e1	ce78	b8ca	9ad4	cbac	f81f	91a8	7bc5	de90	f856	0ab2	
+After Add Round Constant	9de7	3dc6	922a	5315	061e	2f25	18d4	fbb3	850d	d8a1	bce4	37a5	3643	e898	edf3	39c2	
+After Round No.:22	9de7	3dc6	922a	5315	061e	2f25	18d4	fbb3	850d	d8a1	bce4	37a5	3643	e898	edf3	39c2	
+After S-Box	e71d	b74a	e66f	0b50	ca51	6260	5379	288b	30c7	73f5	8419	bdf0	ba9b	13e3	172b	be46	
+After Permutation	ec4d	bc1a	ed3f	0b50	e2da	4aeb	7bf2	288b	8d37	ce05	39e9	bdf0	04dd	ada5	a96d	be46	
+After Rotation	4dbc	1aed	3f0b	50e2	da4a	eb7b	f228	8b8d	37ce	0539	e9bd	f004	ddad	a5a9	6dbe	46ec	
+After Add Round Constant	ecf5	1ed2	7296	b4f7	b375	3282	3855	da85	6012	fcc2	678c	7f74	0bc0	c1af	9440	f086	
+After Round No.:23	ecf5	1ed2	7296	b4f7	b375	3282	3855	da85	6012	fcc2	678c	7f74	0bc0	c1af	9440	f086	
+After S-Box	1420	5176	d6ea	892d	8bd0	b636	b300	7f30	ac56	2446	ad34	d2d9	c84c	45f2	e99c	2c3a	
+After Permutation	9d0d	d85b	5fc7	892d	f4e0	c906	cc30	7f30	7e8f	f69f	7fed	d2d9	e476	69c8	c5a6	2c3a	
+After Rotation	0dd8	5b5f	c789	2df4	e0c9	06cc	307f	307e	8ff6	9f7f	edd2	d9e4	7669	c8c5	a62c	3a9d	
+After Add Round Constant	7ed7	8523	88a8	45f4	6e9e	3a78	07a3	bd19	9a5a	ce39	e1fd	2996	7f01	f150	df7a	99d0	
+After Round No.:24	7ed7	8523	88a8	45f4	6e9e	3a78	07a3	bd19	9a5a	ce39	e1fd	2996	7f01	f150	df7a	99d0	
+After S-Box	d17d	306b	33f3	9029	a1e1	bfd3	cdfb	875e	ef0f	41be	1527	6eea	d2c5	250c	72df	ee7c	
+After Permutation	4154	a042	a3da	9029	26bf	388d	4aa5	875e	81e5	2f54	7bcd	6eea	3cb9	cb70	9ca3	ee7c	
+After Rotation	54a0	42a3	da90	2926	bf38	8d4a	a587	5e81	e52f	547b	cd6e	ea3c	b9cb	709c	a3ee	7c41	
+After Add Round Constant	202b	3282	b9eb	4cb1	dbab	9955	988f	b43c	accf	1420	7ba3	00e7	38a8	a30b	f9ff	2a89	
+After Round No.:25	202b	3282	b9eb	4cb1	dbab	9955	988f	b43c	accf	1420	7ba3	00e7	38a8	a30b	f9ff	2a89	
+After S-Box	6c68	b636	8e18	9485	78f8	ee00	e332	89b4	f442	596c	d8fb	cc1d	b3f3	fbc8	2e22	6f3e	
+After Permutation	f8ed	22b3	1a9d	9485	f14c	67b4	6a86	89b4	385f	9571	14e6	cc1d	dccd	94f6	411c	6f3e	
+After Rotation	ed22	b31a	9d94	85f1	4c67	b46a	8689	b438	5f95	7114	e6cc	1ddc	cd94	f641	1c6f	3ef8	
+After Add Round Constant	cd0d	db81	ccff	55b2	fc1a	8584	1e44	9a97	2094	2a91	3935	31d8	74e1	74da	7818	e29e	
+After Round No.:26	cd0d	db81	ccff	55b2	fc1a	8584	1e44	9a97	2094	2a91	3935	31d8	74e1	74da	7818	e29e	
+After S-Box	47c7	7835	4422	0086	245f	3039	5199	efed	6ce9	6fe5	beb0	b573	d915	d97f	d353	16e1	
+After Permutation	4741	78b3	44a4	0086	cbb2	dfd4	be74	efed	d99a	da96	0bc3	b573	cff4	cf9e	c5b2	16e1	
+After Rotation	4178	b344	a400	86cb	b2df	d4be	74ef	edd9	9ada	960b	c3b5	73cf	f4cf	9ec5	b216	e147	
+After Add Round Constant	e0f7	fbda	ea73	d993	d7a8	166d	be75	59ea	bf49	db34	9911	7ee0	0588	a33a	273a	767a	
+After Round No.:27	e0f7	fbda	ea73	d993	d7a8	166d	be75	59ea	bf49	db34	9911	7ee0	0588	a33a	273a	767a	
+After S-Box	1c2d	287f	1fdb	7eeb	7df3	5aa7	81d0	0e1f	829e	78b9	ee55	d11c	c033	fbbf	6dbf	dadf	
+After Permutation	62c6	5694	6130	7eeb	73ec	54b8	8fcf	0e1f	5382	a9a5	3f49	d11c	1aec	2160	b760	dadf	
+After Rotation	c656	9461	307e	eb73	ec54	b88f	cf0e	1f53	82a9	a53f	49d1	1c1a	ec21	60b7	60da	df62	
+After Add Round Constant	3fef	9b63	929a	3e84	318b	4225	135b	e1ba	e545	c759	e740	dff1	4808	7e27	abbb	9a24	
+After Round No.:28	3fef	9b63	929a	3e84	318b	4225	135b	e1ba	e545	c759	e740	dff1	4808	7e27	abbb	9a24	
+After S-Box	b212	e8ab	e6ef	b139	b538	9660	5b08	158f	1090	4d0e	1d9c	7225	93c3	d16d	f888	ef69	
+After Permutation	032b	5992	57d6	b139	a0b7	83ef	4e87	158f	62b5	3f2b	6fb9	7225	7caa	3e04	17e1	ef69	
+After Rotation	2b59	9257	d6b1	39a0	b783	ef4e	8715	8f62	b53f	2b6f	b972	257c	aa3e	0417	e1ef	6903	
+After Add Round Constant	8ac0	c416	3fda	5d91	6e54	cc35	d01a	572c	0589	f712	8a2b	8143	47b5	8b19	3972	4ed2	
+After Round No.:29	8ac0	c416	3fda	5d91	6e54	cc35	d01a	572c	0589	f712	8a2b	8143	47b5	8b19	3972	4ed2	
+After S-Box	3f4c	495a	b27f	07e5	a109	44b0	7c5f	0d64	c03e	2d56	3f68	359b	9d80	385e	bed6	9176	
+After Permutation	38a9	4ebf	b59a	07e5	ac6d	49d4	713b	0d64	f5a5	18cd	0af3	359b	0cf6	a928	2fa0	9176	
+After Rotation	a94e	bfb5	9a07	e5ac	6d49	d471	3b0d	64f5	a518	cd0a	f335	9b0c	f6a9	282f	a091	7638	
+After Add Round Constant	956b	cd42	7772	4339	3c65	2ee6	dabb	e2b5	671e	15a5	bc26	e899	94f3	93fa	c318	3dfb	
+After Round No.:30	956b	cd42	7772	4339	3c65	2ee6	dabb	e2b5	671e	15a5	bc26	e899	94f3	93fa	c318	3dfb	
+After S-Box	e0a8	4796	ddd6	9bbe	b4a0	611a	7f88	1680	ad51	50f0	846a	13ee	e92b	eb2f	4b53	b728	
+After Permutation	7b16	dc28	4668	9bbe	a220	779a	6908	1680	bebf	431e	9784	13ee	5e03	5c07	fc7b	b728	
+After Rotation	16dc	2846	689b	bea2	2077	9a69	0816	80be	bf43	1e97	8413	ee5e	035c	07fc	7bb7	287b	
+After Add Round Constant	1309	b816	b42a	16d1	ce4d	bac5	b18f	3706	6209	1b32	84dd	7996	a035	523a	74c1	fcb0	
+After Round No.:31	1309	b816	b42a	16d1	ce4d	bac5	b18f	3706	6209	1b32	84dd	7996	a035	523a	74c1	fcb0	
+After S-Box	5bce	835a	896f	5a75	4197	8f40	8532	bdca	a6ce	58b6	3977	deea	fcb0	06bf	d945	248c	
+After Permutation	01bb	d92f	d31a	5a75	fc5d	328a	38f8	bdca	7824	865c	e79d	deea	d83c	2233	fdc9	248c	
+After Rotation	bbd9	2fd3	1a5a	75fc	5d32	8a38	f8bd	ca78	2486	5ce7	9dde	ead8	3c22	33fd	c924	8c01	
+After Add Round Constant	fcbc	3886	9f5b	3a23	8e62	2fbf	8927	d744	78e7	562e	8fdf	6073	8cd8	51d0	f402	679b	fcbc3886
+Input: fcbc	3886	9f5b	3a23	8e62	2fbf	8927	d744	78e7	562e	8fdf	6073	8cd8	51d0	f402	679b	
+After Round No.:0	fcbc	3886	9f5b	3a23	8e62	2fbf	8927	d744	78e7	562e	8fdf	6073	8cd8	51d0	f402	679b	
+After S-Box	2484	b33a	e208	bf6b	31a6	6282	3e6d	7d99	d31d	0a61	3272	acdb	3473	057c	29c6	ade8	
+After Permutation	9bef	0c51	5d63	bf6b	4c3f	1f1b	43f4	7d99	7fc6	a6ba	9ea9	acdb	999b	a894	842e	ade8	
+After Rotation	ef0c	515d	63bf	6b4c	3f1f	1b43	f47d	997f	c6a6	ba9e	a9ac	db99	9ba8	9484	2ead	e89b	
+After Add Round Constant	b6bd	6a9d	8fa6	c6ab	2261	4c24	bb5b	0e90	16e1	3ac8	4053	d0df	98aa	3c91	bb5f	60fe	
+After Round No.:1	b6bd	6a9d	8fa6	c6ab	2261	4c24	bb5b	0e90	16e1	3ac8	4053	d0df	98aa	3c91	bb5f	60fe	
+After S-Box	8a87	afe7	32fa	4af8	66a5	9469	8808	c1ec	5a15	bf43	9c0b	7c72	e3ff	b4e5	8802	ac21	
+After Permutation	c07f	e51f	7802	4af8	a749	5585	49e4	c1ec	2667	c331	e079	7c72	4fde	18c4	2423	ac21	
+After Rotation	7fe5	1f78	024a	f8a7	4955	8549	e4c1	ec26	67c3	31e0	797c	724f	de18	c424	23ac	21c0	
+After Add Round Constant	e975	dfa6	2719	9360	955a	0397	ed33	4d88	448e	c9aa	a18a	8f1a	4bd1	2585	7dbe	9157	
+After Round No.:2	e975	dfa6	2719	9360	955a	0397	ed33	4d88	448e	c9aa	a18a	8f1a	4bd1	2585	7dbe	9157	
+After S-Box	1ed0	72fa	6d5e	ebac	e00f	cbed	17bb	9733	9931	4eff	f53f	325f	9875	6030	d781	e50d	
+After Permutation	f57c	9956	86f2	ebac	773c	5cde	8088	9733	ab6e	7ca0	c760	325f	7d78	853d	328c	e50d	
+After Rotation	7c99	5686	f2eb	ac77	3c5c	de80	8897	33ab	6e7c	a0c7	6032	5f7d	7885	3d32	8ce5	0df5	
+After Add Round Constant	7bbb	8f97	eae1	b139	af33	caf2	63ef	eb0b	d519	8404	4e9d	3f9d	9dd5	016b	5f55	fe53	
+After Round No.:3	7bbb	8f97	eae1	b139	af33	caf2	63ef	eb0b	d519	8404	4e9d	3f9d	9dd5	016b	5f55	fe53	
+After S-Box	d888	32ed	1f15	85be	f2bb	4f26	ab12	18c8	705e	39c9	91e7	b2e7	e770	c5a8	0200	210b	
+After Permutation	5d36	b753	9aab	85be	ea73	57ee	b3da	18c8	c2b9	8b2e	2300	b2e7	c67b	e4a3	230b	210b	
+After Rotation	36b7	539a	ab85	beea	7357	eeb3	da18	c8c2	b98b	2e23	00b2	e7c6	7be4	a323	0b21	0b5d	
+After Add Round Constant	2c5d	161c	b831	d99d	25ba	e2a9	6535	0515	cb16	e7f8	25d3	a518	8a9b	4508	aeec	a9b8	
+After Round No.:4	2c5d	161c	b831	d99d	25ba	e2a9	6535	0515	cb16	e7f8	25d3	a518	8a9b	4508	aeec	a9b8	
+After S-Box	6407	5a54	83b5	7ee7	608f	16fe	a0b0	c050	485a	1d23	607b	f053	3fe8	90c3	f114	fe83	
+After Permutation	1ae0	24b3	fd52	7ee7	a0df	d6ae	60e0	c050	b809	ed70	9028	f053	c16b	6e40	0f97	fe83	
+After Rotation	e024	b3fd	527e	e7a0	dfd6	ae60	e0c0	50b8	09ed	7090	28f0	53c1	6b6e	400f	97fe	831a	
+After Add Round Constant	f636	c55b	d47f	97d1	fe7a	809d	0c73	49be	8d17	d0a9	4431	d59a	5f60	e23a	2e6f	76d4	
+After Round No.:5	f636	c55b	d47f	97d1	fe7a	809d	0c73	49be	8d17	d0a9	4431	d59a	5f60	e23a	2e6f	76d4	
+After S-Box	2aba	4008	79d2	ed75	21df	3ce7	c4db	9e81	375d	7cfe	99b5	70ef	02ac	16bf	61a2	da79	
+After Permutation	c7cf	ad7d	94a7	ed75	bf5e	a266	5a5a	9e81	47b2	0c11	e95a	70ef	d8d5	ccc6	bbdb	da79	
+After Rotation	cfad	7d94	a7ed	75bf	5ea2	665a	5a9e	8147	b20c	11e9	5a70	efd8	d5cc	c6bb	dbda	79c7	
+After Add Round Constant	a246	2bc7	820a	c494	4c3e	c2d1	5f19	f6d6	9227	c436	a271	9313	561c	c7fa	9713	e4db	
+After Round No.:6	a246	2bc7	820a	c494	4c3e	c2d1	5f19	f6d6	9227	c436	a271	9313	561c	c7fa	9713	e4db	
+After S-Box	f69a	684d	36cf	49e9	94b1	4675	025e	2a7a	e66d	49ba	f6d5	eb5b	0a54	4d2f	ed5b	1978	
+After Permutation	bf73	21a4	7f26	49e9	becb	6c0f	2824	2a7a	0d36	a2e1	1d8e	eb5b	132c	5457	f423	1978	
+After Rotation	7321	a47f	2649	e9be	cb6c	0f28	242a	7a0d	36a2	e11d	8eeb	5b13	2c54	57f4	2319	78bf	
+After Add Round Constant	9039	a290	f3b3	9036	9b4c	626d	3842	61e8	ef55	633f	917b	46e7	4ee5	fef3	8f65	9002	
+After Round No.:7	9039	a290	f3b3	9036	9b4c	626d	3842	61e8	ef55	633f	917b	46e7	4ee5	fef3	8f65	9002	
+After S-Box	ecbe	f6ec	2b8b	ecba	e894	a6a7	b396	a513	1200	abb2	e5d8	9a1d	9110	212b	32a0	ecc6	
+After Permutation	0004	1a56	c731	ecba	4d87	03b4	1685	a513	881d	31af	7fc5	9a1d	7dd6	cded	de66	ecc6	
+After Rotation	041a	56c7	31ec	ba4d	8703	b416	85a5	1388	1d31	af7f	c59a	1d7d	d6cd	edde	66ec	c600	
+After Add Round Constant	4f16	b4d9	a993	efab	47b8	5639	a043	4054	2026	0553	3932	53d3	529a	dd6f	4000	95e2	
+After Round No.:8	4f16	b4d9	a993	efab	47b8	5639	a043	4054	2026	0553	3932	53d3	529a	dd6f	4000	95e2	
+After S-Box	925a	897e	feeb	12f8	9d83	0abe	fc9b	9c09	6c6a	c00b	beb6	0b7b	06ef	77a2	9ccc	e016	
+After Permutation	80a2	9b86	ec13	12f8	018a	96b7	6092	9c09	6711	cb70	b5cd	0b7b	e6f9	97b4	7cda	e016	
+After Rotation	a29b	86ec	1312	f801	8a96	b760	929c	0967	11cb	70b5	cd0b	7be6	f997	b47c	dae0	1680	
+After Add Round Constant	8f83	37bf	492c	8357	2a7e	862b	c455	f63e	f8fb	45cf	8704	c748	fcee	8ba4	d89e	f0f2	
+After Round No.:9	8f83	37bf	492c	8357	2a7e	862b	c455	f63e	f8fb	45cf	8704	c748	fcee	8ba4	d89e	f0f2	
+After S-Box	323b	bd82	9e64	3b0d	6fd1	3a68	4900	2ab1	2328	9042	3dc9	4d93	2411	38f9	73e1	2c26	
+After Permutation	0936	868f	a569	3b0d	4560	10d9	63b1	2ab1	6ebb	ddd1	705a	4d93	0837	14df	5fc7	2c26	
+After Rotation	3686	8fa5	693b	0d45	6010	d963	b12a	b16e	bbdd	d170	5a4d	9308	3714	df5f	c72c	2609	
+After Add Round Constant	54e3	bb20	65dd	fe11	4313	8c22	e4e8	ef32	8a3d	5993	f308	f7fe	428e	ba68	f326	f432	
+After Round No.:10	54e3	bb20	65dd	fe11	4313	8c22	e4e8	ef32	8a3d	5993	f308	f7fe	428e	ba68	f326	f432	
+After S-Box	091b	886c	a077	2155	9b5b	3466	1913	12b6	3fb7	0eeb	2bc3	2d21	9631	8fa3	2b6a	29b6	
+After Permutation	284e	a939	8122	2155	89ed	26d0	0ba5	12b6	1296	23ca	06e2	2d21	bf87	a615	02dc	29b6	
+After Rotation	4ea9	3981	2221	5589	ed26	d00b	a512	b612	9623	ca06	e22d	21bf	87a6	1502	dc29	b628	
+After Add Round Constant	d84b	e023	dd19	d110	f310	a75f	ece3	1946	ddbd	9bfe	5c73	9fd1	cd86	4bf4	edc6	a713	
+After Round No.:11	d84b	e023	dd19	d110	f310	a75f	ece3	1946	ddbd	9bfe	5c73	9fd1	cd86	4bf4	edc6	a713	
+After S-Box	7398	1c6b	775e	755c	2b5c	fd02	141b	5e9a	7787	e821	04db	e275	473a	9829	174a	fd5b	
+After Permutation	06c4	6937	0202	755c	75c6	a398	4a81	5e9a	95f2	0a54	e6ae	e275	ba61	6572	ea11	fd5b	
+After Rotation	c469	3702	0275	5c75	c6a3	984a	815e	9a95	f20a	54e6	aee2	75ba	6165	72ea	11fd	5b06	
+After Add Round Constant	5b22	a79a	212d	e660	5f2d	2f09	835a	b866	2c16	667b	c8e1	58ff	f205	7120	d422	cfa4	
+After Round No.:12	5b22	a79a	212d	e660	5f2d	2f09	835a	b866	2c16	667b	c8e1	58ff	f205	7120	d422	cfa4	
+After S-Box	0866	fdef	6567	1aac	0267	62ce	3b0f	83aa	645a	aad8	4315	0322	26c0	d56c	7966	42f9	
+After Permutation	12ca	e743	7fcb	1aac	81cd	e164	b8a5	83aa	6778	a9fa	4037	0322	6439	9795	3b9f	42f9	
+After Rotation	cae7	437f	cb1a	ac81	cde1	64b8	a583	aa67	78a9	fa40	3703	2264	3997	953b	9f42	f912	
+After Add Round Constant	dbd9	50e3	8957	4ef9	fef5	6305	a072	2cd4	2a37	6865	0645	21d3	5c3d	99de	e8aa	71e8	
+After Round No.:13	dbd9	50e3	8957	4ef9	fef5	6305	a072	2cd4	2a37	6865	0645	21d3	5c3d	99de	e8aa	71e8	
+After S-Box	787e	0c1b	3e0d	912e	2120	abc0	fcd6	6479	6fbd	a3a0	ca90	657b	04b7	ee71	13ff	d513	
+After Permutation	e950	9d35	af23	912e	4559	cfb9	98af	6479	0ac6	c6db	afeb	657b	d1a4	3b62	c6ec	d513	
+After Rotation	509d	35af	2391	2e45	59cf	b998	af64	790a	c6c6	dbaf	eb65	7bd1	a43b	62c6	ecd5	13e9	
+After Add Round Constant	60ea	528c	0a00	7576	80f8	7cb9	902e	b4a3	9a61	50f5	5e48	0cde	0e88	3ee6	374e	9ddf	
+After Round No.:14	60ea	528c	0a00	7576	80f8	7cb9	902e	b4a3	9a61	50f5	5e48	0cde	0e88	3ee6	374e	9ddf	
+After S-Box	ac1f	0634	cfcc	d0da	3c23	d48e	ec61	89fb	efa5	0c20	0193	c471	c133	b11a	bd91	e772	
+After Permutation	7cc5	d6ee	1f16	d0da	b5d8	5d75	659a	89fb	2bd4	c851	c5e2	c471	2641	5668	5ae3	e772	
+After Rotation	c5d6	ee1f	16d0	dab5	d85d	7565	9a89	fb2b	d4c8	51c5	e2c4	7126	4156	685a	e3e7	727c	
+After Add Round Constant	010a	5aff	6dd3	b933	8ace	0695	49a4	3d91	3572	14e9	2107	2349	8ceb	2967	0cb8	a7a4	
+After Round No.:15	010a	5aff	6dd3	b933	8ace	0695	49a4	3d91	3572	14e9	2107	2349	8ceb	2967	0cb8	a7a4	
+After S-Box	c5cf	0f22	a77b	8ebb	3f41	cae0	9ef9	b7e5	b0d6	591e	65cd	6b9e	3418	6ead	c483	fdf9	
+After Permutation	4b74	8199	29c0	8ebb	88a4	7d05	291c	b7e5	db48	3280	0e53	6b9e	c9e1	9354	397a	fdf9	
+After Rotation	7481	9929	c08e	bb88	a47d	0529	1cb7	e5db	4832	800e	536b	9ec9	e193	5439	7afd	f94b	
+After Add Round Constant	ecee	1132	e287	0493	38c4	668b	7d56	bfbc	48f4	7dc1	9b69	c0d1	e9fe	71c8	3d42	8fac	
+After Round No.:16	ecee	1132	e287	0493	38c4	668b	7d56	bfbc	48f4	7dc1	9b69	c0d1	e9fe	71c8	3d42	8fac	
+After S-Box	1411	55b6	163d	c9eb	b349	aa38	d70a	8284	9329	d745	e8ae	4c75	1e21	d543	b796	32f4	
+After Permutation	ddfa	9c5d	dfd6	c9eb	31cd	28bc	558e	8284	df5c	9b30	a4db	4c75	2cd5	e7b7	8562	32f4	
+After Rotation	fa9c	5ddf	d6c9	eb31	cd28	bc55	8e82	84df	5c9b	30a4	db4c	752c	d5e7	b785	6232	f4dd	
+After Add Round Constant	8320	be94	0065	d945	af31	1a5b	0546	7352	0b8c	a8bd	51c8	4e1a	680a	cdae	8afa	2c40	
+After Round No.:17	8320	be94	0065	d945	af31	1a5b	0546	7352	0b8c	a8bd	51c8	4e1a	680a	cdae	8afa	2c40	
+After S-Box	3b6c	81e9	cca0	7e90	f2b5	5f08	c09a	db06	c834	f387	0543	915f	a3cf	47f1	3f2f	649c	
+After Permutation	45fc	ff79	b230	7e90	29b3	840e	1b9c	db06	596b	62d8	941c	915f	c753	236d	5bb3	649c	
+After Rotation	fcff	79b2	307e	9029	b384	0e1b	9cdb	0659	6b62	d894	1c91	5fc7	5323	6d5b	b364	9c45	
+After Add Round Constant	e50e	c00e	cffa	8ca1	5819	47d2	d45c	3315	4835	4bdb	ebde	9fec	ff93	0f9e	0a53	a218	
+After Round No.:18	e50e	c00e	cffa	8ca1	5819	47d2	d45c	3315	4835	4bdb	ebde	9fec	ff93	0f9e	0a53	a218	
+After S-Box	10c1	4cc1	422f	34f5	035e	9d76	7904	bb50	93b0	9878	1871	e214	22eb	c2e1	cf0b	f653	
+After Permutation	2434	7834	76da	34f5	b80e	2626	c254	bb50	71a4	7a6c	fa65	e214	d4b8	34b2	3958	f653	
+After Rotation	3478	3476	da34	f5b8	0e26	26c2	54bb	5071	a47a	6cfa	65e2	14d4	b834	b239	58f6	5324	
+After Add Round Constant	02ae	a04e	52dd	173f	951a	24a0	47f9	7b46	b48c	5ab7	4772	9ac4	a402	9a7f	91f0	c44a	
+After Round No.:19	02ae	a04e	52dd	173f	951a	24a0	47f9	7b46	b48c	5ab7	4772	9ac4	a402	9a7f	91f0	c44a	
+After S-Box	c6f1	fc91	0677	5db2	e05f	69fc	9d2e	d89a	8934	0f8d	9dd6	ef49	f9c6	efd2	e52c	499f	
+After Permutation	9b43	a123	5bc5	5db2	38c5	b166	45b4	d89a	667d	e0c4	729f	ef49	b059	a64d	acb3	499f	
+After Rotation	43a1	235b	c55d	b238	c5b1	6645	b4d8	9a66	7de0	c472	9fef	49b0	59a6	4dac	b349	9f9b	
+After Add Round Constant	ba45	81fa	b089	f35b	fcb5	ae6c	352c	4efa	340d	0c8d	fc73	4d51	245b	a047	9dab	56e0	
+After Round No.:20	ba45	81fa	b089	f35b	fcb5	ae6c	352c	4efa	340d	0c8d	fc73	4d51	245b	a047	9dab	56e0	
+After S-Box	8f90	352f	8c3e	2b08	2480	f1a4	b064	912f	b9c7	c437	24db	9705	6908	fc9d	e7f8	0a1c	
+After Permutation	a498	1e27	a736	2b08	b5af	608b	214b	912f	2ec2	5332	b3de	9705	6314	f681	ede4	0a1c	
+After Rotation	981e	27a7	362b	08b5	af60	8b21	4b91	2f2e	c253	32b3	de97	0563	14f6	81ed	e40a	1ca4	
+After Add Round Constant	4614	fb90	6791	afad	4210	34f6	e8e6	d0d3	def4	4e4f	93c7	dd58	e9ff	c8ca	80f8	f6d0	
+After Round No.:21	4614	fb90	6791	afad	4210	34f6	e8e6	d0d3	def4	4e4f	93c7	dd58	e9ff	c8ca	80f8	f6d0	
+After S-Box	9a59	28ec	ade5	f2f7	965c	b92a	131a	7c7b	7129	9192	eb4d	7703	1e22	434f	3c23	2a7c	
+After Permutation	68ae	da1b	5f12	f2f7	ea27	c551	6f61	7c7b	062a	e691	9c4e	7703	345e	6933	165f	2a7c	
+After Rotation	aeda	1b5f	12f2	f7ea	27c5	516f	617c	7b06	2ae6	919c	4e77	0334	5e69	3316	5f2a	7c68	
+After Add Round Constant	e120	cc6b	ab6d	0f39	01ba	e9b3	abd8	bdef	151f	9e91	133c	a931	18e7	3d1e	54c7	ab78	
+After Round No.:22	e120	cc6b	ab6d	0f39	01ba	e9b3	abd8	bdef	151f	9e91	133c	a931	18e7	3d1e	54c7	ab78	
+After S-Box	156c	44a8	f8a7	c2be	c58f	1e8b	f873	8712	5052	e1e5	5bb4	feb5	531d	b751	094d	f8d3	
+After Permutation	d7d2	8616	3a19	c2be	429d	9999	7f61	8712	aee7	1f50	a501	feb5	abce	4f82	f19e	f8d3	
+After Rotation	d286	163a	19c2	be42	9d99	997f	6187	12ae	e71f	50a5	01fe	b5ab	ce4f	82f1	9ef8	d3d7	
+After Add Round Constant	71bf	1a1f	4d4d	2257	76c4	e086	a7b4	61a6	0f63	482e	7fcd	451b	fc62	9ef7	c57a	7d71	
+After Round No.:23	71bf	1a1f	4d4d	2257	76c4	e086	a7b4	61a6	0f63	482e	7fcd	451b	fc62	9ef7	c57a	7d71	
+After S-Box	d582	5f52	9797	660d	da49	1c3a	fd89	a5fa	c2ab	9361	d247	9058	24a6	e12d	40df	d7d5	
+After Permutation	b38f	395f	f19a	660d	7fb3	b9c0	5873	a5fa	52f3	0339	421f	9058	f373	36f8	970a	d7d5	
+After Rotation	8f39	5ff1	9a66	0d7f	b3b9	c058	73a5	fa52	f303	3942	1f90	58f3	7336	f897	0ad7	d5b3	
+After Add Round Constant	0038	89b5	5b85	257f	418e	f404	4ac9	86ed	fd67	67fc	13bb	a8a5	7bce	2122	4425	34e6	
+After Round No.:24	0038	89b5	5b85	257f	418e	f404	4ac9	86ed	fd67	67fc	13bb	a8a5	7bce	2122	4425	34e6	
+After S-Box	ccb3	3e80	0830	60d2	9531	29c9	9f4e	3a17	27ad	ad24	5b88	f3f0	d841	6566	9960	b91a	
+After Permutation	ac61	5e52	68e2	60d2	af26	13de	a559	3a17	d45d	5ed4	a878	f3f0	615b	dc7c	207a	b91a	
+After Rotation	615e	5268	e260	d2af	2613	dea5	593a	17d4	5d5e	d4a8	78f3	f061	5bdc	7c20	7ab9	1aac	
+After Add Round Constant	2ce9	4247	c1bb	f63a	4286	eab0	4c42	6d8f	24fe	944d	2728	070c	dab9	ae8f	d0ca	c8f4	
+After Round No.:25	2ce9	4247	c1bb	f63a	4286	eab0	4c42	6d8f	24fe	944d	2728	070c	dab9	ae8f	d0ca	c8f4	
+After S-Box	641e	969d	4588	2abf	963a	1f8c	9496	a732	6921	e997	6d63	cdc4	7f8e	f132	7c4f	4329	
+After Permutation	4ea1	bc22	6f37	2abf	3108	b8be	33a4	a732	a4e5	2453	a0a7	cdc4	3ca7	b21b	3f66	4329	
+After Rotation	a1bc	226f	372a	bf31	08b8	be33	a4a7	32a4	e524	53a0	a7cd	c43c	a7b2	1b3f	6643	294e	
+After Add Round Constant	81a7	4ad6	6695	8ef2	b86b	8f4d	3c62	1903	a623	0d1d	fa36	d838	4eff	99d8	c1ec	ccf4	
+After Round No.:26	81a7	4ad6	6695	8ef2	b86b	8f4d	3c62	1903	a623	0d1d	fa36	d838	4eff	99d8	c1ec	ccf4	
+After S-Box	35fd	9f7a	aae0	3126	83a8	3297	b4a6	5ecb	fa6b	c757	2fba	73b3	9122	ee73	4514	4429	
+After Permutation	04db	ae5c	9bc6	3126	dd63	6c5c	ea6d	5ecb	89d8	b4e4	5c09	73b3	d50b	aa5a	013d	4429	
+After Rotation	dbae	5c9b	c631	26dd	636c	5cea	6d5e	cb89	d8b4	e45c	0973	b3d5	0baa	5a01	3d44	2904	
+After Add Round Constant	7b2d	a531	0ca4	79a5	8835	9e99	b6e4	379a	fd23	2985	decf	bee6	1c63	5e76	b268	be37	
+After Round No.:27	7b2d	a531	0ca4	79a5	8835	9e99	b6e4	379a	fd23	2985	decf	bee6	1c63	5e76	b268	be37	
+After S-Box	d867	f0b5	c4f9	def0	33b0	e1ee	8a19	bdef	276b	6e30	7142	811a	54ab	01da	86a3	81bd	
+After Permutation	0697	2e45	1a09	def0	8e5f	5c01	37f6	bdef	a671	ef2a	f058	811a	d516	8067	071e	81bd	
+After Rotation	972e	451a	09de	f08e	5f5c	0137	f6bd	efa6	71ef	2af0	5881	1ad5	1680	6707	1e81	bd06	
+After Add Round Constant	10c7	4c1c	6bfa	439f	a493	8acd	3b0a	b20d	d48b	4d0a	f5f0	deac	7267	8477	6962	77c8	
+After Round No.:28	10c7	4c1c	6bfa	439f	a493	8acd	3b0a	b20d	d48b	4d0a	f5f0	deac	7267	8477	6962	77c8	
+After S-Box	5c4d	9454	a82f	9be2	f9eb	3f47	b8cf	86c7	7938	97cf	202c	71f4	d6ad	39dd	aea6	dd43	
+After Permutation	c7af	0fb6	33cd	9be2	7f2c	b980	3e08	86c7	08cc	e63b	51d8	71f4	0bee	e49e	73e5	dd43	
+After Rotation	af0f	b633	cd9b	e27f	2cb9	803e	0886	c708	cce6	3b51	d871	f40b	eee4	9e73	e5dd	43c7	
+After Add Round Constant	0e76	e7f2	36c4	0670	e38a	5d25	518b	8ed2	1d30	06f4	a92a	4fd2	8c5b	2575	3d60	2996	
+After Round No.:29	0e76	e7f2	36c4	0670	e38a	5d25	518b	8ed2	1d30	06f4	a92a	4fd2	8c5b	2575	3d60	2996	
+After S-Box	c1da	1d26	ba49	cadc	1b3f	0760	0538	3176	57bc	ca29	fe6f	9276	3408	60d0	b7ac	6eea	
+After Permutation	0b06	d7fa	7095	cadc	2a49	3616	344e	3176	c5ca	585f	6c19	9276	5ae2	0e3a	d946	6eea	
+After Rotation	06d7	fa70	95ca	dc2a	4936	1634	4e31	76c5	ca58	5f6c	1992	765a	e20e	3ad9	466e	ea0b	
+After Add Round Constant	f2f4	07fd	7335	39b7	1852	70a9	eddf	f485	8c5e	a807	e283	c3e7	8058	a6a4	68f5	b1ce	
+After Round No.:30	f2f4	07fd	7335	39b7	1852	70a9	eddf	f485	8c5e	a807	e283	c3e7	8058	a6a4	68f5	b1ce	
+After S-Box	2629	cd27	dbb0	be8d	5306	dcfe	1772	2930	3401	f3cd	163b	4b1d	3c03	faf9	a320	8541	
+After Permutation	98a4	73aa	653d	be8d	7a36	f5ce	3e42	2930	7f1c	b8d0	5d26	4b1d	b942	7fb8	2661	8541	
+After Rotation	a473	aa65	3dbe	8d7a	36f5	ce3e	4229	307f	1cb8	d05d	264b	1db9	427f	b826	6185	4198	
+After Add Round Constant	a0a0	3a35	894d	e5a9	e4cb	ee9a	eba2	e6c7	bf7e	ccf8	2715	a8f1	df58	0264	5a8f	15cd	
+After Round No.:31	a0a0	3a35	894d	e5a9	e4cb	ee9a	eba2	e6c7	bf7e	ccf8	2715	a8f1	df58	0264	5a8f	15cd	
+After S-Box	fcfc	bfb0	3e97	10fe	1948	11ef	18f6	1a4d	82d1	4423	6d50	f325	7203	c6a9	0f32	5047	
+After Permutation	ec02	af4e	2e69	10fe	0305	0ba2	02bb	1a4d	71f4	b706	9e75	f325	2244	96ee	5f75	5047	
+After Rotation	02af	4e2e	6910	fe03	050b	a202	bb1a	4d71	f4b7	069e	75f3	2522	4496	ee5f	7550	47ec	
+After Add Round Constant	4392	56e1	ee11	c22a	363b	4789	4b84	5a3d	4918	ffe5	67f4	9abd	954c	0c32	a02e	2386	439256e1
+Input: 4392	56e1	ee11	c22a	363b	4789	4b84	5a3d	4918	ffe5	67f4	9abd	954c	0c32	a02e	2386	
+After Round No.:0	4392	56e1	ee11	c22a	363b	4789	4b84	5a3d	4918	ffe5	67f4	9abd	954c	0c32	a02e	2386	
+After S-Box	9be6	0a15	1155	466f	bab8	9d3e	9839	0fb7	9e53	2210	ad29	ef87	e094	c4b6	fc61	6b3a	
+After Permutation	dd89	4c7a	573a	466f	b50f	9289	978e	0fb7	71d4	cd97	42ae	ef87	8bae	af8c	975b	6b3a	
+After Rotation	894c	7a57	3a46	6fb5	0f92	8997	8e0f	b771	d4cd	9742	aeef	878b	aeaf	8c97	5b6b	3add	
+After Add Round Constant	50fd	9397	662d	cb14	f2d4	ba78	54ed	2c82	2508	176c	4596	7cd1	abb1	34a4	e81d	b340	
+After Round No.:1	50fd	9397	662d	cb14	f2d4	ba78	54ed	2c82	2508	176c	4596	7cd1	abb1	34a4	e81d	b340	
+After S-Box	0c27	ebed	aa67	4859	2679	8fd3	0917	6436	60c3	5da4	90ea	d475	f885	b9f9	1357	8b9c	
+After Permutation	447e	a3b4	e23e	4859	424f	ebe5	6d21	6436	b4b6	89d1	449f	d475	7319	3265	98cb	8b9c	
+After Rotation	7ea3	b4e2	3e48	5942	4feb	e56d	2164	36b4	b689	d144	9fd4	7573	1932	6598	cb8b	9c44	
+After Add Round Constant	e833	7510	6317	f3fb	9bf0	63bb	29d6	9816	9354	690e	c7e2	923e	86eb	c6f9	259d	0bdb	
+After Round No.:2	e833	7510	6317	f3fb	9bf0	63bb	29d6	9816	9354	690e	c7e2	923e	86eb	c6f9	259d	0bdb	
+After S-Box	13bb	d05c	ab5d	2b28	e82c	ab88	6e7a	e35a	eb09	aec1	4d16	e6b1	3a18	4a2e	60e7	c878	
+After Permutation	3893	fb74	8075	2b28	0b76	48d2	8d20	e35a	0db8	4870	aba7	e6b1	f260	8256	a89f	c878	
+After Rotation	93fb	7480	752b	280b	7648	d28d	20e3	5a0d	b848	70ab	a7e6	b1f2	6082	56a8	9fc8	7838	
+After Add Round Constant	931d	ad91	6d21	2ccd	e91f	beff	fc3b	116d	1ee5	53e8	9651	9212	85d2	1ae1	7238	6896	
+After Round No.:3	931d	ad91	6d21	2ccd	e91f	beff	fc3b	116d	1ee5	53e8	9651	9212	85d2	1ae1	7238	6896	
+After S-Box	eb57	f7e5	a765	6447	1e52	8122	24b8	55a7	5110	0b13	ea05	e656	3076	5f15	d6b3	a3ea	
+After Permutation	8f10	93a2	c322	6447	4bf5	d485	711f	55a7	b746	ed45	0c53	e656	939c	fcff	7559	a3ea	
+After Rotation	1093	a2c3	2264	474b	f5d4	8571	1f55	a7b7	46ed	450c	53e6	5693	9cfc	ff75	59a3	ea8f	
+After Add Round Constant	0639	6545	2f10	61fe	a837	7967	aa72	e40a	5878	fee1	7907	13e5	abb3	a15a	fd6e	88ea	
+After Round No.:4	0639	6545	2f10	61fe	a837	7967	aa72	e40a	5878	fee1	7907	13e5	abb3	a15a	fd6e	88ea	
+After S-Box	cabe	a090	625c	a521	f3bd	dead	ffd6	19cf	03d3	2115	decd	5b10	f88b	f50f	27a1	331f	
+After Permutation	6f9f	05b1	c77d	a521	ea72	c762	e619	19cf	58c3	7a05	85dd	5b10	cb94	c610	14be	331f	
+After Rotation	9f05	b1c7	7da5	21ea	72c7	62e6	1919	cf58	c37a	0585	dd5b	10cb	94c6	1014	be33	1f6f	
+After Add Round Constant	b517	c325	ffa6	d21b	916b	3523	44cc	c85e	46a4	659e	f89c	92a4	88b8	b23f	54a4	1329	
+After Round No.:5	b517	c325	ffa6	d21b	916b	3523	44cc	c85e	46a4	659e	f89c	92a4	88b8	b23f	54a4	1329	
+After S-Box	805d	4b60	22fa	7658	e5a8	b06b	9944	4301	9af9	a0e1	23e4	e6f9	3383	86b2	09f9	5b6e	
+After Permutation	f605	3d38	54a2	7658	a6a9	f36a	da45	4301	7c00	4618	c51d	e6f9	68ed	dddc	5297	5b6e	
+After Rotation	053d	3854	a276	58a6	a9f3	6ada	4543	017c	0046	18c5	1de6	f968	eddd	dc52	975b	6ef6	
+After Add Round Constant	d7d6	e687	7c93	a77b	978f	c751	49be	770b	e061	cb12	65e7	9ca3	6e2d	dd91	5294	da0a	
+After Round No.:6	d7d6	e687	7c93	a77b	978f	c751	49be	770b	e061	cb12	65e7	9ca3	6e2d	dd91	5294	da0a	
+After S-Box	7d7a	1a3d	d4eb	fdd8	ed32	4d05	9e81	ddc8	1ca5	4856	a01d	e4fb	a167	77e5	06e9	7fcf	
+After Permutation	80a2	e7e5	2933	fdd8	30fa	90cd	4349	ddc8	f85e	acad	44e6	e4fb	dea8	082a	7926	7fcf	
+After Rotation	a2e7	e529	33fd	d830	fa90	cd43	49dd	c8f8	5eac	ad44	e6e4	fbde	a808	2a79	267f	cf80	
+After Add Round Constant	bfff	e33a	0167	7ea8	ca70	2088	5df5	b0d3	175f	2f66	e974	e7b2	ca99	d178	92cb	e6c3	
+After Round No.:7	bfff	e33a	0167	7ea8	ca70	2088	5df5	b0d3	175f	2f66	e974	e7b2	ca99	d178	92cb	e6c3	
+After S-Box	8222	1bbf	c5ad	d1f3	4fdc	6c33	0720	8c7b	5d02	62aa	1ed9	1d86	4fee	75d3	e648	1a4b	
+After Permutation	53d1	ca4c	145e	d1f3	c3a7	e048	8b5b	8c7b	4084	7f2c	035f	1d86	55a5	6f98	fc03	1a4b	
+After Rotation	d1ca	4c14	5ed1	f3c3	a7e0	488b	5b8c	7b40	847f	2c03	5f1d	8655	a56f	98fc	031a	4b53	
+After Add Round Constant	1cc6	aa26	d678	2921	6895	eaae	762a	a80c	8774	81d7	d2b5	bcab	213c	888d	dc2e	1b35	
+After Round No.:8	1cc6	aa26	d678	2921	6895	eaae	762a	a80c	8774	81d7	d2b5	bcab	213c	888d	dc2e	1b35	
+After S-Box	544a	ff6a	7ad3	6e65	a3e0	1ff1	da6f	f3c4	3dd9	357d	7680	84f8	65b4	3337	7461	58b0	
+After Permutation	3a2f	910f	14b6	6e65	5024	ec35	29ab	f3c4	b921	b185	f278	84f8	3d04	6b87	2cd1	58b0	
+After Rotation	2f91	0f14	b66e	6550	24ec	3529	abf3	c4b9	21b1	85f2	7884	f83d	046b	872c	d158	b03a	
+After Add Round Constant	1c79	bfe7	ec88	f0a6	c4d4	03f4	ddac	b190	08e1	5b0c	327d	439f	07c2	5e54	cf16	8aac	
+After Round No.:9	1c79	bfe7	ec88	f0a6	c4d4	03f4	ddac	b190	08e1	5b0c	327d	439f	07c2	5e54	cf16	8aac	
+After S-Box	54de	821d	1433	2cfa	4979	cb29	77f4	85ec	c315	08c4	b6d7	9be2	cd46	0109	425a	3ff4	
+After Permutation	7824	aee7	38c9	2cfa	cc95	4ec5	f218	85ec	58f7	9326	2d35	9be2	f2b2	3efd	7dae	3ff4	
+After Rotation	24ae	e738	c92c	facc	954e	c5f2	1885	ec58	f793	262d	359b	e2f2	b23e	fd7d	ae3f	f478	
+After Add Round Constant	430b	12b3	c5ce	eb98	7851	78b1	4c43	2a1c	c5f3	ae50	ce56	47e8	bdb8	d886	da39	c2a1	
+After Round No.:10	430b	12b3	c5ce	eb98	7851	78b1	4c43	2a1c	c5f3	ae50	ce56	47e8	bdb8	d886	da39	c2a1	
+After S-Box	9bc8	568b	4041	18e3	d305	d385	949b	6f54	402b	f10c	410a	9d13	8783	733a	7fbe	46f5	
+After Permutation	832b	4e68	58a2	18e3	bc51	bcd1	fbcf	6f54	dd38	6c1f	dc19	9d13	c176	35cf	394b	46f5	
+After Rotation	2b4e	6858	a218	e3bc	51bc	d1fb	cf6f	54dd	386c	1fdc	199d	13c1	7635	cf39	4b46	f583	
+After Add Round Constant	b4f0	0efa	5d10	5f43	57a6	a94f	1740	b811	8006	f1d4	93e3	91d3	bc15	062b	5ce3	e66e	
+After Round No.:11	b4f0	0efa	5d10	5f43	57a6	a94f	1740	b811	8006	f1d4	93e3	91d3	bc15	062b	5ce3	e66e	
+After S-Box	892c	c12f	075c	029b	0dfa	fe92	5d9c	8355	3cca	2579	eb1b	e57b	8450	ca68	041b	1aa1	
+After Permutation	8bb7	c3b4	05c7	029b	8eaf	7dc7	dec9	8355	d9b1	c002	0e60	e57b	9ef1	d0c9	1eba	1aa1	
+After Rotation	b7c3	b405	c702	9b8e	af7d	c7de	c983	55d9	b1c0	020e	60e5	7b9e	f1d0	c91e	ba1a	a18b	
+After Add Round Constant	4e7c	249d	e5ba	2579	4807	5e9d	cb7f	73aa	ebcc	13a3	7ae4	5ee3	8270	c754	7c3f	1629	
+After Round No.:12	4e7c	249d	e5ba	2579	4807	5e9d	cb7f	73aa	ebcc	13a3	7ae4	5ee3	8270	c754	7c3f	1629	
+After S-Box	91d4	69e7	108f	60de	93cd	01e7	48d2	dbff	1844	5bfb	df19	011b	36dc	4d09	d4b2	5a6e	
+After Permutation	f10a	0939	7051	60de	4832	da18	932d	dbff	195f	5ae0	de02	011b	6cb2	1767	8edc	5a6e	
+After Rotation	0a09	3970	5160	de48	32da	1893	2ddb	ff19	5f5a	e0de	0201	1b6c	b217	678e	dc5a	6ef1	
+After Add Round Constant	1afb	46d4	0f9d	80c0	63ee	16e0	28ca	8186	10e8	4f03	d143	1adb	d4bd	6c31	25c2	e7c7	
+After Round No.:13	1afb	46d4	0f9d	80c0	63ee	16e0	28ca	8186	10e8	4f03	d143	1adb	d4bd	6c31	25c2	e7c7	
+After S-Box	5f28	9a79	c2e7	3c4c	ab11	5a1c	634f	353a	5c13	92cb	759b	5f78	7987	a4b5	6046	1d4d	
+After Permutation	6364	a635	feab	3c4c	9e2b	6f26	5675	353a	036b	cdb3	2ae3	5f78	64ca	b9f8	7d0b	1d4d	
+After Rotation	64a6	35fe	ab3c	4c9e	2b6f	2656	7535	3a03	6bcd	b32a	e35f	7864	cab9	f87d	0b1d	4d63	
+After Add Round Constant	74f3	52db	91ab	93cf	5298	e977	55ff	759c	3f68	2870	5642	0971	3506	d49d	5596	d759	
+After Round No.:14	74f3	52db	91ab	93cf	5298	e977	55ff	759c	3f68	2870	5642	0971	3506	d49d	5596	d759	
+After S-Box	d92b	0678	e5f8	eb42	06e3	1edd	0022	d0e4	b2a3	63dc	0a96	ced5	b0ca	79e7	00ea	7d0e	
+After Permutation	3269	ed3a	0eba	eb42	d607	ce39	d0c6	d0e4	7c76	ad09	c443	ced5	cdc4	04e9	7de4	7d0e	
+After Rotation	69ed	3a0e	baeb	42d6	07ce	39d0	c6d0	e47c	76ad	09c4	43ce	d5cd	c404	e97d	e47d	0e32	
+After Add Round Constant	a521	a6ee	11ee	2154	ba3f	cb00	75eb	26e2	d757	cce8	8211	87f0	0f99	aa8a	0d4e	435a	
+After Round No.:15	a521	a6ee	11ee	2154	ba3f	cb00	75eb	26e2	d757	cce8	8211	87f0	0f99	aa8a	0d4e	435a	
+After S-Box	f065	fa11	5511	6509	8fb2	48cc	d018	6a16	7d0d	4413	3655	3d2c	c2ee	ff3f	c791	9b0f	
+After Permutation	956c	9f18	3018	6509	e5a4	22da	ba0e	6a16	4021	793f	0b79	3d2c	59e1	6430	5c9e	9b0f	
+After Rotation	6c9f	1830	1865	09e5	a422	daba	0e6a	1640	2179	3f0b	793d	2c59	e164	305c	9e9b	0f95	
+After Add Round Constant	e50c	9039	3a5e	52f0	3869	3c1c	6f09	f021	223b	3cbe	c13b	4e61	e9cf	4deb	60e0	a5f6	
+After Round No.:16	e50c	9039	3a5e	52f0	3869	3c1c	6f09	f021	223b	3cbe	c13b	4e61	e9cf	4deb	60e0	a5f6	
+After S-Box	10c4	ecbe	bf01	062c	b3ae	b454	a2ce	2c65	66b8	b481	45b8	91a5	1e42	9718	ac1c	f02a	
+After Permutation	16e8	ea92	b92d	062c	9fcb	9831	8eab	2c65	f71d	2524	d41d	91a5	ee68	6732	5c36	f02a	
+After Rotation	e8ea	92b9	2d06	2c9f	cb98	318e	ab2c	65f7	1d25	24d4	1d91	a5ee	6867	325c	36f0	2a16	
+After Add Round Constant	716e	f36e	56a2	1ab3	ada1	8f94	21f0	546a	cc16	9ced	940d	7edc	fa8a	4885	5fb8	6179	
+After Round No.:17	716e	f36e	56a2	1ab3	ada1	8f94	21f0	546a	cc16	9ced	940d	7edc	fa8a	4885	5fb8	6179	
+After S-Box	d5a1	2ba1	0af6	5f8b	f7f5	32e9	652c	09af	445a	e417	e9c7	d174	2f3f	9330	0283	a5de	
+After Permutation	8a2a	742a	557d	5f8b	fe5a	3b46	6c83	09af	952e	3563	38b3	d174	8ae1	36ee	a75d	a5de	
+After Rotation	2a74	2a55	7d5f	8bfe	5a3b	466c	8309	af95	2e35	6338	b3d1	748a	e136	eea7	5da5	de8a	
+After Add Round Constant	1283	70b1	1cdb	8876	fed0	8023	ba8a	dc51	0b08	d67f	831e	b4af	8da6	90ea	b494	e45d	
+After Round No.:18	1283	70b1	1cdb	8876	fed0	8023	ba8a	dc51	0b08	d67f	831e	b4af	8da6	90ea	b494	e45d	
+After S-Box	563b	dc85	5478	33da	217c	3c6b	8f3f	7405	c8c3	7ad2	3b51	89f2	37fa	ec1f	89e9	1907	
+After Permutation	65e1	ef5f	67a2	33da	5579	486e	fb3a	7405	4131	f320	b2a3	89f2	2efd	f518	90ee	1907	
+After Rotation	e1ef	5f67	a233	da55	7948	6efb	3a74	0541	31f3	20b2	a389	f22e	fdf5	1890	ee19	0765	
+After Add Round Constant	b025	cb3f	1adc	fbdc	003c	6cd9	2db2	3016	4205	0e6f	8519	781e	e9c3	00d6	2713	788b	
+After Round No.:19	b025	cb3f	1adc	fbdc	003c	6cd9	2db2	3016	4205	0e6f	8519	781e	e9c3	00d6	2713	788b	
+After S-Box	8c60	48b2	5f74	2874	ccb4	a47e	6786	bc5a	96c0	c1a2	305e	d351	1e4b	cc7a	6d5b	d338	
+After Permutation	a414	60c6	7700	2874	70ee	1824	dbdc	bc5a	4591	12f3	e30f	d351	cd73	1f42	be63	d338	
+After Rotation	1460	c677	0028	7470	ee18	24db	dcbc	5a45	9112	f3e3	0fd3	51cd	731f	42be	63d3	38a4	
+After Add Round Constant	8b04	2516	eb54	b593	251c	6d02	5d10	0ed9	473f	3bfe	6c57	556e	3dd4	9559	4e35	efe9	
+After Round No.:20	8b04	2516	eb54	b593	251c	6d02	5d10	0ed9	473f	3bfe	6c57	556e	3dd4	9559	4e35	efe9	
+After S-Box	38c9	605a	1809	80eb	6054	a7c6	075c	c17e	9db2	b821	a40d	00a1	b779	e00e	91b0	121e	
+After Permutation	b822	e0b1	98e2	80eb	a12a	66b8	c622	c17e	9d13	b880	a4ac	00a1	a567	f210	83ae	121e	
+After Rotation	22e0	b198	e280	eba1	2a66	b8c6	22c1	7e9d	13b8	80a4	ac00	a1a5	67f2	1083	ae12	1eb8	
+After Add Round Constant	d0d6	8581	13e6	9299	bd16	629b	c016	2042	3059	9c40	6130	799a	3cfb	5760	4b00	f8e4	
+After Round No.:21	d0d6	8581	13e6	9299	bd16	629b	c016	2042	3059	9c40	6130	799a	3cfb	5760	4b00	f8e4	
+After S-Box	7c7a	3035	5b1a	e6ee	875a	a6e8	4c5a	6c96	bc0e	e49c	a5bc	deef	b428	0dac	98cc	2319	
+After Permutation	9a94	d6db	bdf4	e6ee	ebcc	ca7e	20cc	6c96	62e1	3a73	7b53	deef	9731	2eb5	bbd5	2319	
+After Rotation	94d6	dbbd	f4e6	eeeb	ccca	7e20	cc6c	9662	e13a	737b	53de	ef97	312e	b5bb	d523	199a	
+After Add Round Constant	c71c	8cc9	8d61	063a	a6bf	1664	16c8	d94b	cb73	8070	18a3	9594	ebac	bfc3	cac0	48aa	
+After Round No.:22	c71c	8cc9	8d61	063a	a6bf	1664	16c8	d94b	cb73	8070	18a3	9594	ebac	bfc3	cac0	48aa	
+After S-Box	4d54	344e	37a5	cabf	fa82	5aa9	5a43	7e98	48db	3cdc	53fb	e0e9	18f4	824b	4f4c	93ff	
+After Permutation	87eb	fef1	fd1a	cabf	841a	2431	24db	7e98	a832	dc35	b312	e0e9	8b0b	11b4	dcb3	93ff	
+After Rotation	ebfe	f1fd	1aca	bf84	1a24	3124	db7e	98a8	32dc	35b3	12e0	e98b	0b11	b4dc	b393	ff87	
+After Add Round Constant	8b37	f5e2	4e55	2399	f34f	782b	21ab	e7a0	5b20	2d3c	90af	78fb	3924	d0e2	da15	a921	
+After Round No.:23	8b37	f5e2	4e55	2399	f34f	782b	21ab	e7a0	5b20	2d3c	90af	78fb	3924	d0e2	da15	a921	
+After S-Box	38bd	2016	9100	6bee	2b92	d368	65f8	1dfc	086c	67b4	ecf2	d328	be69	7c16	7f50	fe65	
+After Permutation	5353	4bf8	faee	6bee	366e	ce94	7804	1dfc	db44	b49c	3fda	d328	400c	8273	8135	fe65	
+After Rotation	534b	f8fa	ee6b	ee36	6ece	9478	041d	fcdb	44b4	9c3f	dad3	2840	0c82	7381	35fe	6553	
+After Add Round Constant	c44a	22be	af8a	0636	fca3	c824	db41	8976	4f18	caf9	cefe	77f2	151a	9c0c	6f4c	c486	
+After Round No.:24	c44a	22be	af8a	0636	fca3	c824	db41	8976	4f18	caf9	cefe	77f2	151a	9c0c	6f4c	c486	
+After S-Box	499f	6681	f23f	caba	24fb	4369	7895	3eda	9253	4f2e	4121	dd26	505f	e4c4	a294	493a	
+After Permutation	8325	ac3b	3885	caba	1a21	7db3	464f	3eda	4f75	9208	9c07	dd26	1965	adfe	ebae	493a	
+After Rotation	25ac	3b38	85ca	ba1a	217d	b346	4f3e	da4f	7592	089c	07dd	2619	65ad	feeb	ae49	3a83	
+After Add Round Constant	f137	2b17	6525	dda5	3df0	bf51	4246	300a	3d32	c841	b612	3cc4	e48a	315a	045a	e8cb	
+After Round No.:25	f137	2b17	6525	dda5	3df0	bf51	4246	300a	3d32	c841	b612	3cc4	e48a	315a	045a	e8cb	
+After S-Box	25bd	685d	a060	77f0	b72c	8205	969a	bccf	b7b6	4395	8a56	b449	193f	b50f	c90f	1348	
+After Permutation	524d	1fad	d790	77f0	0be3	3eca	2a55	bccf	03ff	f7dc	3e1f	b449	0a77	a647	da47	1348	
+After Rotation	4d1f	add7	9077	f00b	e33e	ca2a	55bc	cf03	fff7	dc3e	1fb4	490a	77a6	47da	4713	4852	
+After Add Round Constant	2d0a	d63e	bfe2	bfcc	92f1	9b44	ed77	b562	c0f6	95bb	721d	5d06	1ef3	c673	a2bc	ebf8	
+After Round No.:26	2d0a	d63e	bfe2	bfcc	92f1	9b44	ed77	b562	c0f6	95bb	721d	5d06	1ef3	c673	a2bc	ebf8	
+After S-Box	67cf	7ab1	8216	8244	e625	e899	17dd	80a6	4c2a	e088	d657	07ca	512b	4adb	f684	1823	
+After Permutation	e58b	f8f5	0052	8244	6683	683f	977b	80a6	4be0	e742	d19d	07ca	4908	52f8	eea7	1823	
+After Rotation	8bf8	f500	5282	4466	8368	3f97	7b80	a64b	e0e7	42d1	9d07	ca49	0852	f8ee	a718	23e5	
+After Add Round Constant	2b77	3d96	98f5	972e	a831	8146	c506	125c	0556	87fa	7263	d55a	190b	fd63	1c3c	b918	
+After Round No.:27	2b77	3d96	98f5	972e	a831	8146	c506	125c	0556	87fa	7263	d55a	190b	fd63	1c3c	b918	
+After S-Box	68dd	b7ea	e320	ed61	f3b5	359a	40ca	5604	c00a	3d2f	d6ab	700f	5ec8	27ab	54b4	8e53	
+After Permutation	85bc	5a8b	0e41	ed61	a5b1	639e	16ce	5604	b005	4d20	a6a4	700f	d09b	a9f8	dae7	8e53	
+After Rotation	bc5a	8b0e	41ed	61a5	b163	9e16	ce56	04b0	054d	20a6	a470	0fd0	9ba9	f8da	e78e	5385	
+After Add Round Constant	35f3	9210	a409	b4b6	f69a	27ac	12a3	c717	67e9	42c0	41df	d3a7	f790	164a	326f	0e47	
+After Round No.:28	35f3	9210	a409	b4b6	f69a	27ac	12a3	c717	67e9	42c0	41df	d3a7	f790	164a	326f	0e47	
+After S-Box	b02b	e65c	f9ce	898a	2aef	6df4	56fb	4d5d	ad1e	964c	9572	7bfd	2dec	5a9f	b6a2	c19d	
+After Permutation	39a1	6fd6	7044	898a	67b2	20a9	1ba6	4d5d	d6e3	edb1	ee8f	7bfd	ec71	9b02	773f	c19d	
+After Rotation	a16f	d670	4489	8a67	b220	a91b	a64d	5dd6	e3ed	b1ee	8f7b	fdec	719b	0277	3fc1	9d39	
+After Add Round Constant	00d6	082f	adb2	ae58	68f1	8602	ef52	25a0	3437	7d91	6034	59b3	0f12	8979	9744	8308	
+After Round No.:29	00d6	082f	adb2	ae58	68f1	8602	ef52	25a0	3437	7d91	6034	59b3	0f12	8979	9744	8308	
+After S-Box	cc7a	c362	f786	f103	a325	3ac6	1206	60fc	b9bd	d7e5	acb9	0e8b	c256	3ede	ed99	3bc3	
+After Permutation	3d79	3261	0685	f103	c3d9	5a3a	72fa	60fc	b736	d96e	a232	0e8b	f995	051d	d65a	3bc3	
+After Rotation	7932	6106	85f1	03c3	d95a	3a72	fa60	fcb7	36d9	6ea2	320e	8bf9	9505	1dd6	5a3b	c33d	
+After Add Round Constant	654f	6e93	635c	6150	a876	94e7	9a0e	7a77	f8df	b73d	faff	d986	334f	89a1	7cc2	8b00	
+After Round No.:30	654f	6e93	635c	6150	a876	94e7	9a0e	7a77	f8df	b73d	faff	d986	334f	89a1	7cc2	8b00	
+After S-Box	a092	a1eb	ab04	a50c	f3da	e91d	efc1	dfdd	2372	8db7	2f22	7e3a	bb92	3ef5	d446	38cc	
+After Permutation	059e	04e7	0e08	a50c	2c07	36c0	301c	dfdd	5d48	f38d	5118	7e3a	835e	0639	ec8a	38cc	
+After Rotation	9e04	e70e	08a5	0c2c	0736	c030	1cdf	dd5d	48f3	8d51	187e	3a83	5e06	39ec	8a38	cc05	
+After Add Round Constant	9a31	76de	5434	645b	b50c	e08c	c658	93a5	ebb9	89ec	1948	c5bb	fadf	842a	8342	a03a	
+After Round No.:31	9a31	76de	5434	645b	b50c	e08c	c658	93a5	ebb9	89ec	1948	c5bb	fadf	842a	8342	a03a	
+After S-Box	efb5	da71	09b9	a908	80c4	1c34	4a03	ebf0	188e	3e14	5e93	4088	2f72	396f	3b96	fcbf	
+After Permutation	46bd	7379	a0b1	a908	6b34	f7c4	a1f3	ebf0	5806	7e9c	1e1b	4088	d3cd	c5d0	c729	fcbf	
+After Rotation	bd73	79a0	b1a9	086b	34f7	c4a1	f3eb	f058	067e	9c1e	1b40	88d3	cdc5	d0c7	29fc	bf46	
+After Add Round Constant	fe56	8253	36aa	cc92	6627	6a28	8455	fd24	5adf	9565	0d41	fe6e	1e7b	ee9a	54da	9ae0	fe568253
+Input: fe56	8253	36aa	cc92	6627	6a28	8455	fd24	5adf	9565	0d41	fe6e	1e7b	ee9a	54da	9ae0	
+After Round No.:0	fe56	8253	36aa	cc92	6627	6a28	8455	fd24	5adf	9565	0d41	fe6e	1e7b	ee9a	54da	9ae0	
+After S-Box	210a	360b	baff	44e6	aa6d	af63	3900	2769	0f72	e0a0	c795	21a1	51d8	11ef	097f	ef1c	
+After Permutation	65ec	72ed	fe19	44e6	8d04	880a	1e69	2769	2ed3	c101	e634	21a1	bec4	fef3	e663	ef1c	
+After Rotation	ec72	edfe	1944	e68d	0488	0a1e	6927	692e	d3c1	01e6	3421	a1be	c4fe	f3e6	63ef	1c65	
+After Add Round Constant	b423	073e	452b	41ec	e7ca	3aff	3005	de3f	23fc	8210	cac8	9704	c200	9bf3	f0a1	94c8	
+After Round No.:1	b423	073e	452b	41ec	e7ca	3aff	3005	de3f	23fc	8210	cac8	9704	c200	9bf3	f0a1	94c8	
+After S-Box	896b	cdb1	9068	9514	1d4f	bf22	bcc0	71b2	6b24	365c	4f43	edc9	46cc	e82b	2cf5	e943	
+After Permutation	1c7f	58a5	057c	9514	6cfd	ce90	cd72	71b2	86ed	db95	a28a	edc9	af8f	0168	c5b6	e943	
+After Rotation	7f58	a505	7c95	146c	fdce	90cd	7271	b286	eddb	95a2	8aed	c9af	8f01	68c5	b6e9	431c	
+After Add Round Constant	e8e8	6533	a164	af25	49d3	0f1b	7ae3	13e8	caa6	2d6c	b2fb	e67a	fcba	ca26	10fb	b2b3	
+After Round No.:2	e8e8	6533	a164	af25	49d3	0f1b	7ae3	13e8	caa6	2d6c	b2fb	e67a	fcba	ca26	10fb	b2b3	
+After S-Box	1313	a0bb	f5a9	f260	9e7b	c258	df1b	5b13	4ffa	67a4	8628	1adf	248f	4f6a	5c28	868b	
+After Permutation	e173	52db	07c9	f260	c568	994b	8408	5b13	5525	7d7b	9cf7	1adf	a204	c9e1	daa3	868b	
+After Rotation	7352	db07	c9f2	60c5	6899	4b84	085b	1355	257d	7b9c	f71a	dfa2	04c9	e1da	a386	8be1	
+After Add Round Constant	7274	1418	c1e8	6587	db70	37f6	e3b3	cab5	8c1a	5ed9	e585	bfc2	2a19	a613	75f6	7c3f	
+After Round No.:3	7274	1418	c1e8	6587	db70	37f6	e3b3	cab5	8c1a	5ed9	e585	bfc2	2a19	a613	75f6	7c3f	
+After S-Box	d6d9	5953	4513	a03d	78dc	bd2a	1b8b	4f80	345f	017e	1030	8246	6f5e	fa5b	d02a	d4b2	
+After Permutation	76e4	f96e	e52e	a03d	375c	f2aa	540b	4f80	b619	8338	9276	8246	bbec	2ee9	0498	d4b2	
+After Rotation	e4f9	6ee5	2ea0	3d37	5cf2	aa54	0b4f	80b6	1983	3892	7682	46bb	ec2e	e904	98d4	b276	
+After Add Round Constant	da9f	3167	3b4c	57ea	0f55	9e4a	966c	bd09	2b0e	f267	9ba3	040d	fae5	8ae9	3c9f	50d1	
+After Round No.:4	da9f	3167	3b4c	57ea	0f55	9e4a	966c	bd09	2b0e	f267	9ba3	040d	fae5	8ae9	3c9f	50d1	
+After S-Box	7fe2	b5ad	b894	0d1f	c200	e19f	eaa4	87ce	68c1	26ad	e8fb	c9c7	2f10	3f1e	b4e2	0c75	
+After Permutation	72fd	b8b2	b58b	0d1f	45ce	6651	6d6a	87ce	a106	ef6a	213c	c9c7	2365	336b	b897	0c75	
+After Rotation	fdb8	b2b5	8b0d	1f45	ce66	516d	6a87	cea1	06ef	6a21	3cc9	c723	6533	6bb8	970c	7572	
+After Add Round Constant	13ca	c413	0d0e	cf76	ed0a	23aa	963a	c7a7	8a19	ca3a	580a	48fc	5925	0de3	2d7d	692c	
+After Round No.:5	13ca	c413	0d0e	cf76	ed0a	23aa	963a	c7a7	8a19	ca3a	580a	48fc	5925	0de3	2d7d	692c	
+After S-Box	5b4f	495b	c7c1	42da	17cf	6bff	eabf	4dfd	3f5e	4fbf	03cf	9324	0e60	c71b	67d7	ae64	
+After Permutation	1995	0b81	851b	42da	5a32	2602	a742	4dfd	ac7a	dc9b	90eb	9324	a004	697f	c9b3	ae64	
+After Rotation	950b	8185	1b42	da5a	3226	02a7	424d	fdac	7adc	9b90	eb93	24a0	0469	7fc9	b3ae	6419	
+After Add Round Constant	67a4	2fb8	f55f	292f	1fc2	5f1e	46c8	733b	5af7	4ddd	3394	c7db	84b9	8108	6ee7	cf2d	
+After Round No.:6	67a4	2fb8	f55f	292f	1fc2	5f1e	46c8	733b	5af7	4ddd	3394	c7db	84b9	8108	6ee7	cf2d	
+After S-Box	adf9	6283	2002	6e62	5246	0251	9a43	dbb8	0f2d	9777	bbe9	4d78	398e	35c3	a11d	4267	
+After Permutation	c39b	0ce1	4e60	6e62	89fe	d9e9	41fb	dbb8	4255	da0f	f691	4d78	7be9	77a4	e37a	4267	
+After Rotation	9b0c	e14e	606e	6289	fed9	e941	fbdb	b842	55da	0ff6	914d	787b	e977	a4e3	7a42	67c3	
+After Add Round Constant	b824	df5f	2dd8	0901	ceb9	3c86	0ff3	a01d	0e8d	9218	93dd	644f	0c08	4be2	e68e	7f06	
+After Round No.:7	b824	df5f	2dd8	0901	ceb9	3c86	0ff3	a01d	0e8d	9218	93dd	644f	0c08	4be2	e68e	7f06	
+After S-Box	8369	7202	6773	cec5	418e	b43a	c22b	fc57	c137	e653	eb77	a992	c4c3	9816	1a31	d2ca	
+After Permutation	4dac	bcc7	a9b6	cec5	bdd9	486d	3e7c	fc57	68a5	4fc1	42e5	a992	1609	4adc	c8fb	d2ca	
+After Rotation	acbc	c7a9	b6ce	c5bd	d948	6d3e	7cfc	5768	a54f	c142	e5a9	9216	094a	dcc8	fbd2	ca4d	
+After Add Round Constant	f7b8	25bb	2e75	fb1b	99fd	0f61	979a	8434	a844	1716	5941	c86c	8517	cc59	d4e6	9a2f	
+After Round No.:8	f7b8	25bb	2e75	fb1b	99fd	0f61	979a	8434	a844	1716	5941	c86c	8517	cc59	d4e6	9a2f	
+After S-Box	2d83	6088	61d0	2858	ee27	c2a5	edef	39b9	f399	5d5a	0e95	43a4	305d	440e	791a	ef62	
+After Permutation	05db	48d0	4988	2858	d79e	fb1c	d456	39b9	b03d	1efe	4d31	43a4	df3f	ab6c	9678	ef62	
+After Rotation	db48	d049	8828	58d7	9efb	1cd4	5639	b9b0	3d1e	fe4d	3143	a4df	3fab	6c96	78ef	6205	
+After Add Round Constant	c830	811c	be42	e42d	3ee3	eb9f	87f2	a687	244e	d367	eb3c	f041	4302	43be	76ad	3c77	
+After Round No.:9	c830	811c	be42	e42d	3ee3	eb9f	87f2	a687	244e	d367	eb3c	f041	4302	43be	76ad	3c77	
+After S-Box	43bc	3554	8196	1967	b11b	18e2	3d26	fa3d	6991	7bad	18b4	2c95	9bc6	9b81	daf7	b4dd	
+After Permutation	5adb	2c33	98f1	1967	4b26	e2df	c71b	fa3d	4504	5738	3421	2c95	2f1b	2f5c	6e2a	b4dd	
+After Rotation	db2c	3398	f119	674b	26e2	dfc7	1bfa	3d45	0457	3834	212c	952f	1b2f	5c6e	2ab4	dd5a	
+After Add Round Constant	f989	5f13	edbb	5817	09e5	9286	4fb8	7b09	d2b7	c057	b9e7	fa25	26a9	3777	56ae	ab83	
+After Round No.:10	f989	5f13	edbb	5817	09e5	9286	4fb8	7b09	d2b7	c057	b9e7	fa25	26a9	3777	56ae	ab83	
+After S-Box	2e3e	025b	1788	035d	ce10	e63a	9283	d8ce	768d	4c0d	8e1d	2f60	6afe	bddd	0af1	f83b	
+After Permutation	2d63	0106	14d5	035d	16de	3ef4	4a4d	d8ce	59ed	636d	a17d	2f60	92c5	45e6	f2ca	f83b	
+After Rotation	6301	0614	d503	5d16	de3e	f44a	4dd8	ce59	ed63	6da1	7d2f	6092	c545	e6f2	caf8	3b2d	
+After Add Round Constant	eca3	acb6	8ffb	d89d	e428	cb9e	95a9	318d	34fd	3f99	f775	dea4	0b25	1de4	dc95	2c18	
+After Round No.:11	eca3	acb6	8ffb	d89d	e428	cb9e	95a9	318d	34fd	3f99	f775	dea4	0b25	1de4	dc95	2c18	
+After S-Box	14fb	f48a	3228	73e7	1963	48e1	e0fe	b537	b927	b2ee	2dd0	71f9	c860	5719	74e0	6453	
+After Permutation	671c	876d	41cf	73e7	ac54	fdd6	55c9	b537	c8de	c317	5c29	71f9	ac33	334a	10b3	6453	
+After Rotation	1c87	6d41	cf73	e7ac	54fd	d655	c9b5	37c8	dec3	175c	2971	f9ac	3333	4a10	b364	5367	
+After Add Round Constant	b340	ddd9	ee2b	7197	ed87	6d14	cbb1	5599	18cf	28f1	4370	dcf1	c3d3	4846	7589	c805	
+After Round No.:12	b340	ddd9	ee2b	7197	ed87	6d14	cbb1	5599	18cf	28f1	4370	dcf1	c3d3	4846	7589	c805	
+After S-Box	8b9c	777e	1168	d5ed	173d	a759	4885	00ee	5342	6325	9bdc	7425	4b7b	939a	d03e	43c0	
+After Permutation	5e71	a293	c485	d5ed	17d3	a7b7	486b	00ee	2767	1700	eff9	7425	08bb	d05a	93fe	43c0	
+After Rotation	71a2	93c4	85d5	ed17	d3a7	b748	6b00	ee27	6717	00ef	f974	2508	bbd0	5a93	fe43	c05e	
+After Add Round Constant	8294	a128	4412	8f8f	04bb	b595	65ef	7094	18a5	6f14	c8b6	2477	de76	5f36	47ab	3934	
+After Round No.:13	8294	a128	4412	8f8f	04bb	b595	65ef	7094	18a5	6f14	c8b6	2477	de76	5f36	47ab	3934	
+After S-Box	36e9	f563	9956	3232	c988	80e0	a012	dce9	53f0	a259	438a	69dd	71da	02ba	9df8	beb9	
+After Permutation	04db	c751	ab64	3232	1561	5c09	7cfb	dce9	3a2d	cb84	2a57	69dd	cf63	bc03	2341	beb9	
+After Rotation	dbc7	51ab	6432	3215	615c	097c	fbdc	e93a	2dcb	842a	5769	ddcf	63bc	0323	41be	b904	
+After Add Round Constant	ec14	6e88	4aa1	7946	8885	cc9d	dca6	24d3	0166	f970	ca4c	6edc	ce09	df43	8c37	42fa	
+After Round No.:14	ec14	6e88	4aa1	7946	8885	cc9d	dca6	24d3	0166	f970	ca4c	6edc	ce09	df43	8c37	42fa	
+After S-Box	1459	a133	9ff5	de9a	3330	44e7	74fa	697b	c5aa	2edc	4f94	a174	41ce	729b	34bd	962f	
+After Permutation	cac3	7fa9	416f	de9a	5a4b	2d9c	1d81	697b	64de	8fa8	eee0	a174	d7e1	e4b4	a292	962f	
+After Rotation	c37f	a941	6fde	9a5a	4b2d	9c1d	8169	7b64	de8f	a8ee	e0a1	74d7	e1e4	b4a2	9296	2fca	
+After Add Round Constant	feb3	1621	c6e1	78d8	fd9e	2d4d	3084	bdca	3f39	6c12	1ee4	26fa	2d79	75af	bb67	64f2	
+After Round No.:15	feb3	1621	c6e1	78d8	fd9e	2d4d	3084	bdca	3f39	6c12	1ee4	26fa	2d79	75af	bb67	64f2	
+After S-Box	218b	5a65	4a15	d373	27e1	6797	bc39	874f	b2be	a456	5119	6a2f	67de	d0f2	88ad	a926	
+After Permutation	f2f8	8916	9966	d373	a0ae	e0d8	3b76	874f	d891	ce79	3b36	6a2f	cef8	79d4	218b	a926	
+After Rotation	f889	1699	66d3	73a0	aee0	d83b	7687	4fd8	91ce	793b	366a	2fce	f879	d421	8ba9	26f2	
+After Add Round Constant	70f6	8ea2	88cc	bcab	4327	399d	d726	29b9	9290	76ee	7e68	51d6	00e4	f1b0	4dee	bd53	
+After Round No.:16	70f6	8ea2	88cc	bcab	4327	399d	d726	29b9	9290	76ee	7e68	51d6	00e4	f1b0	4dee	bd53	
+After S-Box	dc2a	31f6	3344	84f8	9b6d	bee7	7d6a	6e8e	e6ec	da11	d1a3	057a	cc19	258c	9711	870b	
+After Permutation	58d2	b50e	b7bc	84f8	f5e3	d069	13e4	6e8e	e396	df6b	d4d9	057a	4b12	a287	101a	870b	
+After Rotation	d2b5	0eb7	bc84	f8f5	e3d0	6913	e46e	8ee3	96df	6bd4	d905	7a4b	12a2	8710	1a87	0b58	
+After Add Round Constant	5b39	6f6c	e620	e709	c5d9	c719	5b32	7d56	45d0	e3ed	4f81	5339	a4c5	9d39	434f	42bb	
+After Round No.:17	5b39	6f6c	e620	e709	c5d9	c719	5b32	7d56	45d0	e3ed	4f81	5339	a4c5	9d39	434f	42bb	
+After S-Box	08be	a2a4	1a6c	1dce	407e	4d5e	08b6	d70a	907c	1b17	9235	0bbe	f940	e7be	9b92	9688	
+After Permutation	1570	bf6a	07a2	1dce	9774	9a54	dfbc	d70a	9bc2	10a9	998b	0bbe	6fc8	7136	0d1a	9688	
+After Rotation	70bf	6a07	a21d	ce97	749a	54df	bcd7	0a9b	c210	a999	8b0b	be6f	c871	360d	1a96	8815	
+After Add Round Constant	58ce	b063	4199	cb0f	192f	8e96	f458	3757	9ee3	1ce0	5a58	fe94	74e1	d850	7185	8de8	
+After Round No.:18	58ce	b063	4199	cb0f	192f	8e96	f458	3757	9ee3	1ce0	5a58	fe94	74e1	d850	7185	8de8	
+After S-Box	0341	8cab	95ee	48c2	5e62	31ea	2903	bd0d	e11b	541c	0f03	21e9	d915	730c	d530	3713	
+After Permutation	4b83	c469	dd2c	48c2	e36f	8ce7	940e	bd0d	c0f2	75f5	2eea	21e9	ee06	441f	e223	3713	
+After Rotation	83c4	69dd	2c48	c2e3	6f8c	e794	0ebd	0dc0	f275	f52e	ea21	e9ee	0644	1fe2	2337	134b	
+After Add Round Constant	51fa	d5b5	a4f1	e46a	f680	e572	01fb	3895	0287	e2eb	cbb1	6fde	f212	0828	5c31	8471	
+After Round No.:19	51fa	d5b5	a4f1	e46a	f680	e572	01fb	3895	0287	e2eb	cbb1	6fde	f212	0828	5c31	8471	
+After S-Box	052f	7080	f925	19af	2a3c	10d6	c528	b3e0	c63d	1618	4885	a271	2656	c363	04b5	39d5	
+After Permutation	1c80	692f	e08a	19af	99dc	a336	76c8	b3e0	644c	b469	eaf4	a271	1f83	fab6	3d60	39d5	
+After Rotation	8069	2fe0	8a19	af99	dca3	3676	c8b3	e064	4cb4	69ea	f4a2	711f	83fa	b63d	6039	d51c	
+After Add Round Constant	f70d	8e7f	7545	f0bc	13a7	7e9d	4907	94f8	02e1	b205	5126	74c0	4eaf	08d8	4a9b	8c61	
+After Round No.:20	f70d	8e7f	7545	f0bc	13a7	7e9d	4907	94f8	02e1	b205	5126	74c0	4eaf	08d8	4a9b	8c61	
+After S-Box	2dc7	31d2	d090	2c84	5bfd	d1e7	9ecd	e923	c615	86c0	056a	d94c	91f2	c373	9fe8	34a5	
+After Permutation	0143	1d56	fc14	2c84	b2de	38c4	77ee	e923	1f59	5f8c	dc26	d94c	a557	f7d6	ab4d	34a5	
+After Rotation	431d	56fc	142c	84b2	de38	c477	eee9	231f	595f	8cdc	26d9	4ca5	57f7	d6ab	4d34	a501	
+After Add Round Constant	f113	2ae5	4592	2baa	70e8	6e4c	8c3e	c4c4	7600	a878	dc09	249a	2d00	1d88	ea22	7f2d	
+After Round No.:21	f113	2ae5	4592	2baa	70e8	6e4c	8c3e	c4c4	7600	a878	dc09	249a	2d00	1d88	ea22	7f2d	
+After S-Box	255b	6f10	90e6	68ff	dc13	a194	34b1	4949	dacc	f3d3	74ce	69ef	67cc	5733	1f66	d267	
+After Permutation	4da4	07ef	f819	68ff	955a	e8dd	7df8	4949	b323	9a3c	1d21	69ef	b5ab	8554	cd01	d267	
+After Rotation	a407	eff8	1968	ff95	5ae8	dd7d	f849	49b3	239a	3c1d	2169	efb5	ab85	54cd	01d2	674d	
+After Add Round Constant	d64d	a104	b1e3	16e4	34dd	75c1	42a5	8c9c	0dd3	4912	e62e	95b2	6603	5ed5	f76f	965d	
+After Round No.:22	d64d	a104	b1e3	16e4	34dd	75c1	42a5	8c9c	0dd3	4912	e62e	95b2	6603	5ed5	f76f	965d	
+After S-Box	7a97	f5c9	851b	5a19	b977	d045	96f0	34e4	c77b	9e56	1a61	e086	aacb	0170	2da2	ea07	
+After Permutation	208e	afd0	df02	5a19	8d93	e4a1	a214	34e4	27fd	7ed0	fae7	e086	40cc	eb77	c7a5	ea07	
+After Rotation	8eaf	d0df	025a	198d	93e4	a1a2	1434	e427	fd7e	d0fa	e7e0	8640	cceb	77c7	a5ea	0720	
+After Add Round Constant	2de8	d4c4	35e5	7da2	6d0f	e8a9	5a61	331f	25c2	c883	65af	15b0	fafe	93cd	cc6c	b0ba	
+After Round No.:23	2de8	d4c4	35e5	7da2	6d0f	e8a9	5a61	331f	25c2	c883	65af	15b0	fafe	93cd	cc6c	b0ba	
+After S-Box	6713	7949	b010	d7f6	a7c2	13fe	0fa5	bb52	6046	433b	a0f2	508c	2f21	eb47	44a4	8c8f	
+After Permutation	b0e5	aebf	67e6	d7f6	1c90	a8ac	b4f7	bb52	30ca	13b7	f07e	508c	a3ae	67c8	c82b	8c8f	
+After Rotation	e5ae	bf67	e6d7	f61c	90a8	acb4	f7bb	5230	ca13	b7f0	7e50	8ca3	ae67	c8c8	2b8c	8fb0	
+After Add Round Constant	56ad	e92b	a7f6	0e1c	1e7d	e060	cedf	decb	d477	e6aa	727b	dc55	b6ff	f153	64da	eee3	
+After Round No.:24	56ad	e92b	a7f6	0e1c	1e7d	e060	cedf	decb	d477	e6aa	727b	dc55	b6ff	f153	64da	eee3	
+After S-Box	0af7	1e68	fd2a	c154	51d7	1cac	4172	7148	79dd	1aff	d6d8	7400	8a22	250b	a97f	111b	
+After Permutation	cba3	df3c	3c7e	c154	209f	6de4	303a	7148	0ddd	6eff	a2d8	7400	9b39	3410	b864	111b	
+After Rotation	a3df	3c3c	7ec1	5420	9f6d	e430	3a71	480d	dd6e	ffa2	d874	009b	3934	10b8	6411	1bcb	
+After Add Round Constant	6f6a	2c1b	5e1c	77ab	bbe0	f03b	2d79	9dc8	a50e	bf47	86a9	1746	b811	4327	ba22	ca13	
+After Round No.:25	6f6a	2c1b	5e1c	77ab	bbe0	f03b	2d79	9dc8	a50e	bf47	86a9	1746	b811	4327	ba22	ca13	
+After S-Box	a2af	6458	0154	ddf8	881c	2cb8	67de	e743	f0c1	829d	3afe	5d9a	8355	9b6d	8f66	4f5b	
+After Permutation	7f57	b9a0	dcac	ddf8	6f5f	cbfb	809d	e743	ad5b	df07	6764	5d9a	cc0e	d436	c03d	4f5b	
+After Rotation	57b9	a0dc	acdd	f86f	5fcb	fb80	9de7	43ad	5bdf	0767	645d	9acc	0ed4	36c0	3d4f	5b7f	
+After Add Round Constant	37a4	c943	dc48	c830	0f7e	cc9a	35a2	2a0c	1cde	c0e4	b6c6	aec8	b621	b559	98f8	ff25	
+After Round No.:26	37a4	c943	dc48	c830	0f7e	cc9a	35a2	2a0c	1cde	c0e4	b6c6	aec8	b621	b559	98f8	ff25	
+After S-Box	bdf9	4e9b	7493	43bc	c2d1	44ef	b0f6	6fc4	5471	4c19	8a4a	f143	8a65	800e	e323	2260	
+After Permutation	fe45	0d27	372f	43bc	ad15	2b2b	df32	6fc4	a532	bd5a	7b09	f143	a805	a26e	c143	2260	
+After Rotation	450d	2737	2f43	bcad	152b	2bdf	326f	c4a5	32bd	5a7b	09f1	43a8	05a2	6ec1	4322	60fe	
+After Add Round Constant	e48c	6fcd	75b6	0f75	39f4	6d8e	7bf5	30b6	572c	9fa4	df4d	4eb9	165b	7336	b846	f631	
+After Round No.:27	e48c	6fcd	75b6	0f75	39f4	6d8e	7bf5	30b6	572c	9fa4	df4d	4eb9	165b	7336	b846	f631	
+After S-Box	1934	a247	d08a	c2d0	be29	a731	d820	bc8a	0d64	e2f9	7297	918e	5a08	dbba	839a	2ab5	
+After Permutation	dbe4	6097	125a	c2d0	02a3	1bbb	64aa	bc8a	9cea	7377	e319	918e	70bd	f10f	a92f	2ab5	
+After Rotation	e460	9712	5ac2	d002	a31b	bb64	aabc	8a9c	ea73	77e3	1991	8e70	bdf1	0fa9	2f2a	b5db	
+After Add Round Constant	5df9	9e14	bcde	2313	e852	44fa	ef09	4d03	4d0f	99fd	b700	5247	19d8	2d19	7a0b	709d	
+After Round No.:28	5df9	9e14	bcde	2313	e852	44fa	ef09	4d03	4d0f	99fd	b700	5247	19d8	2d19	7a0b	709d	
+After S-Box	072e	e159	8471	6b5b	1306	992f	12ce	97cb	97c2	ee27	8dcc	069d	5e73	675e	dfc8	dce7	
+After Permutation	6c75	8a02	ef2a	6b5b	84cd	0ee4	8505	97cb	915f	e8ba	8b51	069d	8294	bbb9	032f	dce7	
+After Rotation	758a	02ef	2a6b	5b84	cd0e	e485	0597	cb91	5fe8	ba8b	5106	9d82	94bb	b903	2fdc	e76c	
+After Add Round Constant	d4f1	34ae	9394	7f75	83df	c16c	4e9c	935b	b032	862e	21bf	f949	3232	4005	875f	cd3b	
+After Round No.:29	d4f1	34ae	9394	7f75	83df	c16c	4e9c	935b	b032	862e	21bf	f949	3232	4005	875f	cd3b	
+After S-Box	7925	b9f1	ebe9	d2d0	3b72	45a4	91e4	eb08	8cb6	3a61	6582	2e9e	b6b6	9cc0	3d02	47b8	
+After Permutation	abf5	6b21	3939	d2d0	d07a	aeac	7aec	eb08	a228	14ff	4b1c	2e9e	f10e	db78	7aba	47b8	
+After Rotation	f56b	2139	39d2	d0d0	7aae	ac7a	eceb	08a2	2814	ff4b	1c2e	9ef1	0edb	787a	ba47	b8ab	
+After Add Round Constant	e188	2ec6	173d	2e5d	49ca	06ef	8c99	8662	ea1a	47e6	e51f	ec7e	ad25	e445	dcce	806e	
+After Round No.:30	e188	2ec6	173d	2e5d	49ca	06ef	8c99	8662	ea1a	47e6	e51f	ec7e	ad25	e445	dcce	806e	
+After S-Box	1533	614a	5db7	6107	9e4f	ca12	34ee	3aa6	1f5f	9d1a	1052	14d1	f760	1990	7441	3ca1	
+After Permutation	7434	004d	3cb0	6107	a4e9	f0b4	0e48	3aa6	0b8e	89cb	0483	14d1	cbc1	2531	48e0	3ca1	
+After Rotation	3400	4d3c	b061	07a4	e9f0	b40e	483a	a60b	8e89	cb04	8314	d1cb	c125	3148	e03c	a174	
+After Add Round Constant	302d	dd0c	fbf0	5fd3	97c6	d46a	f1b3	5c53	314f	c79f	83de	5d03	5dfe	7b86	d946	75a9	
+After Round No.:31	302d	dd0c	fbf0	5fd3	97c6	d46a	f1b3	5c53	314f	c79f	83de	5d03	5dfe	7b86	d946	75a9	
+After S-Box	bc67	77c4	282c	027b	ed4a	79af	258b	040b	b592	4de2	3b71	07cb	0721	d83a	7e9a	d0fe	
+After Permutation	be1c	75bf	2a57	027b	e941	7da4	2180	040b	b259	4a29	3cba	07cb	d7df	08c4	ae64	d0fe	
+After Rotation	1c75	bf2a	5702	7be9	417d	a421	8004	0bb2	594a	293c	ba07	cbd7	df08	c4ae	64d0	febe	
+After Add Round Constant	5d58	c7dd	dc03	4010	72ad	49a8	106e	187e	adab	2283	ac08	4172	2fbe	e281	8fae	da58	5d58c7dd
+Input: 5d58	c7dd	dc03	4010	72ad	49a8	106e	187e	adab	2283	ac08	4172	2fbe	e281	8fae	da58	
+After Round No.:0	5d58	c7dd	dc03	4010	72ad	49a8	106e	187e	adab	2283	ac08	4172	2fbe	e281	8fae	da58	
+After S-Box	0703	4d77	74cb	9c5c	d6f7	9ef3	5ca1	53d1	f7f8	663b	f4c3	95d6	6281	1635	32f1	7f03	
+After Permutation	9b5f	d12b	e897	9c5c	8526	cd22	0f70	53d1	622e	f3ed	6115	95d6	1d82	6936	4df2	7f03	
+After Rotation	5fd1	2be8	979c	5c85	26cd	220f	7053	d162	2ef3	ed61	1595	d61d	8269	364d	f27f	039b	
+After Add Round Constant	2782	4528	c383	b7e4	0a0f	52f0	3731	4673	7f2e	6d8b	ac3c	cb63	7f6b	de5a	7f31	7bfe	
+After Round No.:1	2782	4528	c383	b7e4	0a0f	52f0	3731	4673	7f2e	6d8b	ac3c	cb63	7f6b	de5a	7f31	7bfe	
+After S-Box	6d36	9063	4b3b	8d19	cfc2	062c	bdb5	9adb	d261	a738	f4b4	48ab	d2a8	710f	d2b5	d821	
+After Permutation	e02f	1d7a	c622	8d19	5519	9cf7	276e	9adb	9aca	ef93	bc1f	48ab	0a89	a92e	0a94	d821	
+After Rotation	2f1d	7ac6	228d	1955	199c	f727	6e9a	db9a	caef	93bc	1f48	ab0a	89a9	2e0a	94d8	21e0	
+After Add Round Constant	98ad	3af4	475c	b40e	65a1	7575	770c	3cfc	a7ba	2b86	4756	c7d5	f762	8f6b	eeea	9177	
+After Round No.:2	98ad	3af4	475c	b40e	65a1	7575	770c	3cfc	a7ba	2b86	4756	c7d5	f762	8f6b	eeea	9177	
+After S-Box	e3f7	bf29	9d04	89c1	a0f5	d0d0	ddc4	b424	fd8f	683a	9d0a	4d70	2da6	32a8	111f	e5dd	
+After Permutation	6a36	36e8	14c5	89c1	14d1	64f4	69e0	b424	b0ff	254a	d07a	4d70	c87b	d775	f4c2	e5dd	
+After Rotation	3636	e814	c589	c114	d164	f469	e0b4	24b0	ff25	4ad0	7a4d	70c8	7bd7	75f4	c2e5	dd6a	
+After Add Round Constant	3558	2125	bd7f	c5d6	443b	e0db	bc0c	dc10	65c2	2e0d	68b8	50e8	a127	3a2d	9555	cdc8	
+After Round No.:3	3558	2125	bd7f	c5d6	443b	e0db	bc0c	dc10	65c2	2e0d	68b8	50e8	a127	3a2d	9555	cdc8	
+After S-Box	b003	6560	87d2	407a	99b8	1c78	84c4	745c	a046	61c7	a383	0c13	f56d	bf67	e000	4743	
+After Permutation	f079	251a	c7a8	407a	ede4	6824	f098	745c	ac55	6dd4	af90	0c13	b22e	f824	a743	4743	
+After Rotation	7925	1ac7	a840	7aed	e468	24f0	9874	5cac	556d	d4af	900c	13b2	2ef8	24a7	4347	43f0	
+After Add Round Constant	6ecb	dd49	b4ec	95a0	96cb	18e6	2391	98ff	66f8	8e84	b52d	d104	3daf	c68c	e712	e24b	
+After Round No.:4	6ecb	dd49	b4ec	95a0	96cb	18e6	2391	98ff	66f8	8e84	b52d	d104	3daf	c68c	e712	e24b	
+After S-Box	a148	779e	8914	e0fc	ea48	531a	6be5	e322	aa23	3139	8067	75c9	b7f2	4a34	1d56	1698	
+After Permutation	41b4	9762	69e8	e0fc	096a	b038	88c7	e322	dfea	44f0	f5ae	75c9	a16a	5cac	0bce	1698	
+After Rotation	b497	6269	e8e0	fc09	6ab0	3888	c7e3	22df	ea44	f0f5	ae75	c9a1	6a5c	ac0b	ce16	9841	
+After Add Round Constant	caa9	73c7	6ae1	ac3a	8954	0ac5	f396	1be5	6d6e	510e	c9b6	4b7a	5e4e	4e36	6487	8bfb	
+After Round No.:5	caa9	73c7	6ae1	ac3a	8954	0ac5	f396	1be5	6d6e	510e	c9b6	4b7a	5e4e	4e36	6487	8bfb	
+After S-Box	4ffe	db4d	af15	f4bf	3e09	cf40	2bea	5810	a7a1	05c1	4e8a	98df	0191	91ba	a93d	3828	
+After Permutation	bb41	2ff2	5baa	f4bf	6619	9750	73fa	5810	3f7e	9d1e	d655	98df	39b9	a992	9115	3828	
+After Rotation	412f	f25b	aaf4	bf66	1997	5073	fa58	103f	7e9d	1ed6	5598	df39	b9a9	9291	1538	28bb	
+After Add Round Constant	13c8	a08e	8511	0e3b	0733	acea	fed3	85ce	5eb8	d123	9d99	8274	39f9	93d0	d071	93cf	
+After Round No.:6	13c8	a08e	8511	0e3b	0733	acea	fed3	85ce	5eb8	d123	9d99	8274	39f9	93d0	d071	93cf	
+After S-Box	5b43	fc31	3055	c1b8	cdbb	f41f	217b	3041	0183	756b	e7ee	36d9	be2e	eb7c	7cd5	eb42	
+After Permutation	9afb	3d89	f1ed	c1b8	fdfa	c45e	113a	3041	375a	43b2	d137	36d9	556c	003e	9797	eb42	
+After Rotation	fb3d	89f1	edc1	b8fd	fac4	5e11	3a30	4137	5a43	b2d1	3736	d955	6c00	3e97	97eb	429a	
+After Add Round Constant	1855	8802	bb2b	5f75	caa4	b156	4e48	2912	12f6	34f3	39c6	c529	8e91	e596	0437	59dd	
+After Round No.:7	1855	8802	bb2b	5f75	caa4	b156	4e48	2912	12f6	34f3	39c6	c529	8e91	e596	0437	59dd	
+After S-Box	5300	33c6	8868	02d0	4ff9	850a	9193	6e56	562a	b92b	be4a	406e	31e5	10ea	c9bd	0e77	
+After Permutation	51d0	3116	8ab8	02d0	21af	eb5c	ffc5	6e56	1644	f945	fe24	406e	3f92	1e9d	c7ca	0e77	
+After Rotation	d031	168a	b802	d021	afeb	5cff	c56e	5616	44f9	45fe	2440	6e3f	921e	9dc7	ca0e	7751	
+After Add Round Constant	1b2d	749c	2fa9	057f	70a0	ff22	e00c	82e2	47ee	9bd2	97d8	a495	0deb	8d58	a322	4733	
+After Round No.:8	1b2d	749c	2fa9	057f	70a0	ff22	e00c	82e2	47ee	9bd2	97d8	a495	0deb	8d58	a322	4733	
+After S-Box	5867	d9e4	62fe	c0d2	dcfc	2266	1cc4	3616	9d11	e876	ed73	f9e0	c718	3703	fb66	9dbb	
+After Permutation	98b5	1936	a22c	c0d2	eaea	1470	2ad2	3616	64f1	1196	1493	f9e0	5aa3	aab8	66dd	9dbb	
+After Rotation	b519	36a2	2cc0	d2ea	ea14	702a	d236	1664	f111	9614	93f9	e05a	a3aa	b866	dd9d	bb98	
+After Add Round Constant	a201	e775	62da	5e40	89fc	3ef5	03ef	033b	d841	6b2e	4df2	2bbc	a701	8f8e	db5b	960a	
+After Round No.:9	a201	e775	62da	5e40	89fc	3ef5	03ef	033b	d841	6b2e	4df2	2bbc	a701	8f8e	db5b	960a	
+After S-Box	f6c5	1dd0	a67f	019c	3e24	b120	cb12	cbb8	7395	a861	9726	6884	fdc5	3231	7808	eacf	
+After Permutation	f759	1c4c	a7e3	019c	f59c	7a98	00aa	cbb8	1b11	c0e5	ffa2	6884	170a	d8fe	92c7	eacf	
+After Rotation	591c	4ca7	e301	9cf5	9c7a	9800	aacb	b81b	11c0	e5ff	a268	8417	0ad8	fe92	c7ea	cff7	
+After Add Round Constant	7779	7822	dfa3	8dc1	7f7d	4abf	de89	f5df	e020	6e22	3b23	e90d	1652	d99b	f3e4	9e20	
+After Round No.:10	7779	7822	dfa3	8dc1	7f7d	4abf	de89	f5df	e020	6e22	3b23	e90d	1652	d99b	f3e4	9e20	
+After S-Box	ddde	d366	72fb	3745	d2d7	9f82	713e	2072	1c6c	a166	b86b	1ec7	5a06	7ee8	2b19	e16c	
+After Permutation	ea9b	e423	45be	3745	f2a5	bff0	514c	2072	02ab	bfa1	a6ac	1ec7	bb6a	9f84	ca75	e16c	
+After Rotation	9be4	2345	be37	45f2	a5bf	f051	4c20	7202	abbf	a1a6	ac1e	c7bb	6a9f	84ca	75e1	6cea	
+After Add Round Constant	2586	c9e7	792f	c179	aba9	c7a5	93f1	d536	f359	739e	2664	45cd	b07f	bbbc	877e	5dd5	
+After Round No.:11	2586	c9e7	792f	c179	aba9	c7a5	93f1	d536	f359	739e	2664	45cd	b07f	bbbc	877e	5dd5	
+After S-Box	603a	4e1d	de62	45de	f8fe	4df0	eb25	70ba	2b0e	dbe1	6aa9	9047	8cd2	8884	3dd1	0770	
+After Permutation	25e4	0bc3	9bbc	45de	8844	3d4a	9b9f	70ba	bb49	4ba6	faee	9047	8ba2	8ff4	3aa1	0770	
+After Rotation	e40b	c39b	bc45	de88	443d	4a9b	9f70	babb	494b	a6fa	ee90	478b	a28f	f43a	a107	7025	
+After Add Round Constant	7ac4	3433	dafd	6873	dcc7	e15a	a16c	d88c	8357	b88f	088f	2ad0	332f	f270	632c	e4c3	
+After Round No.:12	7ac4	3433	dafd	6873	dcc7	e15a	a16c	d88c	8357	b88f	088f	2ad0	332f	f270	632c	e4c3	
+After S-Box	df49	b9bb	7f27	a3db	744d	150f	f5a4	7334	3b0d	8332	c332	6f7c	bb62	26dc	ab64	194b	
+After Permutation	7c92	1a60	dcfc	a3db	0779	663b	8690	7334	5471	ec4e	ac4e	6f7c	a229	3f97	b22f	194b	
+After Rotation	921a	60dc	fca3	db07	7966	3b86	9073	3454	71ec	4eac	4e6f	7ca2	293f	97b2	2f19	4b7c	
+After Add Round Constant	a30c	6e40	bae0	7d7f	aa7a	39d3	8b62	b6c1	237a	bcd1	1db1	7c11	4be5	9c55	7881	c452	
+After Round No.:13	a30c	6e40	bae0	7d7f	aa7a	39d3	8b62	b6c1	237a	bcd1	1db1	7c11	4be5	9c55	7881	c452	
+After S-Box	fbc4	a19c	8f1c	d7d2	ffdf	be7b	38a6	8a45	6bdf	8475	5785	d455	9810	e400	d335	4906	
+After Permutation	2c16	764e	58ce	d7d2	759a	343e	b2e3	8a45	bf8a	5020	83d0	d455	d116	ad06	9a33	4906	
+After Rotation	1676	4e58	ced7	d275	9a34	3eb2	e38a	45bf	8a50	2083	d0d4	55d1	16ad	069a	3349	062c	
+After Add Round Constant	26c3	6b35	b546	19a6	c15d	01d3	c454	8158	5deb	95c9	43b7	e6de	80fa	e2ba	7dc2	9022	
+After Round No.:14	26c3	6b35	b546	19a6	c15d	01d3	c454	8158	5deb	95c9	43b7	e6de	80fa	e2ba	7dc2	9022	
+After S-Box	6a4b	a8b0	809a	5efa	4507	c57b	4909	3503	0718	e04e	9b8d	1a71	3c2f	168f	d746	ec66	
+After Permutation	34b1	f64a	de60	5efa	7004	f078	7c0a	3503	1d69	fa3f	81fc	1a71	d049	fae9	3b20	ec66	
+After Rotation	b1f6	4ade	605e	fa70	04f0	787c	0a35	031d	69fa	3f81	fc1a	71d0	49fa	e93b	20ec	6634	
+After Add Round Constant	ed2a	b7be	b761	d8ee	b761	09ac	b950	4583	caa4	02a5	3a5d	23f3	958f	aa48	49bd	9b5c	
+After Round No.:15	ed2a	b7be	b761	d8ee	b761	09ac	b950	4583	caa4	02a5	3a5d	23f3	958f	aa48	49bd	9b5c	
+After S-Box	176f	8d81	8da5	7311	8da5	cef4	8e0c	903b	4ff9	c6f0	bf07	6b2b	e032	ff93	9e87	e804	
+After Permutation	647e	fe90	feb4	7311	1d9e	5ecf	1e37	903b	24d2	addb	d42c	6b2b	0836	1797	7683	e804	
+After Rotation	7efe	90fe	b473	111d	9e5e	cf1e	3790	3b24	d2ad	dbd4	2c6b	2b08	3617	9776	83e8	0464	
+After Add Round Constant	f76b	0907	d66c	5a28	32a5	3080	982f	1505	d36f	d987	7469	4d10	3e82	b505	462d	9ac5	
+After Round No.:16	f76b	0907	d66c	5a28	32a5	3080	982f	1505	d36f	d987	7469	4d10	3e82	b505	462d	9ac5	
+After S-Box	2da8	cecd	7aa4	0f63	b6f0	bc3c	e362	50c0	7ba2	7e3d	d9ae	975c	b136	80c0	9a67	ef40	
+After Permutation	22cb	c1ae	75c7	0f63	e630	ecfc	b3a2	50c0	ecfe	e961	4ef2	975c	5e76	6f80	7527	ef40	
+After Rotation	cbc1	ae75	c70f	63e6	30ec	fcb3	a250	c0ec	fee9	614e	f297	5c5e	766f	8075	27ef	4022	
+After Add Round Constant	5445	0f2a	f0ab	51fa	12f5	5ab9	1914	af5f	adda	d967	6913	354c	0892	969e	50b7	7785	
+After Round No.:17	5445	0f2a	f0ab	51fa	12f5	5ab9	1914	af5f	adda	d967	6913	354c	0892	969e	50b7	7785	
+After S-Box	0990	c26f	2cf8	052f	5620	0f8e	5e59	f202	f77f	7ead	ae5b	b094	c3e6	eae1	0c8d	dd30	
+After Permutation	0cbf	c740	29d7	052f	a422	fd8c	ac5b	f202	47eb	ce39	1ecf	b094	1ed6	37d1	d1bd	dd30	
+After Rotation	bfc7	4029	d705	2fa4	22fd	8cac	5bf2	0247	ebce	391e	cfb0	941e	d637	d1d1	bddd	300c	
+After Add Round Constant	a7d6	8685	7681	2c1c	c792	c663	9373	2f03	c8a1	ac65	9efd	d443	82a7	7414	14cc	35df	
+After Round No.:18	a7d6	8685	7681	2c1c	c792	c663	9373	2f03	c8a1	ac65	9efd	d443	82a7	7414	14cc	35df	
+After S-Box	fd7a	3a30	da35	6454	4de6	4aab	ebdb	62cb	43f5	f4a0	e127	799b	36fd	d959	5944	b072	
+After Permutation	992e	5e64	be61	6454	2f2d	2860	8910	62cb	3a6e	8d3b	98bc	799b	868f	692b	e936	b072	
+After Rotation	2e5e	64be	6164	542f	2d28	6089	1062	cb3a	6e8d	3b98	bc79	9b86	8f69	2be9	36b0	7299	
+After Add Round Constant	fc94	d096	da0d	75b6	b41c	5e67	03a0	f60f	7e9f	2955	9e09	2176	7b37	142f	6faa	e3bf	
+After Round No.:19	fc94	d096	da0d	75b6	b41c	5e67	03a0	f60f	7e9f	2955	9e09	2176	7b37	142f	6faa	e3bf	
+After S-Box	24e9	7cea	7fc7	d08a	8954	01ad	cbfc	2ac2	d1e2	6e00	e1ce	65da	d8bd	5962	a2ff	1b82	
+After Permutation	f463	ac60	af4d	d08a	a396	2b6f	e13e	2ac2	b438	0bda	8414	65da	c33f	42e0	b97d	1b82	
+After Rotation	63ac	60af	4dd0	8aa3	962b	6fe1	3e2a	c2b4	380b	da84	1465	dac3	3f42	e0b9	7d1b	82f4	
+After Add Round Constant	da50	bf4e	38fc	cbc6	cd2f	b808	be7e	7748	ee38	229f	70e9	de64	09f7	3354	677d	3a39	
+After Round No.:20	da50	bf4e	38fc	cbc6	cd2f	b808	be7e	7748	ee38	229f	70e9	de64	09f7	3354	677d	3a39	
+After S-Box	7f0c	8291	b324	484a	4762	83c3	81d1	dd93	11b3	66e2	dc1e	71a9	ce2d	bb09	add7	bfbe	
+After Permutation	3746	cadb	fb6e	484a	9af1	5e50	5c42	dd93	601a	174b	adb7	71a9	7193	04b7	1269	bfbe	
+After Rotation	46ca	dbfb	6e48	4a9a	f15e	505c	42dd	9360	1a17	4bad	b771	a971	9304	b712	69bf	be37	
+After Add Round Constant	f4c0	afe4	9fae	f192	840e	fa31	e032	3505	36b8	6749	6ca1	8166	680d	fdef	06ad	9863	
+After Round No.:21	f4c0	afe4	9fae	f192	840e	fa31	e032	3505	36b8	6749	6ca1	8166	680d	fdef	06ad	9863	
+After S-Box	294c	f219	e2f1	25e6	39c1	2fb5	1cb6	b0c0	ba83	ad9e	a4f5	35aa	a3c7	2712	caf7	e3ab	
+After Permutation	0caa	d7ff	c717	25e6	8901	9f75	ac76	b0c0	8f29	9834	915f	35aa	406c	c4b9	295c	e3ab	
+After Rotation	aad7	ffc7	1725	e689	019f	75ac	76b0	c08f	2998	3491	5f35	aa40	6cc4	b929	5ce3	ab0c	
+After Add Round Constant	dd1d	b0d3	afa0	fdd8	db94	0df0	c10c	0378	13d1	4186	23fa	503d	2742	c331	5280	da1c	
+After Round No.:22	dd1d	b0d3	afa0	fdd8	db94	0df0	c10c	0378	13d1	4186	23fa	503d	2742	c331	5280	da1c	
+After S-Box	7757	8c7b	f2fc	2773	78e9	c72c	45c4	cbd3	5b75	953a	6b2f	0cb7	6d96	4bb5	063c	7f54	
+After Permutation	5024	ab08	d58f	2773	b33a	0cff	8e17	cbd3	57c2	998d	6798	0cb7	12c2	34e1	7968	7f54	
+After Rotation	24ab	08d5	8f27	73b3	3a0c	ff8e	17cb	d357	c299	8d67	980c	b712	c234	e179	687f	5450	
+After Add Round Constant	c3e4	0cba	c2b2	d7c8	1337	4695	5df8	224f	eadd	84f0	15db	4682	f047	fd7f	8f01	fdea	
+After Round No.:23	c3e4	0cba	c2b2	d7c8	1337	4695	5df8	224f	eadd	84f0	15db	4682	f047	fd7f	8f01	fdea	
+After S-Box	4b19	c48f	4686	7d43	5bbd	9ae0	0723	6692	1f77	392c	5078	9a36	2c9d	27d2	32c5	271f	
+After Permutation	365a	b9cc	3bc5	7d43	3d2f	fc72	61b1	6692	8541	a31a	ca4e	9a36	0b82	00cd	15da	271f	
+After Rotation	5ab9	cc3b	c57d	433d	2ffc	7261	b166	9285	41a3	1aca	4e9a	360b	8200	cd15	da27	1f36	
+After Add Round Constant	cbb8	f5ff	869c	5b3d	bdd1	a60d	888a	1f20	4c07	4984	42c5	85bd	8a98	f5a0	1375	7e69	
+After Round No.:24	cbb8	f5ff	869c	5b3d	bdd1	a60d	888a	1f20	4c07	4984	42c5	85bd	8a98	f5a0	1375	7e69	
+After S-Box	4883	2022	3ae4	08b7	8775	fac7	333f	526c	94cd	9e39	9640	3087	3fe3	20fc	5bd0	d1ae	
+After Permutation	4034	2895	3253	08b7	d519	a8ab	6153	526c	a44a	aebe	a6c7	3087	ee4d	f152	8a7e	d1ae	
+After Rotation	3428	9532	5308	b7d5	19a8	ab61	5352	6ca4	4aae	bea6	c730	87ee	4df1	528a	7ed1	ae40	
+After Add Round Constant	ffb3	8511	3263	db60	361b	b76c	465a	c25f	124e	7e4b	7565	9e99	ccce	84f9	d4e2	5c88	
+After Round No.:25	ffb3	8511	3263	db60	361b	b76c	465a	c25f	124e	7e4b	7565	9e99	ccce	84f9	d4e2	5c88	
+After S-Box	228b	3055	b6ab	78ac	ba58	8da4	9a0f	4602	5691	d198	d0a0	e1ee	4441	392e	7916	0433	
+After Permutation	5a27	48f9	ce07	78ac	fc5a	cba6	dc0d	4602	b77f	3076	314e	e1ee	4072	3d1d	7d25	0433	
+After Rotation	2748	f9ce	0778	acfc	5acb	a6dc	0d46	02b7	7f30	7631	4ee1	ee40	723d	1d7d	2504	335a	
+After Add Round Constant	0733	2235	36e3	7cbd	0a7e	77f6	a501	e916	402f	2fae	a14a	023c	198a	9c16	80ad	d700	
+After Round No.:26	0733	2235	36e3	7cbd	0a7e	77f6	a501	e916	402f	2fae	a14a	023c	198a	9c16	80ad	d700	
+After S-Box	cdbb	66b0	ba1b	d487	cfd1	dd2a	f0c5	1e5a	9c62	62f1	f59f	c6b4	5e3f	e45a	3cf7	7dcc	
+After Permutation	193c	b237	6e9c	d487	d18b	c370	ee9f	1e5a	5ad6	a445	332b	c6b4	23f3	9996	413b	7dcc	
+After Rotation	3cb2	376e	9cd4	87d1	8bc3	70ee	9f1e	5a5a	d6a4	4533	2bc6	b423	f399	9641	3b7d	cc19	
+After Add Round Constant	dc31	8004	e347	da99	b08c	b29d	e8a4	c66b	fb13	8a5c	0122	bf34	0452	9ab6	b0a1	614c	
+After Round No.:27	dc31	8004	e347	da99	b08c	b29d	e8a4	c66b	fb13	8a5c	0122	bf34	0452	9ab6	b0a1	614c	
+After S-Box	74b5	3cc9	1b9d	7fee	8c34	86e7	13f9	4aa8	285b	3f04	c566	82b9	c906	ef8a	8cf5	a594	
+After Permutation	0b5b	4327	6473	7fee	c69c	cc4f	5951	4aa8	aae2	bdbd	47df	82b9	6c92	4a1e	2961	a594	
+After Rotation	5b43	2764	737f	eec6	9ccc	4f59	514a	a8aa	e2bd	bd47	df82	b96c	924a	1e29	61a5	940b	
+After Add Round Constant	d4dc	2e66	d59b	41d7	e203	d8ef	9597	6b11	4559	df61	7cf1	7d43	ee31	3b99	ac86	4ecd	
+After Round No.:28	d4dc	2e66	d59b	41d7	e203	d8ef	9597	6b11	4559	df61	7cf1	7d43	ee31	3b99	ac86	4ecd	
+After S-Box	7974	61aa	70e8	957d	16cb	7312	e0ed	a855	900e	72a5	d425	d79b	11b5	b8ee	f43a	9147	
+After Permutation	ec09	f4d7	e595	957d	be9e	db47	48b8	a855	4795	a53e	03be	d79b	80f2	29a9	657d	9147	
+After Rotation	09f4	d7e5	9595	7dbe	9edb	4748	b8a8	5547	95a5	3e03	bed7	9b80	f229	a965	7d91	47ec	
+After Add Round Constant	695b	09a4	febe	a1af	55ac	242f	01ad	1d11	e5ef	09a6	8f90	f747	8fa0	3067	d514	2dbb	
+After Round No.:29	695b	09a4	febe	a1af	55ac	242f	01ad	1d11	e5ef	09a6	8f90	f747	8fa0	3067	d514	2dbb	
+After S-Box	ae08	cef9	2181	f5f2	00f4	6962	c5f7	5755	1012	cefa	32ec	2d9d	32fc	bcad	7059	6788	
+After Permutation	5bfa	3b0b	d473	f5f2	57a1	3e37	92a2	5755	3d8f	e367	1f71	2d9d	5574	db25	17d1	6788	
+After Rotation	fa3b	0bd4	73f5	f257	a13e	3792	a257	553d	8fe3	671f	712d	9d55	74db	2517	d167	885b	
+After Add Round Constant	e658	1961	5160	4fe4	705a	9207	4205	d2fd	51e9	afba	3a1e	eae2	1325	90e2	f3ee	501e	
+After Round No.:30	e658	1961	5160	4fe4	705a	9207	4205	d2fd	51e9	afba	3a1e	eae2	1325	90e2	f3ee	501e	
+After S-Box	1a03	5ea5	05ac	9219	dc0f	e6cd	96c0	7627	051e	f28f	bf51	1f16	5b60	ec16	2b11	0c51	
+After Permutation	881a	ccbc	97b5	9219	aa28	90ea	e0e7	7627	1a08	ed99	a047	1f16	5731	e047	2740	0c51	
+After Rotation	1acc	bc97	b592	19aa	2890	eae0	e776	271a	08ed	99a0	471f	1657	31e0	4727	400c	5188	
+After Add Round Constant	16f9	4c67	0121	71d9	d666	0b3c	90ef	dd62	abb3	963b	47e9	a18f	ceb9	9165	3916	25bd	
+After Round No.:31	16f9	4c67	0121	71d9	d666	0b3c	90ef	dd62	abb3	963b	47e9	a18f	ceb9	9165	3916	25bd	
+After S-Box	5a2e	94ad	c565	d57e	7aaa	c8b4	ec12	77a6	f88b	eab8	9d1e	f532	418e	e5a0	be5a	6087	
+After Permutation	8f50	41d3	101b	d57e	0d0c	bf12	9bb4	77a6	0db9	1f8a	682c	f532	2109	8527	dedd	6087	
+After Rotation	5041	d310	1bd5	7e0d	0cbf	129b	b477	a60d	b91f	8a68	2cf5	3221	0985	27de	dd60	878f	
+After Add Round Constant	9124	dbc3	a0d6	4234	3def	b822	44e1	b2d9	0d80	83af	1ef6	a7bc	5a3b	45b1	083e	6329	9124dbc3
+Input: 9124	dbc3	a0d6	4234	3def	b822	44e1	b2d9	0d80	83af	1ef6	a7bc	5a3b	45b1	083e	6329	
+After Round No.:0	9124	dbc3	a0d6	4234	3def	b822	44e1	b2d9	0d80	83af	1ef6	a7bc	5a3b	45b1	083e	6329	
+After S-Box	e569	784b	fc7a	96b9	b712	8366	9915	867e	c73c	3bf2	512a	fd84	0fb8	9085	c3b1	ab6e	
+After Permutation	73d0	eef2	6ac3	96b9	316c	0518	1f6b	867e	3ab8	c676	acae	fd84	a4d6	3beb	68df	ab6e	
+After Rotation	d0ee	f26a	c396	b931	6c05	181f	6b86	7e3a	b8c6	76ac	aefd	84a4	d63b	eb68	dfab	6e73	
+After Add Round Constant	989f	0baa	ef7d	1490	4f47	4900	3264	f34b	0901	f6d6	45a4	79ea	d33d	9375	6c5d	e6d6	
+After Round No.:1	989f	0baa	ef7d	1490	4f47	4900	3264	f34b	0901	f6d6	45a4	79ea	d33d	9375	6c5d	e6d6	
+After S-Box	e3e2	c8ff	12d7	59ec	929d	9ecc	b6a9	2b98	cec5	2a7a	90f9	de1f	7bb7	ebd0	a407	1a7a	
+After Permutation	ba0e	9113	4b3b	59ec	b905	b554	9d31	2b98	10da	f465	4ee6	de1f	61cd	f1aa	be7d	1a7a	
+After Rotation	0e91	134b	3b59	ecb9	05b5	549d	312b	9810	daf4	654e	e6de	1f61	cdf1	aabe	7d1a	7aba	
+After Add Round Constant	7821	d379	6028	8772	51ba	d2eb	399d	f972	b7bf	fd18	0eec	3c2c	3baa	0c1f	d72c	ea51	
+After Round No.:2	7821	d379	6028	8772	51ba	d2eb	399d	f972	b7bf	fd18	0eec	3c2c	3baa	0c1f	d72c	ea51	
+After S-Box	d365	7bde	ac63	3dd6	058f	7618	bee7	2ed6	8d82	2753	c114	b464	b8ff	c452	7d64	1f05	
+After Permutation	eeb3	4608	91b5	3dd6	2b59	58ce	9031	2ed6	39e6	9337	7570	b464	a7fa	db57	6261	1f05	
+After Rotation	b346	0891	b53d	d62b	5958	ce90	312e	d639	e693	3775	70b4	64a7	fadb	5762	611f	05ee	
+After Add Round Constant	b268	41a2	ad33	daed	cc2f	bb02	0c86	8d99	4d30	1ab2	5f1f	44c7	202b	1b9b	338f	f64c	
+After Round No.:3	b268	41a2	ad33	daed	cc2f	bb02	0c86	8d99	4d30	1ab2	5f1f	44c7	202b	1b9b	338f	f64c	
+After S-Box	86a3	95f6	f7bb	7f17	4462	88c6	c43a	37ee	97bc	5f86	0252	994d	6c68	58e8	bb32	2a94	
+After Permutation	f9b4	eae1	88ac	7f17	738c	bf28	f3d4	37ee	0ef1	c6cb	9b1f	994d	46fc	727c	91a6	2a94	
+After Rotation	b4ea	e188	ac7f	1773	8cbf	28f3	d437	ee0e	f1c6	cb9b	1f99	4d46	fc72	7c91	a62a	94f9	
+After Add Round Constant	aa90	a40a	b92b	3226	3f22	1ce9	5f54	2a61	0351	8570	44ba	0a98	0b29	1e76	49f5	3354	
+After Round No.:4	aa90	a40a	b92b	3226	3f22	1ce9	5f54	2a61	0351	8570	44ba	0a98	0b29	1e76	49f5	3354	
+After S-Box	ffec	f9cf	8e68	b66a	b266	541e	0209	6fa5	cb05	30dc	998f	cfe3	c86e	51da	9e20	bb09	
+After Permutation	4986	4fa5	3802	b66a	ddc3	3bbb	6dac	6fa5	04e6	ff3f	566c	cfe3	7367	ead3	2529	bb09	
+After Rotation	864f	a538	02b6	6add	c33b	bb6d	ac6f	a504	e6ff	3f56	6ccf	e373	67ea	d325	29bb	0949	
+After Add Round Constant	9c61	b696	84b7	1b0e	e1df	8daa	d822	9e0a	6a29	9f6f	8810	654c	5bdc	7550	c02c	fd03	
+After Round No.:5	9c61	b696	84b7	1b0e	e1df	8daa	d822	9e0a	6a29	9f6f	8810	654c	5bdc	7550	c02c	fd03	
+After S-Box	e4a5	8aea	398d	58c1	1572	37ff	7366	e1cf	af6e	e2a2	335c	a094	0874	d00c	4c64	27cb	
+After Permutation	bc64	d22b	614c	58c1	f4bd	d630	92a9	e1cf	0ffa	4236	93c8	a094	2fbf	f7c7	6baf	27cb	
+After Rotation	64d2	2b61	4c58	c1f4	bdd6	3092	a9e1	cf0f	fa42	3693	c8a0	942f	bff7	c76b	af27	cbbc	
+After Add Round Constant	376b	d994	2675	10c9	ab72	8d09	ae5c	449e	da5d	e8e0	10a1	376a	4047	c8aa	6a60	36d0	
+After Round No.:6	376b	d994	2675	10c9	ab72	8d09	ae5c	449e	da5d	e8e0	10a1	376a	4047	c8aa	6a60	36d0	
+After S-Box	bda8	7ee9	6ad0	5c4e	f8d6	37ce	f104	99e1	7f07	131c	5cf5	bdaf	9c9d	43ff	afac	ba7c	
+After Permutation	e1e6	22a7	369e	5c4e	6137	ae2f	68e5	99e1	c2a8	aeb3	e15a	bdaf	26e1	f983	15d0	ba7c	
+After Rotation	e622	a736	9e5c	4e61	37ae	2f68	e599	e1c2	a8ae	b3e1	5abd	af26	e1f9	8315	d0ba	7ce1	
+After Add Round Constant	033a	a547	6bc6	f4d9	078e	82ad	f9b1	c99d	6161	3603	5d4d	9afa	048a	2a14	3d06	9424	
+After Round No.:7	033a	a547	6bc6	f4d9	078e	82ad	f9b1	c99d	6161	3603	5d4d	9afa	048a	2a14	3d06	9424	
+After S-Box	cbbf	f09d	a84a	297e	cd31	36f7	2e85	4ee7	a5a5	bacb	0797	ef2f	c93f	6f59	b7ca	e969	
+After Permutation	e2c1	d9e3	8134	297e	83d6	7810	6062	4ee7	4a8a	55e4	e8b8	ef2f	2056	8630	5ea3	e969	
+After Rotation	c1d9	e381	3429	7e83	d678	1060	624e	e74a	8a55	e4e8	b8ef	2f20	5686	305e	a3e9	69e2	
+After Add Round Constant	0cd5	4193	abd0	b3e1	972d	b283	7cec	1416	8d4a	3abc	2c87	6576	d253	1fef	7cfd	39c4	
+After Round No.:8	0cd5	4193	abd0	b3e1	972d	b283	7cec	1416	8d4a	3abc	2c87	6576	d253	1fef	7cfd	39c4	
+After S-Box	c470	95eb	f87c	8b15	ed67	863b	d414	595a	379f	bf84	643d	a0da	760b	5212	d427	be49	
+After Permutation	4f65	1efe	7369	8b15	b43d	df61	8d4e	595a	9745	1f5e	c4e7	a0da	c842	ec5b	6a6e	be49	
+After Rotation	651e	fe73	698b	15b4	3ddf	618d	4e59	5a97	451f	5ec4	e7a0	dac8	42ec	5b6a	6ebe	494f	
+After Add Round Constant	5206	af46	9fa5	a10a	ddc7	3058	8012	476e	2c4f	33de	a199	262a	4643	3292	6c7c	23c1	
+After Round No.:9	5206	af46	9fa5	a10a	ddc7	3058	8012	476e	2c4f	33de	a199	262a	4643	3292	6c7c	23c1	
+After S-Box	06ca	f29a	e2f0	f5cf	774d	bc03	3c56	9da1	6492	bb71	f5ee	6a6f	9a9b	b6e6	a4d4	6b45	
+After Permutation	f305	0755	173f	f5cf	eaec	21a2	a1f7	9da1	0efd	d11e	9f81	6a6f	f1de	dda3	cf91	6b45	
+After Rotation	0507	5517	3ff5	cfea	ec21	a2a1	f79d	a10e	fdd1	1e9f	816a	6ff1	dedd	a3cf	916b	45f3	
+After Add Round Constant	2364	8092	3c97	c0b6	cf24	5560	2b5b	ded2	cc31	a6c2	1a25	d4e7	ea57	7ed8	bd65	141c	
+After Round No.:10	2364	8092	3c97	c0b6	cf24	5560	2b5b	ded2	cc31	a6c2	1a25	d4e7	ea57	7ed8	bd65	141c	
+After S-Box	6ba9	3ce6	b4ed	4c8a	4269	00ac	6808	7176	44b5	fa46	5f60	791d	1f0d	d173	87a0	5954	
+After Permutation	2723	706c	f867	4c8a	331f	71da	197e	7176	3da8	835b	267d	791d	4659	8827	def4	5954	
+After Rotation	2370	6cf8	674c	8a33	1f71	da19	7e71	763d	a883	5b26	7d79	1d46	5988	27de	f459	5427	
+After Add Round Constant	ad12	139a	2244	05ba	255b	b16d	c642	d971	f01d	2d1e	f7bf	9b58	9f68	5ed0	05f6	4512	
+After Round No.:11	ad12	139a	2244	05ba	255b	b16d	c642	d971	f01d	2d1e	f7bf	9b58	9f68	5ed0	05f6	4512	
+After S-Box	f756	5bef	6699	c08f	6008	85a7	4a96	7ed5	2c57	6751	2d82	e803	e2a3	017c	c02a	9056	
+After Permutation	37d9	9b60	a616	c08f	1edd	fb72	3443	7ed5	c454	8f52	c581	e803	72f5	912a	507c	9056	
+After Rotation	d99b	60a6	16c0	8f1e	ddfb	7234	437e	d5c4	548f	52c5	81e8	0372	f591	2a50	7c90	5637	
+After Add Round Constant	7054	d13e	3578	1909	7685	08f3	457a	f395	8e9b	645a	9be7	e6b7	8631	2886	3eb5	cad5	
+After Round No.:12	7054	d13e	3578	1909	7685	08f3	457a	f395	8e9b	645a	9be7	e6b7	8631	2886	3eb5	cad5	
+After S-Box	dc09	75b1	b0d3	5ece	da30	c32b	90df	2be0	31e8	a90f	e81d	1a8d	3ab5	633a	b180	4f70	
+After Permutation	82c7	2b7f	ee1d	5ece	f1d0	e8cb	bb3f	2be0	2b65	b382	f290	1a8d	75c5	2c4a	fef0	4f70	
+After Rotation	c72b	7fee	1d5e	cef1	d0e8	cbbb	3f2b	e02b	65b3	82f2	901a	8d75	c52c	4afe	f04f	7082	
+After Add Round Constant	d81d	8d52	db9b	7169	01fc	ca08	3a1a	6298	1741	f117	5f5c	8ce4	e7d2	4fa1	39b7	e958	
+After Round No.:13	d81d	8d52	db9b	7169	01fc	ca08	3a1a	6298	1741	f117	5f5c	8ce4	e7d2	4fa1	39b7	e958	
+After S-Box	7357	3706	78e8	d5ae	c524	4fc3	bf5f	a6e3	5d95	255d	0204	3419	1d76	92f5	be8d	1e03	
+After Permutation	a6f9	e2a8	ad46	d5ae	63c7	e920	19bc	a6e3	698c	1144	361d	3419	0375	8cf6	a08e	1e03	
+After Rotation	f9e2	a8ad	46d5	ae63	c7e9	2019	bca6	e369	8c11	4436	1d34	1903	758c	f6a0	8e1e	03a6	
+After Add Round Constant	0a2f	c58a	2d44	f594	ef12	e33a	9d70	1f02	5fac	b97c	9017	aa10	dfd9	d2c0	d897	8d9c	
+After Round No.:14	0a2f	c58a	2d44	f594	ef12	e33a	9d70	1f02	5fac	b97c	9017	aa10	dfd9	d2c0	d897	8d9c	
+After S-Box	cf62	403f	6799	20e9	1256	1bbf	e7dc	52c6	02f4	8ed4	ec5d	ff5c	727e	764c	73ed	37e4	
+After Permutation	ef8b	60d6	4770	20e9	4090	4979	b51a	52c6	fda8	7188	1301	ff5c	459a	41a8	4409	37e4	
+After Rotation	8b60	d647	7020	e940	9049	79b5	1a52	c6fd	a871	8813	01ff	5c45	9a41	a844	0937	e4ef	
+After Add Round Constant	c694	4327	c723	c7be	42ba	0ae5	c96d	0963	091b	4b37	4042	0e68	e5d6	6951	3208	1a17	
+After Round No.:15	c694	4327	c723	c7be	42ba	0ae5	c96d	0963	091b	4b37	4042	0e68	e5d6	6951	3208	1a17	
+After S-Box	4ae9	9b6d	4d6b	4d81	968f	cf10	4ea7	ceab	ce58	98bd	9c96	c1a3	107a	ae05	b6c3	5f5d	
+After Permutation	0768	d6ec	00ea	4d81	5824	01bb	800c	ceab	0ffb	591e	5d35	c1a3	4f27	f158	e99e	5f5d	
+After Rotation	68d6	ec00	ea4d	8158	2401	bb80	0cce	ab0f	fb59	1e5d	35c1	a34f	27f1	58e9	9e5f	5d07	
+After Add Round Constant	e143	6409	0c46	ca63	b848	1ce2	6d6d	84f0	fc1b	1c10	7dbf	c557	305c	7678	60a4	f368	
+After Round No.:16	e143	6409	0c46	ca63	b848	1ce2	6d6d	84f0	fc1b	1c10	7dbf	c557	305c	7678	60a4	f368	
+After S-Box	159b	a9ce	c49a	4fab	8393	5416	a7a7	392c	2458	545c	d782	400d	bc04	dad3	acf9	2ba3	
+After Permutation	5a30	e665	8b31	4fab	babf	6d3a	9e8b	392c	6455	1451	978f	400d	97a7	f170	875a	2ba3	
+After Rotation	30e6	658b	314f	abba	bf6d	3a9e	8b39	2c64	5514	5197	8f40	0d97	a7f1	7087	5a2b	a35a	
+After Add Round Constant	b96a	c640	5aeb	99ce	a176	98a4	01fd	1ad7	0405	c9b0	05bc	e685	3a14	86b0	82f3	dabd	
+After Round No.:17	b96a	c640	5aeb	99ce	a176	98a4	01fd	1ad7	0405	c9b0	05bc	e685	3a14	86b0	82f3	dabd	
+After S-Box	8eaf	4a9c	0f18	ee41	f5da	e3f9	c527	5f7d	c9c0	4e8c	c084	1a30	bf59	3a8c	362b	7f87	
+After Permutation	60ee	a4dd	e159	ee41	aaa7	bc84	9a5a	5f7d	d3f0	54bc	dab4	1a30	c0de	450b	49ac	7f87	
+After Rotation	eea4	dde1	59ee	41aa	a7bc	849a	5a5f	7dd3	f054	bcda	b41a	30c0	de45	0b49	ac7f	8760	
+After Add Round Constant	d6b3	243d	f96a	3e22	4c51	be51	91e0	aa8f	cd27	3021	8367	70e5	8ab5	ad8c	036e	8d33	
+After Round No.:18	d6b3	243d	f96a	3e22	4c51	be51	91e0	aa8f	cd27	3021	8367	70e5	8ab5	ad8c	036e	8d33	
+After S-Box	7a8b	69b7	2eaf	b166	9405	8105	e51c	ff32	476d	bc65	3bad	dc10	3f80	f734	cba1	37bb	
+After Permutation	cbed	d8d1	9fc9	b166	6b37	7e37	1a2e	ff32	9b7d	6075	e7bd	dc10	083b	c08f	fc1a	37bb	
+After Rotation	edd8	d19f	c9b1	666b	377e	371a	2eff	329b	7d60	75e7	bddc	1008	3bc0	8ffc	1a37	bbcb	
+After Add Round Constant	bc0e	3d77	425a	87f2	be72	34f8	223d	5d70	8d72	63a4	9f6c	95f8	278e	7842	5331	2cf1	
+After Round No.:19	bc0e	3d77	425a	87f2	be72	34f8	223d	5d70	8d72	63a4	9f6c	95f8	278e	7842	5331	2cf1	
+After S-Box	84c1	b7dd	960f	3d26	81d6	b923	66b7	07dc	37d6	abf9	e2a4	e023	6d31	d396	0bb5	6425	
+After Permutation	b9e7	8afb	ab29	3d26	860a	beff	616b	07dc	d7f5	4bda	0287	e023	0914	b7b3	6f90	6425	
+After Rotation	e78a	fbab	293d	2686	0abe	ff61	6b07	dcd7	f54b	da02	87e0	2309	14b7	b36f	9064	25b9	
+After Add Round Constant	5e2e	5a4a	1469	67a9	41c2	4788	eb5b	916b	ab78	221d	e464	26aa	df6c	060a	7ac6	dcfe	
+After Round No.:20	5e2e	5a4a	1469	67a9	41c2	4788	eb5b	916b	ab78	221d	e464	26aa	df6c	060a	7ac6	dcfe	
+After S-Box	0161	0f9f	59ae	adfe	9546	9d33	1808	e5a8	f8d3	6657	19a9	6aff	72a4	cacf	df4a	7421	
+After Permutation	ac9f	a261	f450	adfe	70ee	789b	fda0	e5a8	922c	0ca8	7356	6aff	0685	beee	ab6b	7421	
+After Rotation	9fa2	61f4	50ad	fe70	ee78	9bfd	a0e5	a892	2c0c	a873	566a	ff06	85be	eeab	6b74	21ac	
+After Add Round Constant	4d98	35dd	8213	a568	8128	45d2	3e3a	4a37	48ad	c40f	0b9a	d6fb	5ac7	3588	0862	fbd8	
+After Round No.:21	4d98	35dd	8213	a568	8128	45d2	3e3a	4a37	48ad	c40f	0b9a	d6fb	5ac7	3588	0862	fbd8	
+After S-Box	97e3	b077	365b	f0a3	3563	9076	b1bf	9fbd	93f7	49c2	c8ef	7a28	0f4d	b033	c3a6	2873	
+After Permutation	6740	40d4	c6f8	f0a3	aade	0fcb	2e02	9fbd	e9df	33ea	b2c7	7a28	273e	9840	ebd5	2873	
+After Rotation	4040	d4c6	f8f0	a3aa	de0f	cb2e	029f	bde9	df33	eab2	c77a	2827	3e98	40eb	d528	7367	
+After Add Round Constant	7286	85d2	916b	baf9	b804	6372	4cfb	00d2	c96c	f7a7	8c3f	ce24	f916	4af3	cac5	a277	
+After Round No.:22	7286	85d2	916b	baf9	b804	6372	4cfb	00d2	c96c	f7a7	8c3f	ce24	f916	4af3	cac5	a277	
+After S-Box	d63a	3076	e5a8	8f2e	83c9	abd6	9428	cc76	4ea4	2dfd	34b2	4169	2e5a	9f2b	4f40	f6dd	
+After Permutation	5914	bf58	6a86	8f2e	4fbf	67a0	585e	cc76	0fcd	6c94	75db	4169	d887	69f6	b99d	f6dd	
+After Rotation	14bf	586a	868f	2e4f	bf67	a058	5ecc	760f	cd6c	9475	db41	69d8	8769	f6b9	9df6	dd59	
+After Add Round Constant	b3f8	5c4f	ba1a	9264	9892	e75f	a4f9	c507	f5b0	8bfe	5910	f948	b57c	12bf	c478	86f3	
+After Round No.:23	b3f8	5c4f	ba1a	9264	9892	e75f	a4f9	c507	f5b0	8bfe	5910	f948	b57c	12bf	c478	86f3	
+After S-Box	8b23	0492	8f5f	e6a9	e3e6	1d02	f92e	40cd	208c	3821	0e5c	2e93	80d4	5682	49d3	3a2b	
+After Permutation	6d8a	e23b	69f6	e6a9	a32b	5dcf	b9e3	40cd	0e1f	16b2	20cf	2e93	baff	6ca9	73f8	3a2b	
+After Rotation	8ae2	3b69	f6e6	a9a3	2b5d	cfb9	e340	cd0e	1f16	b220	cf2e	93ba	ff6c	a973	f83a	2b6d	
+After Add Round Constant	fbe1	652d	b805	c1a3	b932	0365	ba64	59a9	297a	e0da	c359	e36c	0804	d1fe	3188	8aa0	
+After Round No.:24	fbe1	652d	b805	c1a3	b932	0365	ba64	59a9	297a	e0da	c359	e36c	0804	d1fe	3188	8aa0	
+After S-Box	2815	a067	83c0	45fb	8eb6	cba0	8fa9	0efe	6edf	1c7f	4b0e	1ba4	c3c9	7521	b533	3ffc	
+After Permutation	6dee	e59c	c63b	45fb	8048	c55e	8157	0efe	757b	07db	50aa	1ba4	fc35	4add	8acf	3ffc	
+After Rotation	eee5	9cc6	3b45	fb80	48c5	5e81	570e	fe75	7b07	db50	aa1b	a4fc	354a	dd8a	cf3f	fc6d	
+After Add Round Constant	ba70	8ca5	1aa0	1f0b	6538	6a8c	4a16	5430	42a7	9af5	5850	bba7	b427	0ff9	2550	aab5	
+After Round No.:25	ba70	8ca5	1aa0	1f0b	6538	6a8c	4a16	5430	42a7	9af5	5850	bba7	b427	0ff9	2550	aab5	
+After S-Box	8fdc	34f0	5ffc	52c8	a0b3	af34	9f5a	09bc	96fd	ef20	030c	88fd	896d	c22e	600c	ff80	
+After Permutation	dd14	6638	0d34	52c8	a90f	a688	96e6	09bc	1e00	67dd	8bf1	88fd	76ed	3dae	9f8c	ff80	
+After Rotation	1466	380d	3452	c8a9	0fa6	8896	e609	bc1e	0067	dd8b	f188	fd76	ed3d	ae9f	8cff	80dd	
+After Add Round Constant	f451	6074	63bd	986a	bf59	59b0	7dc4	a27d	c166	9708	43f1	1172	948a	2d38	e8a8	2483	
+After Round No.:26	f451	6074	63bd	986a	bf59	59b0	7dc4	a27d	c166	9708	43f1	1172	948a	2d38	e8a8	2483	
+After S-Box	2905	acd9	ab87	e3af	820e	0e8c	d749	f6d7	45aa	edc3	9b25	55d6	e93f	67b3	13f3	693b	
+After Permutation	caaa	4f76	4828	e3af	74d9	f85b	219e	f6d7	107c	b815	cef3	55d6	8004	0e88	7ac8	693b	
+After Rotation	aa4f	7648	28e3	af74	d9f8	5b21	9ef6	d710	7cb8	15ce	f355	d680	040e	887a	c869	3bca	
+After Add Round Constant	49ce	bede	6f56	023c	fec1	9cd0	e87c	4321	a127	5af7	c8b1	e191	14c7	8cef	3d8d	d0fd	
+After Round No.:27	49ce	bede	6f56	023c	fec1	9cd0	e87c	4321	a127	5af7	c8b1	e191	14c7	8cef	3d8d	d0fd	
+After S-Box	9e41	8171	a20a	c6b4	2145	e47c	13d4	9b65	f56d	0f2d	4385	15e5	594d	3412	b737	7c27	
+After Permutation	58f5	47c5	64be	c6b4	ba20	7f19	88b1	9b65	e088	1ac8	5660	15e5	256a	4835	cb10	7c27	
+After Rotation	f547	c564	bec6	b4ba	207f	1988	b19b	65e0	881a	c856	6015	e525	6a48	35cb	107c	2758	
+After Add Round Constant	6ee0	cc66	20e2	07cb	65b6	a31e	f5e8	2847	eab6	ea70	fd84	a8fc	c62f	533b	5b5d	e21a	
+After Round No.:28	6ee0	cc66	20e2	07cb	65b6	a31e	f5e8	2847	eab6	ea70	fd84	a8fc	c62f	533b	5b5d	e21a	
+After S-Box	a11c	44aa	6c16	cd48	a08a	fb51	2013	639d	1f8a	1fdc	2739	f324	4a62	0bb8	0807	165f	
+After Permutation	6c54	89e2	a15e	cd48	c317	98cc	438e	639d	ecae	ecf8	d41d	f324	5c3d	1de7	1e58	165f	
+After Rotation	5489	e2a1	5ecd	48c3	1798	cc43	8e63	9dec	aeec	f8d4	1df3	245c	3d1d	e71e	5816	5f6c	
+After Add Round Constant	b3f0	1460	c7f6	6cb4	ce69	a92a	d768	65b6	ff36	c477	eeac	8023	da94	6e20	af99	453b	
+After Round No.:29	b3f0	1460	c7f6	6cb4	ce69	a92a	d768	65b6	ff36	c477	eeac	8023	da94	6e20	af99	453b	
+After S-Box	8b2c	59ac	4d2a	a489	41ae	fe6f	7da3	a08a	22ba	49dd	11f4	3c6b	7fe9	a16c	f2ee	90b8	
+After Permutation	2fa5	fd25	e9a3	a489	e124	5ee5	dd29	a08a	1ed1	75b6	2d9f	3c6b	ef51	31d4	6256	90b8	
+After Rotation	a5fd	25e9	a3a4	89e1	245e	e5dd	29a0	8a1e	d175	b62d	9f3c	6bef	5131	d462	5690	b82f	
+After Add Round Constant	921a	3376	810f	e76e	f37a	4052	c94e	07de	937b	fec8	682d	b97c	ef7b	402d	7917	7ff2	
+After Round No.:30	921a	3376	810f	e76e	f37a	4052	c94e	07de	937b	fec8	682d	b97c	ef7b	402d	7917	7ff2	
+After S-Box	e65f	bbda	35c2	1da1	2bdf	9c06	4e91	cd71	ebd8	2143	a367	8ed4	12d8	9c67	de5d	d226	
+After Permutation	fbfe	a67b	2863	1da1	e6ae	5177	83e0	cd71	650c	af97	2db3	8ed4	c0fe	4e41	0c7b	d226	
+After Rotation	fea6	7b28	631d	a1e6	ae51	7783	e0cd	7165	0caf	972d	b38e	d4c0	fe4e	410c	7bd2	26fb	
+After Add Round Constant	fad3	0af8	aeac	fa15	5c27	97df	8a46	27ad	af75	93c8	b458	5ff8	9b27	8b4a	74dc	fb30	
+After Round No.:31	fad3	0af8	aeac	fa15	5c27	97df	8a46	27ad	af75	93c8	b458	5ff8	9b27	8b4a	74dc	fb30	
+After S-Box	2f7b	cf23	f1f4	2f50	046d	ed72	3f9a	6df7	f2d0	eb43	8903	0223	e86d	389f	d974	28bc	
+After Permutation	002b	e073	dea4	2f50	699a	8085	526d	6df7	f0f3	e960	8b20	0223	c0d1	1023	f1c8	28bc	
+After Rotation	2be0	73de	a42f	5069	9a80	8552	6d6d	f7f0	f3e9	608b	2002	23c0	d110	23f1	c828	bc00	
+After Add Round Constant	6cc3	7c91	2930	1490	cbb0	2ad9	fdd7	04bc	484a	59d2	1203	995b	21c6	41c4	f306	979a	6cc37c91

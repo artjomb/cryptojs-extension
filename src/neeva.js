@@ -61,11 +61,11 @@
 				cv[j] = word;
 			}
 			
-			// ADD 3 16-bit words into the first one 4 times
+			// XOR 3 16-bit words into the first one 4 times
 			for(j = 0; j < 4; j++) {
 				word = cv[j*2+1] & 0xffff;
-				cv[2*j] = (((cv[j*2] >>> 16) + word) << 16) | ((cv[j*2] + word) & 0xffff);
-				cv[2*j+1] = (cv[2*j+1] + (word << 16)) | 0;
+				cv[2*j] = (((cv[j*2] >>> 16) ^ word) << 16) | ((cv[j*2] ^ word) & 0xffff);
+				cv[2*j+1] = (cv[2*j+1] ^ (word << 16)) | 0;
 			}
 			
 			// rotate left by 8 bit
@@ -86,7 +86,7 @@
 
 	var Neeva = C_algo.Neeva = Hasher.extend({
 		_doReset: function () {
-			this._cv = WordArray.create([0, 0, 0, 0, 0, 0, 0, 0]);
+			this._cv = [0, 0, 0, 0, 0, 0, 0, 0];
 		},
 
 		_doProcessBlock: function (M, offset) {
