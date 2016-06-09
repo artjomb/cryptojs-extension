@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "node build.js",
-    "testn": "cd test && node neeva.js",
-    "test": "cd test && node neeva.js && node tea.js && node gost28147.js && node gost-streebog.js && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
+    "testn": "cd test && node spongent.js",
+    "test": "cd test && node spongent.js && node neeva.js && node tea.js && node gost28147.js && node gost-streebog.js && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
   },
   "keywords": [
     "crypto",
@@ -23,7 +23,13 @@
     "omac",
     "cfb",
     "cryptojs",
-    "blowfish"
+    "blowfish",
+	"neeva",
+	"tea",
+	"gost28147",
+	"hkdf",
+	"streebog",
+	"spongent"
   ],
   "author": "artjomb",
   "license": "MIT"
