@@ -25,16 +25,23 @@ module.exports = function(grunt) {
       if (options.pack) {
 
         // Collect all components
-        deps = _.chain(conf)
-          .map(function(depName) {return options.modules[depName];})
-          .flatten()
-          .unique()
-          .without(name)
-          .select(function(depName) {return options.modules[depName];})
-          .sort(function(a, b) {
-            return options.modules[a].indexOf(b) >= 0 ? 1 : -1;
-          })
-          .value();
+        var newDeps = conf;
+        do {
+          deps = newDeps;
+          newDeps = _.chain(deps)
+            .map(function(depName) {return options.modules[depName];})
+            .flatten()
+            .concat(deps)
+            .unique()
+            .without(name)
+            .select(function(depName) {return options.modules[depName];})
+            .sortBy(_.identity)
+            .sort(function(a, b) {
+              return options.modules[a].indexOf(b) >= 0 ? 1 : -1;
+            })
+            .value();
+        } while (!_.isEqual(deps, newDeps));
+        console.log(name, deps);
 
         // Add components as source files -> results a single file
         _.each(this.filesSrc, function(source) {
