@@ -40,7 +40,7 @@ var Sbox8 = [
 			Sbox8[i*16 + j] = (Sbox[i]<<4) | Sbox[j];
 		}
 	}
-})()
+})();
 
 function lCounter(version, lfsr) {
 	switch(version) {
@@ -221,7 +221,7 @@ var Spongent88808 = C_algo.Spongent = C_algo.Spongent88808 = Hasher.extend({
 		self.__R_SizeInBytes = (self.__rate / 8) | 0;
 		self.__nBits = (self.__capacity + self.__rate) | 0;
 		self.__nSBox = (self.__nBits / 8) | 0;
-		self.__val = Array.apply(null, Array(self.__nSBox)).map(function(){return 0});
+		self.__val = Array.apply(null, Array(self.__nSBox)).map(function(){return 0;});
 		self.__buf = [];
 		self.__hash = [];
 	},

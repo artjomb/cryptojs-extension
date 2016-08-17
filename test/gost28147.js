@@ -7,7 +7,9 @@ var fs = require("fs");
  */
 var testcases = require("./gost28147-ecb.json");
 
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
+require('crypto-js/enc-base64');
+require('crypto-js/mode-ecb');
 require('../build_node/gost28147.js');
 
 var stats = { passed: 0, failed: 0 };

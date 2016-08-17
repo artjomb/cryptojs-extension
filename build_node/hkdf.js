@@ -1,6 +1,6 @@
 ;(function (root, factory) {
   // CommonJS
-  module.exports = exports = factory(require("crypto-js"));
+  module.exports = exports = factory(require("crypto-js/core"), require("crypto-js/hmac"));
 }(this, function (C) {
 
   /*

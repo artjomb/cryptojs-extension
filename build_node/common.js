@@ -1,6 +1,6 @@
 ;(function (root, factory) {
   // CommonJS
-  module.exports = exports = factory(require("crypto-js"), require("./common-bit-ops"));
+  module.exports = exports = factory(require("crypto-js/core"), require("./common-bit-ops"), require("crypto-js/cipher-core"));
 }(this, function (C) {
 
   /*
@@ -19,7 +19,6 @@
   // Shortcuts
   var Base = C.lib.Base;
   var WordArray = C.lib.WordArray;
-  var AES = C.algo.AES;
 
   // Constants
   ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);

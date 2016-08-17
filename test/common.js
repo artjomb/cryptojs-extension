@@ -1,5 +1,5 @@
 var fs = require("fs");
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
 require('../build_node/enc-bin.js');
 require('../build_node/common.js');
 

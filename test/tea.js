@@ -1,5 +1,6 @@
 var fs = require("fs");
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
+require('crypto-js/mode-ecb');
 require('../build_node/tea.js');
 
 var stats = { passed: 0, failed: 0 };

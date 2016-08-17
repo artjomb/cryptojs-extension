@@ -1,7 +1,7 @@
-;(function (root, factory) {
+;(function (root, factory, undef) {
   if (typeof define === "function" && define.amd) {
     // AMD
-    define(["crypto-js"], factory);
+    define(["crypto-js/core", "crypto-js/cipher-core"], factory);
   }
   else {
     // Global (browser)

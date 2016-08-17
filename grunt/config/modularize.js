@@ -6,19 +6,19 @@ var modules = {
   'enc-bin': [],
   'common-bit-ops': [],
   'random': [],
-  'mode-cfb-w': [],
-  'common': ['common-bit-ops'],
-  'mode-cfb-b': ['common-bit-ops'],
-  'cmac': ['common-bit-ops', 'common'],
-  'siv': ['common-bit-ops', 'common', 'cmac'],
-  'eax': ['common-bit-ops', 'common', 'cmac'],
-  'hkdf': [],
-  'blowfish': [],
-  'gost-streebog': [],
-  'gost28147': [],
-  'spongent': [],
-  'neeva': [],
-  'tea': []
+  'mode-cfb-w': ['crypto-js/cipher-core'],
+  'common': ['common-bit-ops', 'crypto-js/cipher-core'],
+  'mode-cfb-b': ['common-bit-ops', 'crypto-js/cipher-core'],
+  'cmac': ['common-bit-ops', 'common', 'crypto-js/aes'],
+  'siv': ['common-bit-ops', 'common', 'cmac', 'crypto-js/aes', 'crypto-js/mode-ctr'],
+  'eax': ['common-bit-ops', 'common', 'cmac', 'crypto-js/aes', 'crypto-js/mode-ctr'],
+  'hkdf': ['crypto-js/hmac'],
+  'blowfish': ['crypto-js/cipher-core'],
+  'gost-streebog': ['crypto-js/cipher-core'],
+  'gost28147': ['crypto-js/cipher-core'],
+  'spongent': ['crypto-js/cipher-core'],
+  'neeva': ['crypto-js/cipher-core'],
+  'tea': ['crypto-js/cipher-core']
 };
 
 module.exports = {

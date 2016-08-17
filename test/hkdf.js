@@ -1,5 +1,7 @@
 var fs = require("fs");
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
+require('crypto-js/sha1');
+require('crypto-js/sha256');
 require('../build_node/hkdf.js');
 
 var stats = { passed: 0, failed: 0 };

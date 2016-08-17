@@ -1,5 +1,6 @@
 var fs = require("fs");
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
+require('crypto-js/aes');
 require('../build_node/enc-bin.js');
 require('../build_node/mode-cfb-w.js');
 require('../build_node/mode-cfb-b.js');

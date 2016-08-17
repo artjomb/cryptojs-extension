@@ -1,6 +1,6 @@
 ;(function (root, factory) {
   // CommonJS
-  module.exports = exports = factory(require("crypto-js"), require("./common-bit-ops"), require("./common"));
+  module.exports = exports = factory(require("crypto-js/core"), require("./common-bit-ops"), require("./common"), require("crypto-js/aes"));
 }(this, function (C) {
 
   /*

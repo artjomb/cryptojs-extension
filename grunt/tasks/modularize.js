@@ -1,5 +1,6 @@
+var fs = require('fs');
 var _ = require('lodash');
-var fmd = require('fmd');
+var Fmd = require('fmd');
 
 module.exports = function(grunt) {
 
@@ -18,7 +19,7 @@ module.exports = function(grunt) {
     // Prepare Factory-Module-Definition settings
     _.each(options.modules, function(conf, name) {
       var sources = [];
-      var opts = {depends: {'crypto-js': 'C'}};
+      var opts = {depends: {'crypto-js/core': 'C'}};
       var deps = [];
 
       if (options.pack) {
@@ -29,6 +30,7 @@ module.exports = function(grunt) {
           .flatten()
           .unique()
           .without(name)
+          .select(function(depName) {return options.modules[depName];})
           .sort(function(a, b) {
             return options.modules[a].indexOf(b) >= 0 ? 1 : -1;
           })
@@ -44,6 +46,12 @@ module.exports = function(grunt) {
           if (grunt.file.exists(source + name + '.js')) sources.push(source + name + '.js');
         }, this);
 
+        // Add any components that aren't modules as external dependencies instead
+        _.chain(conf)
+          .reject(function(depName) {return options.modules[depName];})
+          .map(function(depName) {opts.depends[depName] = null;})
+          .commit();
+
       } else {
 
         // Find and add self as source
@@ -52,8 +60,8 @@ module.exports = function(grunt) {
         }, this);
 
         // Read components and add them as dependecies
-        _.each(_.without(conf, name), function (value) {
-          opts.depends['./' + value] = null;
+        _.each(_.without(conf, name), function(depName) {
+          opts.depends[(options.modules[depName] ? './' : '') + depName] = null;
         });
 
       }
@@ -67,9 +75,22 @@ module.exports = function(grunt) {
     }, this);
 
     // Build packege modules
-    fmd(_.defaults({factories: options.factories}, config))
-      .vendor('crypto-js', 'CryptoJS')
-      .define(modules)
-      .build(function(createdFiles) {done();});
+    var fmd = Fmd(_.defaults({factories: options.factories}, config));
+    fs.readdir('node_modules/crypto-js', function(error, files) {
+      if (error) {
+        grunt.log.writeln('Failed to scan contents of node_modules/crypto-js: ' + error);
+        done(false);
+        return;
+      }
+      _.each(files, function(filename) {
+        if (/\.js$/.test(filename) && filename !== 'index.js') {
+          fmd.vendor(
+            'crypto-js/' + filename.replace(/\.js$/, ''),
+            filename === 'core.js' ? 'CryptoJS' : null);
+        }
+      });
+      fmd.define(modules).build(function(createdFiles) {done();});
+    });
+
   });
 };

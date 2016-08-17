@@ -1,5 +1,5 @@
 var fs = require("fs");
-var CryptoJS = require('crypto-js');
+var CryptoJS = require('crypto-js/core');
 require('../build_node/gost-streebog.js');
 
 var stats = { passed: 0, failed: 0 };

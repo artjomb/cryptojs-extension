@@ -1,7 +1,7 @@
 ;(function (root, factory) {
   if (typeof define === "function" && define.amd) {
     // AMD
-    define(["crypto-js"], factory);
+    define(["crypto-js/core"], factory);
   }
   else {
     // Global (browser)

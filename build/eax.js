@@ -1,7 +1,7 @@
-;(function (root, factory) {
+;(function (root, factory, undef) {
   if (typeof define === "function" && define.amd) {
     // AMD
-    define(["crypto-js"], factory);
+    define(["crypto-js/core", "crypto-js/aes", "crypto-js/mode-ctr"], factory);
   }
   else {
     // Global (browser)
@@ -155,7 +155,6 @@
   // Shortcuts
   var Base = C.lib.Base;
   var WordArray = C.lib.WordArray;
-  var AES = C.algo.AES;
 
   // Constants
   ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
