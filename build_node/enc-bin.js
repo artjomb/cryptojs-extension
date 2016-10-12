@@ -44,7 +44,7 @@
                   words.push(0);
               }
           }
-          return C.lib.WordArray.create(words, Math.ceil(bits/8));
+          return new C.lib.WordArray.init(words, Math.ceil(bits/8));
       }
   };
 

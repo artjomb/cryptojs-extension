@@ -157,11 +157,11 @@
   var WordArray = C.lib.WordArray;
 
   // Constants
-  ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
-  ext.const_One = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
-  ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
-  ext.const_Rb_Shifted = WordArray.create([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
-  ext.const_nonMSB = WordArray.create([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
+  ext.const_Zero = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
+  ext.const_One = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
+  ext.const_Rb = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
+  ext.const_Rb_Shifted = new WordArray.init([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
+  ext.const_nonMSB = new WordArray.init([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
 
   /**
    * Looks into the object to see if it is a WordArray.
@@ -197,7 +197,7 @@
               }
               paddingWords.push(paddingWord);
           }
-          var padding = WordArray.create(paddingWords, nPaddingBytes);
+          var padding = new WordArray.init(paddingWords, nPaddingBytes);
 
           // Add padding
           data.concat(padding);
@@ -267,10 +267,9 @@
    * @returns popped words as new WordArray
    */
   ext.popWords = function(wordArray, n){
-      var left = ext.leftmostBytes(wordArray, n * 4);
-      wordArray.words = wordArray.words.slice(n);
+      var left = wordArray.words.splice(0, n);
       wordArray.sigBytes -= n * 4;
-      return left;
+      return new WordArray.init(left);
   };
 
   /**
@@ -288,7 +287,7 @@
       var r = n % 4;
       n -= r;
 
-      var shiftedArray = WordArray.create();
+      var shiftedArray = new WordArray.init();
       for(var i = 0; i < n; i += 4) {
           shiftedArray.words.push(wordArray.words.shift());
           wordArray.sigBytes -= 4;

@@ -9,9 +9,9 @@ var WordArray = C.lib.WordArray;
 var AES = C.algo.AES;
 var ext = C.ext;
 var CMAC = C.algo.CMAC;
-var zero = WordArray.create([0x0, 0x0, 0x0, 0x0]);
-var one = WordArray.create([0x0, 0x0, 0x0, 0x1]);
-var two = WordArray.create([0x0, 0x0, 0x0, 0x2]);
+var zero = new WordArray.init([0x0, 0x0, 0x0, 0x0]);
+var one = new WordArray.init([0x0, 0x0, 0x0, 0x1]);
+var two = new WordArray.init([0x0, 0x0, 0x0, 0x2]);
 var blockLength = 16;
 
 var EAX = C.EAX = Base.extend({
@@ -63,7 +63,7 @@ var EAX = C.EAX = Base.extend({
             mode: C.mode.CTR,
             padding: C.pad.NoPadding
         });
-        self._buf = WordArray.create();
+        self._buf = new WordArray.init();
 
         self._mac.update(two);
 
@@ -80,7 +80,7 @@ var EAX = C.EAX = Base.extend({
 
         var useBytes = isEncrypt ? buffer.sigBytes : Math.max(buffer.sigBytes - self._tagLen, 0);
 
-        var data = useBytes > 0 ? ext.shiftBytes(buffer, useBytes) : WordArray.create(); // guaranteed to be pure plaintext or ciphertext (without a tag during decryption)
+        var data = useBytes > 0 ? ext.shiftBytes(buffer, useBytes) : new WordArray.init(); // guaranteed to be pure plaintext or ciphertext (without a tag during decryption)
         var xoredData = self._ctr.process(data);
 
         self._mac.update(isEncrypt ? xoredData : data);
@@ -89,7 +89,7 @@ var EAX = C.EAX = Base.extend({
     },
     finalize: function(msg){
         var self = this;
-        var xoredData = msg ? self.update(msg) : WordArray.create();
+        var xoredData = msg ? self.update(msg) : new WordArray.init();
         var mac = self._mac;
         var ctFin = self._ctr.finalize();
 

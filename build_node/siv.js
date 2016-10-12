@@ -28,7 +28,7 @@
           this.reset();
       },
       reset: function(){
-          this._buffer = WordArray.create();
+          this._buffer = new WordArray.init();
           this._cmacAD.reset();
           this._cmacPT.reset();
           this._d = this._cmacAD.finalize(ext.const_Zero);

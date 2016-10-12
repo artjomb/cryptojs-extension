@@ -121,7 +121,7 @@ var Neeva = C_algo.Neeva = Hasher.extend({
 		}
 
 		// Return final computed hash
-		return WordArray.create(hash);
+		return new WordArray.init(hash);
 	},
 
 	clone: function () {

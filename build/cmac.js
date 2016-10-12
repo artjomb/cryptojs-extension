@@ -157,11 +157,11 @@
   var WordArray = C.lib.WordArray;
 
   // Constants
-  ext.const_Zero = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
-  ext.const_One = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
-  ext.const_Rb = WordArray.create([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
-  ext.const_Rb_Shifted = WordArray.create([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
-  ext.const_nonMSB = WordArray.create([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
+  ext.const_Zero = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000000]);
+  ext.const_One = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000001]);
+  ext.const_Rb = new WordArray.init([0x00000000, 0x00000000, 0x00000000, 0x00000087]); // 00..0010000111
+  ext.const_Rb_Shifted = new WordArray.init([0x80000000, 0x00000000, 0x00000000, 0x00000043]); // 100..001000011
+  ext.const_nonMSB = new WordArray.init([0xFFFFFFFF, 0xFFFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF]); // 1^64 || 0^1 || 1^31 || 0^1 || 1^31
 
   /**
    * Looks into the object to see if it is a WordArray.
@@ -197,7 +197,7 @@
               }
               paddingWords.push(paddingWord);
           }
-          var padding = WordArray.create(paddingWords, nPaddingBytes);
+          var padding = new WordArray.init(paddingWords, nPaddingBytes);
 
           // Add padding
           data.concat(padding);
@@ -267,10 +267,9 @@
    * @returns popped words as new WordArray
    */
   ext.popWords = function(wordArray, n){
-      var left = ext.leftmostBytes(wordArray, n * 4);
-      wordArray.words = wordArray.words.slice(n);
+      var left = wordArray.words.splice(0, n);
       wordArray.sigBytes -= n * 4;
-      return left;
+      return new WordArray.init(left);
   };
 
   /**
@@ -288,7 +287,7 @@
       var r = n % 4;
       n -= r;
 
-      var shiftedArray = WordArray.create();
+      var shiftedArray = new WordArray.init();
       for(var i = 0; i < n; i += 4) {
           shiftedArray.words.push(wordArray.words.shift());
           wordArray.sigBytes -= 4;
@@ -394,11 +393,6 @@
   var ext = C.ext;
   var OneZeroPadding = C.pad.OneZeroPadding;
 
-  function aesBlock(key, data){
-      var aes128 = AES.createEncryptor(key, { iv: WordArray.create(), padding: C.pad.NoPadding });
-      var arr = aes128.finalize(data);
-      return arr;
-  }
 
   var CMAC = C.algo.CMAC = Base.extend({
       /**
@@ -412,9 +406,10 @@
        */
       init: function(key){
           // generate sub keys...
+          this._aes = AES.createEncryptor(key, { iv: new WordArray.init(), padding: C.pad.NoPadding });
 
           // Step 1
-          var L = aesBlock(key, ext.const_Zero);
+          var L = this._aes.finalize(ext.const_Zero);
 
           // Step 2
           var K1 = L.clone();
@@ -431,7 +426,6 @@
 
           this._K1 = K1;
           this._K2 = K2;
-          this._K = key;
 
           this._const_Bsize = 16;
 
@@ -441,7 +435,7 @@
       reset: function () {
           this._x = ext.const_Zero.clone();
           this._counter = 0;
-          this._buffer = WordArray.create();
+          this._buffer = new WordArray.init();
       },
 
       update: function (messageUpdate) {
@@ -463,7 +457,8 @@
               var M_i = ext.shiftBytes(buffer, bsize);
               ext.xor(this._x, M_i);
               this._x.clamp();
-              this._x = aesBlock(this._K, this._x);
+              this._aes.reset();
+              this._x = this._aes.finalize(this._x);
               this._counter++;
           }
 
@@ -490,7 +485,8 @@
 
           this.reset(); // Can be used immediately afterwards
 
-          return aesBlock(this._K, M_last);
+          this._aes.reset();
+          return this._aes.finalize(M_last);
       },
 
       _isTwo: false

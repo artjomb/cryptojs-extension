@@ -425,7 +425,7 @@
 
   var Streebog256 = C_algo.Streebog256 = Hasher.extend({
   	_doReset: function () {
-  		this._streebogCache = WordArray.create();
+  		this._streebogCache = new WordArray.init();
   	},
 
   	_doProcessBlock: function (M, offset) {
@@ -464,7 +464,7 @@
   		hashBytes = stribog(messageBytes, messageBytes.length, self.outputSize === 256);
 
   		// combine bytes into words (4 ints into one int)
-  		hash = WordArray.create(from_u8_to_u32(hashBytes));
+  		hash = new WordArray.init(from_u8_to_u32(hashBytes));
 
   		// Hash final blocks
   		//self._process();

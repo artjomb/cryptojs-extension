@@ -223,7 +223,7 @@
   		wa[(i/4)|0] |= ba[i] << (24 - 8 * i);
   	}
 
-  	return WordArray.create(wa, ba.length);
+  	return new WordArray.init(wa, ba.length);
   }
 
   var Spongent88808 = C_algo.Spongent = C_algo.Spongent88808 = Hasher.extend({

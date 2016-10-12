@@ -15,11 +15,6 @@
   var ext = C.ext;
   var OneZeroPadding = C.pad.OneZeroPadding;
 
-  function aesBlock(key, data){
-      var aes128 = AES.createEncryptor(key, { iv: WordArray.create(), padding: C.pad.NoPadding });
-      var arr = aes128.finalize(data);
-      return arr;
-  }
 
   var CMAC = C.algo.CMAC = Base.extend({
       /**
@@ -33,9 +28,10 @@
        */
       init: function(key){
           // generate sub keys...
+          this._aes = AES.createEncryptor(key, { iv: new WordArray.init(), padding: C.pad.NoPadding });
 
           // Step 1
-          var L = aesBlock(key, ext.const_Zero);
+          var L = this._aes.finalize(ext.const_Zero);
 
           // Step 2
           var K1 = L.clone();
@@ -52,7 +48,6 @@
 
           this._K1 = K1;
           this._K2 = K2;
-          this._K = key;
 
           this._const_Bsize = 16;
 
@@ -62,7 +57,7 @@
       reset: function () {
           this._x = ext.const_Zero.clone();
           this._counter = 0;
-          this._buffer = WordArray.create();
+          this._buffer = new WordArray.init();
       },
 
       update: function (messageUpdate) {
@@ -84,7 +79,8 @@
               var M_i = ext.shiftBytes(buffer, bsize);
               ext.xor(this._x, M_i);
               this._x.clamp();
-              this._x = aesBlock(this._K, this._x);
+              this._aes.reset();
+              this._x = this._aes.finalize(this._x);
               this._counter++;
           }
 
@@ -111,7 +107,8 @@
 
           this.reset(); // Can be used immediately afterwards
 
-          return aesBlock(this._K, M_last);
+          this._aes.reset();
+          return this._aes.finalize(M_last);
       },
 
       _isTwo: false

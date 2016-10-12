@@ -192,7 +192,7 @@
           fullSegmentMask.push(0);
       }
 
-      fullSegmentMask = WordArray.create(fullSegmentMask);
+      fullSegmentMask = new WordArray.init(fullSegmentMask);
 
       // some helper variables
       var slidingSegmentMask = fullSegmentMask.clone(),
@@ -212,7 +212,7 @@
           } else {
               // Prepare the iteration by concatenating the unencrypted part of the previous block and the previous ciphertext
 
-              prev = WordArray.create(prev);
+              prev = new WordArray.init(prev);
               bitshift(prev, segmentSize);
               prev = prev.words;
               previousCiphertextSegment = self._ct;
@@ -221,7 +221,7 @@
               while(previousCiphertextSegment.length < blockSize / 32) {
                   previousCiphertextSegment.push(0);
               }
-              previousCiphertextSegment = WordArray.create(previousCiphertextSegment);
+              previousCiphertextSegment = new WordArray.init(previousCiphertextSegment);
 
               // move to the back
               bitshift(previousCiphertextSegment, -blockSize + segmentSize);
@@ -235,7 +235,7 @@
           currentPosition = offset * 32 + i * segmentSize;
 
           // move segment in question to the front of the array
-          var plaintextSlice = WordArray.create(words.slice(0));
+          var plaintextSlice = new WordArray.init(words.slice(0));
           bitshift(plaintextSlice, currentPosition);
 
           if (!encryptor) {

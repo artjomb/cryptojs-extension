@@ -43,7 +43,7 @@
   			}
   		}
 
-  		salt = salt || WordArray.create([], self._hashLen);
+  		salt = salt || new WordArray.init([], self._hashLen);
 
   		self._hmacer = Hasher._createHmacHelper(hasher);
   		self._prk = self._hmacer(key, salt);
@@ -54,15 +54,15 @@
   	},
 
   	expand: function (outputLength, info) {
-  		var previousBlock = WordArray.create(),
-  			result = WordArray.create(),
+  		var previousBlock = new WordArray.init(),
+  			result = new WordArray.init(),
   			i,
   			self = this,
   			iterations = Math.ceil(outputLength / self._hashLen);
-  		info = info || WordArray.create();
+  		info = info || new WordArray.init();
 
   		for(i = 1; i <= iterations; i++) {
-  			previousBlock = self._hmacer(previousBlock.concat(info).concat(WordArray.create([i<<24], 1)), self._prk);
+  			previousBlock = self._hmacer(previousBlock.concat(info).concat(new WordArray.init([i<<24], 1)), self._prk);
   			result.concat(previousBlock);
   		}
   		result.sigBytes = outputLength;
