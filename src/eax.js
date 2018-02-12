@@ -99,14 +99,14 @@
                 
                 ext.xor(self._tag, ctTag);
                 self.reset();
-                return xoredData.concat(ctFin).concat(self._tag);
+                return xoredData.concat(ctFin).concat(ext.leftmostBytes(self._tag, self._tagLen));
             } else {
                 // buffer must contain only the tag at this point
                 var ctTag = mac.finalize();
                 
                 ext.xor(self._tag, ctTag);
                 self.reset();
-                if (ext.equals(self._tag, self._buf)) {
+                if (ext.equals(ext.leftmostBytes(self._tag, self._tagLen), self._buf)) {
                     return xoredData.concat(ctFin);
                 } else {
                     return false; // tag doesn't match
