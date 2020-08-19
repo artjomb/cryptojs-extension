@@ -1,6 +1,6 @@
 {
   "name": "cryptojs-extension",
-  "version": "0.2.1-dev",
+  "version": "0.2.2-dev",
   "description": "Some additional crypto functions built on top of CryptoJS",
   "main": "build_node/index.js",
   "directories": {
