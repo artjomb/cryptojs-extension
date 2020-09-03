@@ -1,18 +1,31 @@
 {
   "name": "cryptojs-extension",
-  "version": "0.2.0-dev",
+  "version": "0.2.2-dev",
   "description": "Some additional crypto functions built on top of CryptoJS",
-  "main": "index.js",
+  "main": "build_node/index.js",
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artjomb/cryptojs-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/artjomb/cryptojs-extension/issues"
+  },
   "devDependencies": {
-    "uglify-js": "2.4.10"
+    "fmd": "^0.0.3",
+    "grunt": "^0.4.2",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-execute": "^0.2.2",
+    "load-grunt-config": "^0.19.2",
+    "lodash": "^3.0.0"
   },
   "scripts": {
-    "build": "node build.js",
-    "testn": "cd test && node spongent.js",
-    "test": "cd test && node spongent.js && node neeva.js && node tea.js && node gost28147.js && node gost-streebog.js && node hkdf.js && node blowfish.js && node eax.js && node common.js && node cmac.js && node siv.js && node mode-cfb.js"
+    "build": "grunt build",
+    "test": "grunt test"
   },
   "keywords": [
     "crypto",
@@ -24,13 +37,16 @@
     "cfb",
     "cryptojs",
     "blowfish",
-	"neeva",
-	"tea",
-	"gost28147",
-	"hkdf",
-	"streebog",
-	"spongent"
+    "neeva",
+    "tea",
+    "gost28147",
+    "hkdf",
+    "streebog",
+    "spongent"
   ],
   "author": "artjomb",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
 }
