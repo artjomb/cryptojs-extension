@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "fmd": "^0.0.3",
-    "grunt": "^0.4.2",
+    "grunt": "^1.5.3",
     "grunt-banner": "^0.6.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
     "grunt-execute": "^0.2.2",
-    "load-grunt-config": "^0.19.2",
-    "lodash": "^3.0.0"
+    "load-grunt-config": "^4.0.1",
+    "lodash": "^4.0.0"
   },
   "scripts": {
     "build": "grunt build",
