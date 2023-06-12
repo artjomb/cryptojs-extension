@@ -7,13 +7,15 @@ This extension adds the following algorithms to CryptoJS:
 - AES-EAX ([eax.pdf](http://web.cs.ucdavis.edu/~rogaway/papers/eax.pdf)): EAX Mode of Operation for AES
 - CFB ([NIST Special Publication 800-38A](http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf)): Block cipher mode of operation for confidentiality with a variable segment size
 
-It can only be used in the browser (for now). The tests run in Node.js in kind of hacky way.
+It can be used both in Node.js and the browser.
 
 ## Online "calculator"
 
 There is an online calculator that enables you to try out AES-CMAC and AES-SIV in the browser: http://artjomb.github.io/cryptojs-extension/
 
 ## How to build
+
+Make sure you have `npm install -g grunt-cli` installed on your system.
 
 ```
 $ npm install
@@ -42,9 +44,9 @@ CMAC is a message authentication code algorithm based on AES-128. The key is exp
 <script type="text/javascript">
     var key = CryptoJS.enc.Hex.parse('2b7e151628aed2a6abf7158809cf4f3c');
     var message = "This is some message";
-    
+
     var mac = CryptoJS.CMAC(key, message);
-    
+
     console.log(mac.toString()); // Hex-encoded MAC
 </script>
 ```
@@ -79,7 +81,7 @@ SIV is an authenticated and deterministic mode of operation for AES. It requires
     var key = CryptoJS.enc.Hex.parse('fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff');
     var message = "This is some secret message";
     var additionalData = "This is some additional data";
-    
+
     var siv = CryptoJS.SIV.create(key);
     var ciphertext = siv.encrypt([ additionalData ], message);
 
@@ -113,7 +115,7 @@ EAX is a authenticated mode based on AES and CMAC. It requires the use of a nonc
     var nonce = CryptoJS.lib.WordArray.random(16);
     var message = "This is some secret message";
     var additionalData = "This is some additional (authenticated) data";
-    
+
     var eax = CryptoJS.EAX.create(key);
     var ciphertext = eax.encrypt(message, nonce, [ additionalData ]);
 
@@ -185,7 +187,7 @@ Example usage of `CFBb` without padding:
     var segmentSize = 8; // bits; can also be 1, 2, 4, 16, 32, 64, 128 for AES
 
     var message = "This is some secret message";
-    
+
     var encrypted = CryptoJS.AES.encrypt(message, key, {
         iv: iv,
         mode: mode,
@@ -215,7 +217,7 @@ Example usage of `CFBw` with default PKCS#7 padding:
     var segmentSize = 32; // bits; can also be 64 or 128 for AES
 
     var message = "This is some secret message";
-    
+
     var encrypted = CryptoJS.AES.encrypt(message, key, {
         iv: iv,
         mode: mode,
